@@ -62,7 +62,7 @@ export HISTCONTROL=ignoreboth
 export HISTSIZE=10000
 export HISTFILESIZE=10000
 export EDITOR='vim'
-export BROWSER='chromium'
+export BROWSER='luakit'
 
 #use bash-completion if available (obviously...)
 if [ -f /etc/bash_completion ]; then
@@ -71,7 +71,7 @@ fi
 
 #complete -cf sudo
 #complete -cf man
-##complete -cd yaourt
+#complete -cd yaourt
 #complete -cf killall
 
 bind 'set match-hidden-files off'
