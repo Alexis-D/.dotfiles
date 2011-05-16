@@ -19,9 +19,20 @@ export WMII_NORMCOLORS='#888888 #222222 #333333'
 export WMII_FOCUSCOLORS='#ffffff #285577 #4C7899'
 
 export WMII_BACKGROUND='#333333'
-#export WMII_FONT='-*-inconsolata-medium-r-*-*-13-*-*-*-*-*-*-*'
 export WMII_FONT='xft:Inconsolata-10'
 #wmiir xwrite /ctl 'font xft:DejaVu Sans Mono-7'
+
+#put the bar on top
+wmiir xwrite /ctl bar on top
+
+VIEW_NAME='[0] [1]urxvt [2]web [3]multimedia [4]dev [5]bg [6]other [7] [8] [9]'
+
+#get the viewname from the number
+#e.g. getviewname 3 -> '[3]multimedia'
+getviewname(){ 
+    n=`expr $1 + 1`
+    echo $VIEW_NAME | cut -d ' ' -f $n
+}
 
 set -- $(echo $WMII_NORMCOLORS $WMII_FOCUSCOLORS)
 export WMII_TERM="urxvt"
@@ -50,14 +61,40 @@ wmiir write /colrules <<!
 !
 
 # Tagging Rules
+
+urxvt=`getviewname 1`
+web=`getviewname 2`
+multimedia=`getviewname 3`
+dev=`getviewname 4`
+bg=`getviewname 5`
+other=`getviewname 6`
+tilda=`echo $VIEW_NAME | tr ' ' '+'`
+
+# /urxvt|xterm/ -> $urxvt
+
 wmiir write /tagrules <<!
-/MPlayer|VLC/ -> ~
+/opera|firefox|jumanji|luakit/ -> $web
+/chromium/ -> $web
+/mplayer/ -> ~$multimedia
+/vlc|banshee/ -> $multimedia
+/geany/ -> $dev
+/transmission|linuxdcpp/ -> $bd
+/gimp|*office*/ -> ~$other
+/tilda/ -> $tilda
+/.*/ -> sel
 !
 
 # Status Bar Info
+# status() {
+# 	echo -n $(uptime | sed 's/.*://; s/,//g') '|' $(date)
+# }
+
+#status bar (+acpi)
 status() {
-	echo -n $(uptime | sed 's/.*://; s/,//g') '|' $(date)
+echo -n ' Wlan0:' $(iwconfig wlan0 | sed 's/ /\n/g' | grep Quality) '|' $(acpi -b) '|' $(acpi -t) '|' $(uptime |
+sed 's/.*://; s/,//g') '|' $(date) 
 }
+
 
 local_events() { true;}
 wi_runconf -s wmiirc_local
@@ -152,14 +189,19 @@ Action status
 		sleep 1
 	done
 
+#custom : resize window
 Key $MODKEY-Control-$LEFT
-    wmiir xwrite /tag/sel/ctl grow sel sel right -20
+    wmiir xwrite /tag/sel/ctl nudge sel sel left 10
 Key $MODKEY-Control-$RIGHT
-    wmiir xwrite /tag/sel/ctl grow sel sel right 20
+    wmiir xwrite /tag/sel/ctl nudge sel sel right 10
 Key $MODKEY-Control-$DOWN
-    wmiir xwrite /tag/sel/ctl grow sel sel down 20
+    wmiir xwrite /tag/sel/ctl nudge sel sel down 10
 Key $MODKEY-Control-$UP
-    wmiir xwrite /tag/sel/ctl grow sel sel down -20
+    wmiir xwrite /tag/sel/ctl nudge sel sel up 10
+Key $MODKEY-i
+    tilda&
+    luakit&
+    wmiir xwrite /ctl view [2]web
 
 # Key Bindings
 KeyGroup Moving around
@@ -230,19 +272,28 @@ Key $MODKEY-Control-t # Toggle all other key bindings
 
 KeyGroup Tag actions
 Key $MODKEY-t       # Change to another tag
-	(tag=$(wi_tags | wimenu -h "${hist}.tags" -n 50) && wmiir xwrite /ctl view $tag) &
+    #(tag=$(wi_tags | wimenu -h "${hist}.tags" -n 50) && wmiir xwrite /ctl view $tag) &
 Key $MODKEY-Shift-t # Retag the selected client
+    tag=$(wi_tags | wimenu -h "${hist}.tags" -n 50) 
+
+    for i in `echo $tag | tr '+' '\n'`
+    do
+        tags=$tags+`getviewname $i`
+    done
+    tags=`echo $tags | sed 's/.\(.*\)/\1/'`
+
+    echo $tags
 	c=$(wi_selclient)
-	(tag=$(wi_tags | wimenu -h "${hist}.tags" -n 50) && wmiir xwrite /client/$c/tags $tag) &
+	wmiir xwrite /client/$c/tags $tags &
 !
-	for i in 0 1 2 3 4 5 6 7 8 9; do
-		cat <<!
-Key $MODKEY-$i		 # Move to the numbered view
-	wmiir xwrite /ctl view "$i"
+for i in 0 1 2 3 4 5 6 7 8 9; do
+            cat <<!
+Key $MODKEY-$i           # Move to the numbered view
+    wmiir xwrite /ctl view "`getviewname $i`"
 Key $MODKEY-Shift-$i     # Retag selected client with the numbered tag
-	wmiir xwrite /client/sel/tags "$i"
+    wmiir xwrite /client/sel/tags "`getviewname $i`"
 !
-	done
+done
 }
 wi_events events local_events
 
