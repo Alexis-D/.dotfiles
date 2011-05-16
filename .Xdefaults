@@ -1,0 +1,8 @@
+urxvt*depth: 32
+urxvt*background: black
+urxvt*foreground: white
+urxvt*font: xft:Inconsolata:pixselsize=12
+urxvt*transparent: true
+urxvt*shading: 60
+urxvt*scrollBar: false
+URxvt.perl-ext-common: default,tabbed
