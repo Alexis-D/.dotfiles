@@ -16,9 +16,5 @@ case $SESSION in
         ;;
 esac
 
-#relaunch the wm without quitting X session
-while true;
-do
-    exec ck-launch-session $SESSION
-done
+exec ck-launch-session $SESSION
 

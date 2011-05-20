@@ -2,7 +2,7 @@ URxvt*background: black
 URxvt*foreground: white
 URxvt*font: xft:Inconsolata:pixselsize=12
 URxvt*transparent: true
-URxvt*shading: 60
+URxvt*shading: 20
 URxvt*scrollBar: false
 URxvt*perl-ext-common: default,tabbed
 URxvt*tabbed*tabbar-fg: 0
