@@ -119,6 +119,7 @@ set autochdir " change le current directory pour celui du fichier
 
 " ---
 
+imap ,, <ESC>
 map j gj
 map k gk
 
@@ -151,7 +152,5 @@ set so=5 " afficher x lignes en plus quand on scrolle vers le bas
 "autocmd VimEnter * NERDTree
 "autocmd VimEnter * wincmd p
 
-" ---
-
 set t_Co=256
-colo molokai
+colo neverland2-darker
