@@ -13,6 +13,7 @@ case $SESSION in
         ~/.fehbg&
         tilda&
         wmname LG3D& #for Java...
+        status.sh&
         ;;
 esac
 
