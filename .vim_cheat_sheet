@@ -1,0 +1,107 @@
+Useful shortcuts for Vim
+========================
+
+Normal:
+-------
+
+[{ : go to the begining of a block of {}
+]} : go to the end of a block of {}
+[/ or [* : go to the begining of a C comment /**/
+]/ or ]* : go to the begining of a C comment /**/
+[[, ]] : start of section backward, forward
+[], ][ : end of section backward, forward
+
+([ jump to the previous unclosed )
+{[ jump to the previous unclosed }
+]) jump to the next unclosed )
+]} jump to the next unclosed }
+
+d/kw, y/kw, c/kw : delete, yank, change up to kw
+
+guu, gUU : lowercase, uppercase all line
+ga : show ASCII value of the char
+gv : reselect the last visual selection
+
+'. : jump to the last modified line
+'' : jump to previous line
+
+<C-o>, <C-i> : retrace movement in the file (backward, forward)
+
+q:, q/ : command, search history
+"/p, ":p : paste the last search, command
+
+[I : show line matching the word under the cursor
+
+:## : go to line ## (like ##G)
+##| : go to column ##
+
+<C-y>, <C-e> : scroll up, down of one line without moving the cursor if possible
+
+#% : go to #% in the file
+
+H : first line of the window
+M : middle line of the window
+L : last line of the window
+
+J : join current line with next one
+K : open the man page of the line between the cursor
+
+D : same as d$
+C : same as c$
+
+<C-w>w : cycle throught splits
+<C-w>s : horizontal split
+<C-w>v : vertical split
+
+~ : flip case
+
+"{buf}y, "{buf}p : yank into, paste from buffer {buf}
+
+:noh : cancel highlighting of the last search
+
+:bn, :bp : go to the next, previous buffer
+
+<C-c> : to cancel a command (not <Esc>...)
+
+
+Insertion:
+----------
+
+<C-x><C-l> : complete the line (like <C-n>, or <C-p>)
+<C-x><C-y>, <C-x><C-e> : scroll up, down of one line without moving the cursor if possible
+
+<C-v>x : if x is a char display x, if it's an integer display the char associated to this integer (base ten)
+
+<C-o><command> : execute <command> like in normal mode
+
+
+Normal & Insertion:
+-------------------
+
+<C-LeftArrow>, <C-RightArrow> : jump to the begining of the next, previous word
+
+
+Visual:
+-------
+
+O : jump to the other side of the selection
+aB, ab : select {block}, (block}
+iB, ib : select {inner block}, (inner block}
+
+
+Other:
+------
+
+:#,#s/old/new/ : search and replace between the to specified lines
+:s//new : replace the last search by new
+:g/kw/# : show all line containing kw with their line number
+
+@:, @/, @@ : repeat last :command, /search, macro
+
+
+(Pretty) useless, but fun:
+--------------------------
+
+g? : rot13 the selection
+:X : crypt the file
+

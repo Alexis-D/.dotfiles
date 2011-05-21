@@ -81,12 +81,14 @@ set background=dark
 set shellcmdflag=-c
 set number
 set showcmd
+
+" ---
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set smarttab
 set cindent "useless ?
-
+set shiftround
 autocmd FileType make setlocal noexpandtab
 
 " ---
@@ -96,22 +98,18 @@ filetype plugin on
 " ---
 
 set hidden
+
+" ---
+
 set showmatch
-set shiftround
 set ignorecase
 set smartcase " ignore la casse si tout en minuscule, la prends en compte sinon
 set title
 set cursorline
-" set fdm=indent
-
-set pastetoggle=<F2> " supprime le 'bug' du c/C (oui c'est le coller, pour le copier, F2 via un plugin) dans vim
 
 " ---
 
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+set pastetoggle=<F2> " supprime le 'bug' du c/C (oui c'est le coller, pour le copier, F2 via un plugin) dans vim
 
 " ---
 
@@ -119,9 +117,8 @@ set autochdir " change le current directory pour celui du fichier
 
 " ---
 
-imap ,, <ESC>
-map j gj
-map k gk
+nmap j gj
+nmap k gk
 
 " ---
 
@@ -129,16 +126,11 @@ autocmd BufNewFile * silent! 0r ~/.vim/tpl/%:e.tpl
 
 " ---
 
-"set foldmethod=indent
-"set foldnestmax=2
-
-" --
-
 set nobackup
 set nowritebackup
 set noswapfile
 
-" --
+" ---
 
 set omnifunc=syntaxcomplete#Complete
 
@@ -148,9 +140,18 @@ set so=5 " afficher x lignes en plus quand on scrolle vers le bas
 
 " ---
 
-"let NERDTreeShowBookmarks=1
-"autocmd VimEnter * NERDTree
-"autocmd VimEnter * wincmd p
-
 set t_Co=256
-colo neverland2-darker
+"colo neverland2-darker
+colo molokai
+
+" ---
+
+nmap <C-j> <C-w>j<C-w>_
+nmap <C-k> <C-w>k<C-w>_
+nmap <C-h> <C-w>h<C-w><Bar>
+nmap <C-l> <C-w>l<C-w><Bar>
+
+" ---
+
+" also increment/decrement character with <C-a>, <C-x>
+set nrformats=octal,hex,alpha
