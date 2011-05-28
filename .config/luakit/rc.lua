@@ -72,6 +72,8 @@ require "downloads_chrome"
 -- Add vimperator-like link hinting & following
 -- (depends on downloads)
 require "follow"
+require "follow.styles"
+follow.style = follow.styles.charset("fghjklrtyui")
 
 -- Add command completion
 require "completion"
