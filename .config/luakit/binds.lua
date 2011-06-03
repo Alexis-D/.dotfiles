@@ -152,11 +152,11 @@ add_binds("normal", {
 
     -- Clipboard
     key({},          "p",           function (w)
-                                        local uri = luakit.get_selection()
+                                        local uri = luakit.get_selection("c")
                                         if uri then w:navigate(w:search_open(uri)) else w:error("Empty selection.") end
                                     end),
     key({},          "P",           function (w, m)
-                                        local uri = luakit.get_selection()
+                                        local uri = luakit.get_selection("c")
                                         if not uri then w:error("Empty selection.") return end
                                         for i = 1, m.count do w:new_tab(w:search_open(uri)) end
                                     end, {count = 1}),
@@ -164,12 +164,14 @@ add_binds("normal", {
     -- Yanking
     buf("^yy$",                     function (w)
                                         local uri = string.gsub(w:get_current().uri or "", " ", "%%20")
-                                        luakit.set_selection(uri)
+                                        luakit.set_selection(uri, "c")
+                                        luakit.set_selection(uri, "p")
                                         w:notify("Yanked uri: " .. uri)
                                     end),
 
     buf("^yt$",                     function (w)
-                                        luakit.set_selection(w.win.title)
+                                        luakit.set_selection(w.win.title, "c")
+                                        luakit.set_selection(w.win.title, "p")
                                         w:notify("Yanked title: " .. w.win.title)
                                     end),
 

@@ -1,12 +1,12 @@
 # Check for an interactive session
 [ -z "$PS1" ] && return
 
-# Créer une archive pour un repertoire donne.
+#create an archive from a directory
 mktar() { tar cvf  "${1%%/}.tar"     "${1%%/}/"; }
 mktgz() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
 mktbz() { tar cvjf "${1%%/}.tar.bz2" "${1%%/}/"; }
 
-#usage: remind 15m "Aller manger"
+#usage: remind 15m "Go lunch"
 remind()
 {
     sleep $1 && zenity --info --text "$2" &
@@ -17,8 +17,8 @@ calc()
     echo $@ | bc
 }
 
-# ex - Extraire une archive
-# usage: ex <fichier>
+# ex - extract an archive
+# usage: ex <file>
 ex ()
 {
     if [ -f $1 ] ; then
