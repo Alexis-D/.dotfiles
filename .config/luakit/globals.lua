@@ -69,6 +69,8 @@ search_engines = {
     wa          = "http://www.wolframalpha.com/",
     mail        = "https://mail.google.com/mail/u/0/?shva=1#mbox",
     gitref      = "http://gitref.org/",
+    github      = "http://github.com/",
+    home        = "file:///home/alexis/",
 }
 
 -- Set google as fallback search engine

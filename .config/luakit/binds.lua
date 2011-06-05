@@ -164,14 +164,14 @@ add_binds("normal", {
     -- Yanking
     buf("^yy$",                     function (w)
                                         local uri = string.gsub(w:get_current().uri or "", " ", "%%20")
-                                        luakit.set_selection(uri, "c")
-                                        luakit.set_selection(uri, "p")
+                                        luakit.set_selection("clipboard", uri)
+                                        luakit.set_selection("primary", uri)
                                         w:notify("Yanked uri: " .. uri)
                                     end),
 
     buf("^yt$",                     function (w)
-                                        luakit.set_selection(w.win.title, "c")
-                                        luakit.set_selection(w.win.title, "p")
+                                        luakit.set_selection(w.win.title, "clipboard")
+                                        luakit.set_selection(w.win.title, "primary")
                                         w:notify("Yanked title: " .. w.win.title)
                                     end),
 

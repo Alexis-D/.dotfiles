@@ -141,8 +141,12 @@ set so=5 " afficher x lignes en plus quand on scrolle vers le bas
 " ---
 
 set t_Co=256
-"colo neverland2-darker
 colo molokai
+"colo neverland2-darker
+
+"if &t_Co > 8
+"    colo molokai
+"endif
 
 " ---
 
