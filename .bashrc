@@ -17,6 +17,11 @@ calc()
     echo $@ | bc
 }
 
+wcat()
+{
+    wget -O - $1 2>/dev/null
+}
+
 # ex - extract an archive
 # usage: ex <file>
 ex ()
@@ -88,4 +93,5 @@ tooLong ()
 
 #PS1='`date +"%R"` < \e[1;37m\u\e[0m in \W > \$ '
 PS1='\A <\[\e[1m\]\u\[\e[0m\] in $(tooLong)> \$ '
+PATH=$PATH:/opt/google-appengine
 
