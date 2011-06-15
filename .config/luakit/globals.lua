@@ -60,8 +60,9 @@ search_engines = {
     fren        = "http://www.wordreference.com/fren/%s",
 
     -- better bookmarks :D
-    google      = "http://www.google.com/",
+    gg          = "http://www.google.com/",
     fb          = "http://www.facebook.com/",
+    hn          = "http://news.ycombinator.com/",
     rss         = "http://www.google.com/reader/view/",
     plurk       = "http://www.plurk.com/Cerium",
     edt         = "http://edt.polytech.unice.fr/etudiant?FD=1",
