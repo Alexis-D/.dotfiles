@@ -20,6 +20,7 @@ local homepage = globals.homepage or "http://luakit.org"
 function add_binds(mode, binds, before)
     assert(binds and type(binds) == "table", "invalid binds table type: " .. type(binds))
     mode = type(mode) ~= "table" and {mode} or mode
+
     for _, m in ipairs(mode) do
         local mdata = get_mode(m)
         if mdata and before then
@@ -152,11 +153,11 @@ add_binds("normal", {
 
     -- Clipboard
     key({},          "p",           function (w)
-                                        local uri = luakit.get_selection("c")
+                                        local uri = luakit.get_selection()
                                         if uri then w:navigate(w:search_open(uri)) else w:error("Empty selection.") end
                                     end),
     key({},          "P",           function (w, m)
-                                        local uri = luakit.get_selection("c")
+                                        local uri = luakit.get_selection()
                                         if not uri then w:error("Empty selection.") return end
                                         for i = 1, m.count do w:new_tab(w:search_open(uri)) end
                                     end, {count = 1}),
