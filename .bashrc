@@ -50,6 +50,8 @@ alias ls='ls --color=auto'
 alias la='ls -A'
 alias lar='la -R'
 
+alias chmox='chmod +x'
+
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
