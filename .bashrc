@@ -70,6 +70,7 @@ export HISTSIZE=10000
 export HISTFILESIZE=10000
 export EDITOR='vim'
 export BROWSER='luakit'
+export SESSION='dwm'
 
 #use bash-completion if available (obviously...)
 if [ -f /etc/bash_completion ]; then

@@ -1,11 +1,9 @@
 #!/bin/sh
 
-SESSION=dwm
-
 case $SESSION in
     openbox)
         ;;
-    dwm|wmii)
+    dwm|wmii|*)
         xcompmgr&
         numlockx on&
         gmixer -d&
