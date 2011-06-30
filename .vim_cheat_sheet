@@ -79,6 +79,8 @@ Insertion:
 
 <C-o><command> : execute <command> like in normal mode
 
+<C-c> : aka <Esc>
+
 
 Normal & Insertion:
 -------------------

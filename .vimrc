@@ -77,6 +77,10 @@ endif
 
 " Start of Custom .vimrc
 
+let mapleader = ','
+
+" --
+
 set background=dark
 set shellcmdflag=-c
 set number
@@ -166,3 +170,23 @@ set nrformats=octal,hex,alpha
 
 nnoremap / /\v
 vnoremap / /\v
+
+" --
+
+set gdefault " :s/??/!!/g without g, to come back to default add g
+
+" --
+
+nnoremap <leader><space> :noh<cr>
+
+" --
+
+nnoremap <tab> %
+vnoremap <tab> %
+
+" --
+
+inoremap jj <ESC>
+
+" --
+
