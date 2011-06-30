@@ -161,3 +161,8 @@ nmap <C-l> <C-w>l<C-w><Bar>
 
 " also increment/decrement character with <C-a>, <C-x>
 set nrformats=octal,hex,alpha
+
+" --
+
+nnoremap / /\v
+vnoremap / /\v
