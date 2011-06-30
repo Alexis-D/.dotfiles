@@ -63,6 +63,11 @@ C : same as c$
 
 <C-c> : to cancel a command (not <Esc>...)
 
+ci(, ci{, ci[, ciw : change inside (), {}, [], w (important: movement, c may be replaced by d/...)
+ca(, ca{, ca[, caw : change around (), {}, [], w (important: movement, c may be replaced by d/...)
+
+s : same as cl
+
 
 Insertion:
 ----------
