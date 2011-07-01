@@ -190,3 +190,6 @@ inoremap jj <ESC>
 
 " --
 
+" when forget sudo
+cmap w!! %!sudo tee > /dev/null %
+
