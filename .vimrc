@@ -168,8 +168,8 @@ set nrformats=octal,hex,alpha
 
 " --
 
-nnoremap / /\v
-vnoremap / /\v
+" nnoremap / /\v
+" vnoremap / /\v
 
 " --
 
