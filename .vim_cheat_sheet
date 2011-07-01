@@ -27,6 +27,10 @@ guu, gUU : lowercase, uppercase all line
 ga : show ASCII value of the char
 gv : reselect the last visual selection
 
+*, # : search for word under cursor forward/backward
+g*, g# : search for words containing the word under cursor forward/backward
+        (for instance g* on "the" will match "the" (obvious), and "their"...)
+
 '. : jump to the last modified line
 '' : jump to previous line
 
@@ -62,6 +66,8 @@ C : same as c$
 
 "{buf}y, "{buf}p : yank into, paste from buffer {buf}
 "_ : black hole buffer (aka /dev/null)
+"* : primary buffer (text selected with mouse and pasted with middle click)
+"+ : "traditional" copy buffer <C-c>/<C-v>
 
 :noh : cancel highlighting of the last search
 
@@ -69,8 +75,10 @@ C : same as c$
 
 <C-c> : to cancel a command (not <Esc>...)
 
-ci(, ci{, ci[, ciw : change inside (), {}, [], w (important: movement, c may be replaced by d/...)
-ca(, ca{, ca[, caw : change around (), {}, [], w (important: movement, c may be replaced by d/...)
+ci(, ci{, ci[, ciw, ci', ci", ci<, cip, cis : change inside (), {}, [],
+        w, '', "", <>, paragraph, sentence (important: movement, c may be replaced by d/...)
+ca(, ca{, ca[, caw, ca', ca", ca<, cap, cas : change around (), {}, [],
+        w, '', "", <>, paragraph, sentence (important: movement, c may be replaced by d/...)
 
 s : same as cl
 
@@ -96,7 +104,7 @@ Insertion:
 
 <C-v>x : if x is a char display x, if it's an integer display the char associated to this integer (base ten)
 
-<C-o><command> : execute <command> like in normal mode
+<C-o><command> : execute <command> like in normal mode, e.g. <C-o><S-i> to go at the begining of the line!
 
 <C-c> : aka <Esc>
 
