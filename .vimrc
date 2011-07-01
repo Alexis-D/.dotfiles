@@ -1,19 +1,5 @@
 set nocompatible
 
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
-
-if has("vms")
-  set nobackup		" do not keep a backup file, use versions instead
-else
-  set backup		" keep a backup file
-endif
-set history=500		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
-
-
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
@@ -62,20 +48,21 @@ if has("autocmd")
   augroup END
 
 else
-
   set autoindent		" always set autoindenting on
-
 endif " has("autocmd")
 
-" Convenient command to see the difference between the current buffer and the
-" file it was loaded from, thus the changes you made.
-" Only define it when not defined already.
-if !exists(":DiffOrig")
-  command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
-endif
+" --
 
-" Start of Custom .vimrc
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+" --
+
+set history=5000
+set ruler
+set incsearch
+
+" --
 
 let mapleader = ','
 
@@ -93,6 +80,7 @@ set expandtab
 set smarttab
 set cindent "useless ?
 set shiftround
+
 autocmd FileType make setlocal noexpandtab
 autocmd FileType haskell setlocal tabstop=2
 autocmd FileType haskell setlocal shiftwidth=2
