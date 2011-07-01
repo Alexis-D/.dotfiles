@@ -11,6 +11,11 @@ Normal:
 [[, ]] : start of section backward, forward
 [], ][ : end of section backward, forward
 
+} : Move to end of paragraph (first empty line).
+{ : Move to start of paragraph.
+( : Move to start of sentence (separator is both period and space).
+) : Move to start of next sentence (separator is both period and space).
+
 ([ jump to the previous unclosed )
 {[ jump to the previous unclosed }
 ]) jump to the next unclosed )
@@ -56,6 +61,7 @@ C : same as c$
 ~ : flip case
 
 "{buf}y, "{buf}p : yank into, paste from buffer {buf}
+"_ : black hole buffer (aka /dev/null)
 
 :noh : cancel highlighting of the last search
 
@@ -68,11 +74,24 @@ ca(, ca{, ca[, caw : change around (), {}, [], w (important: movement, c may be 
 
 s : same as cl
 
+:help <C-v><C-f><cr> : display help for <C-f>
+
+zt, zz, zb : move line to the top, middle, bottom of the line
+
+!!<command> : pass current line to a filter e.g. !!cut -d : -f 1
+:%!<command> : all buffer to filter
+!<command> : apply command to the selection e.g. Vjj!sort
+
+:make : run make
+:cw : show compile errors in a window
+:cn, :cp : go to previous, next compile error
+
 
 Insertion:
 ----------
 
 <C-x><C-l> : complete the line (like <C-n>, or <C-p>)
+<C-x><C-f> : filename completion
 <C-x><C-y>, <C-x><C-e> : scroll up, down of one line without moving the cursor if possible
 
 <C-v>x : if x is a char display x, if it's an integer display the char associated to this integer (base ten)
@@ -80,6 +99,8 @@ Insertion:
 <C-o><command> : execute <command> like in normal mode
 
 <C-c> : aka <Esc>
+
+<C-t>, <C-d> : indent, dedent (same as >>, << in insert mode)
 
 
 Normal & Insertion:
