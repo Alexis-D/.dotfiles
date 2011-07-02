@@ -51,6 +51,7 @@ alias la='ls -A'
 alias lar='la -R'
 
 alias chmox='chmod +x'
+alias py='python'
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -68,8 +69,10 @@ export HISTCONTROL=ignoredups
 export HISTCONTROL=ignoreboth
 export HISTSIZE=10000
 export HISTFILESIZE=10000
-export EDITOR='vim'
+
 export BROWSER='luakit'
+export EDITOR='vim'
+export PYTHONSTARTUP="$HOME/.pythonrc.py"
 export SESSION='dwm'
 
 #use bash-completion if available (obviously...)
