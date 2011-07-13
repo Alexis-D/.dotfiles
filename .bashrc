@@ -52,6 +52,10 @@ alias lar='la -R'
 
 alias chmox='chmod +x'
 alias py='python'
+alias vi='vim'
+
+alias halt='sudo halt'
+alias updatedb='sudo updatedb'
 
 alias ..='cd ..'
 alias ...='cd ../..'
