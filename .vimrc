@@ -135,7 +135,7 @@ set so=5 " afficher x lignes en plus quand on scrolle vers le bas
 " ---
 
 set t_Co=256
-colo molokai
+colo xoria256
 "colo neverland2-darker
 
 "if &t_Co > 8
@@ -180,4 +180,6 @@ inoremap jj <ESC>
 
 " when forget sudo
 cmap w!! %!sudo tee > /dev/null %
+
+" --
 

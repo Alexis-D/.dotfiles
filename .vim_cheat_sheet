@@ -110,6 +110,8 @@ Insertion:
 
 <C-t>, <C-d> : indent, dedent (same as >>, << in insert mode)
 
+<C-y> : insert the letter above at the cursor pos
+
 
 Normal & Insertion:
 -------------------
