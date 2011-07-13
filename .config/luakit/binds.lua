@@ -50,6 +50,7 @@ function set_ua(w, ua, restore)
     end
 
     w:get_current():set_property('user-agent', ua)
+    w:notify("Set user-agent to: " .. ua)
 end
 
 -- Adds the default menu widget bindings to a mode
@@ -184,8 +185,8 @@ add_binds("normal", {
                                     end),
 
     buf("^yt$",                     function (w)
-                                        luakit.set_selection(w.win.title, "clipboard")
-                                        luakit.set_selection(w.win.title, "primary")
+                                        luakit.set_selection("clipboard", w.win.title)
+                                        luakit.set_selection("primary", w.win.title)
                                         w:notify("Yanked title: " .. w.win.title)
                                     end),
 

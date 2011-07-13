@@ -5,14 +5,14 @@
 local theme = {}
 
 -- Default settings
-theme.font = "inconsolata normal 10"
-theme.fg   = "#888"
-theme.bg   = "#222"
+theme.font = "droid sans mono 9"
+theme.fg   = "#5fafd7"
+theme.bg   = "#1c1c1c"
 
 -- Genaral colours
 theme.success_fg = "#0f0"
 --theme.loaded_fg  = "#3ad"
-theme.loaded_fg  = "#f92672"
+theme.loaded_fg  = "#afd787"
 theme.error_fg = "#fff"
 theme.error_bg = "#f00"
 
@@ -25,12 +25,12 @@ theme.notif_fg = "#444"
 theme.notif_bg = "#fff"
 
 -- Menu colours
-theme.menu_fg                   = "#888"
-theme.menu_bg                   = "#222"
-theme.menu_selected_fg          = "#fff"
-theme.menu_selected_bg          = "#f92672"
-theme.menu_title_bg             = "#222"
-theme.menu_primary_title_fg     = "#f92672"
+theme.menu_fg                   = "#5fafd7"
+theme.menu_bg                   = "#1c1c1c"
+theme.menu_selected_fg          = "#afd787"
+theme.menu_selected_bg          = "#444444"
+theme.menu_title_bg             = "#1c1c1c"
+theme.menu_primary_title_fg     = "#afd787"
 theme.menu_secondary_title_fg   = "#fff"
 
 -- Proxy manager
@@ -40,25 +40,25 @@ theme.proxy_inactive_menu_fg    = '#888'
 theme.proxy_inactive_menu_bg    = '#fff'
 
 -- Statusbar specific
-theme.sbar_fg         = "#888"
-theme.sbar_bg         = "#222"
+theme.sbar_fg         = "#5fafd7"
+theme.sbar_bg         = "#1c1c1c"
 
 -- Downloadbar specific
 theme.dbar_fg         = "#fff"
 theme.dbar_bg         = "#000"
-theme.dbar_error_fg   = "#F00"
+theme.dbar_error_fg   = "#f00"
 
 -- Input bar specific
-theme.ibar_fg           = "#888"
-theme.ibar_bg           = "#222"
+theme.ibar_fg           = "#5fafd7"
+theme.ibar_bg           = "#1c1c1c"
 
 -- Tab label
-theme.tab_fg            = "#888"
-theme.tab_bg            = "#222"
-theme.tab_ntheme        = "#ddd"
-theme.selected_fg       = "#f92672"
-theme.selected_bg       = "#000"
-theme.selected_ntheme   = "#ddd"
+theme.tab_fg            = "#5fafd7"
+theme.tab_bg            = "#1c1c1c"
+theme.tab_ntheme        = "#5fafd7"
+theme.selected_fg       = "#afd787"
+theme.selected_bg       = "#2d2d2d"
+theme.selected_ntheme   = "#afd787"
 theme.loading_fg        = "#3ad"
 theme.loading_bg        = "#000"
 
