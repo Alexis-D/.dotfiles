@@ -52,6 +52,7 @@ alias lar='la -R'
 
 alias chmox='chmod +x'
 alias py='python'
+alias py2='python2'
 alias vi='vim'
 
 alias halt='sudo halt'
