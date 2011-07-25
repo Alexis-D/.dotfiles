@@ -169,8 +169,8 @@ nnoremap <leader><space> :noh<cr>
 
 " --
 
-nnoremap <tab> %
-vnoremap <tab> %
+" nnoremap <tab> %
+" vnoremap <tab> %
 
 " --
 
