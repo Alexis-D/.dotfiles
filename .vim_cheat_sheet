@@ -65,6 +65,7 @@ C : same as c$
 ~ : flip case
 
 "{buf}y, "{buf}p : yank into, paste from buffer {buf}
+"" : buffer d, c, s, x
 "_ : black hole buffer (aka /dev/null)
 "* : primary buffer (text selected with mouse and pasted with middle click)
 "+ : "traditional" copy buffer <C-c>/<C-v>
@@ -111,6 +112,8 @@ Insertion:
 <C-t>, <C-d> : indent, dedent (same as >>, << in insert mode)
 
 <C-y> : insert the letter above at the cursor pos
+
+<C-r>x : insert the content of the buffer x
 
 
 Normal & Insertion:
