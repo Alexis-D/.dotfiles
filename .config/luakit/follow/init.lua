@@ -516,19 +516,19 @@ window.follow = (function () {
 ]=]
 
 local default_theme = {
-    focus_bg      = "#00ff00";
-    normal_bg     = "#ffff99";
-    opacity       = 0.3;
-    border        = "1px dotted #000000";
-    frame_border  = "2px solid #880000";
+    focus_bg      = "#55ff55";
+    normal_bg     = "#ffff33";
+    opacity       = 0.7;
+    border        = "none",
+    frame_border  = "none",
     tick_frame_bg = "#880000";
     tick_fg       = "#ffffff";
-    tick_bg       = "#000088";
-    tick_border   = "2px dashed #000000";
-    tick_opacity  = 0.4;
-    tick_font     = "11px monospace bold";
-    vert_offset   = 0;
-    horiz_offset  = -10;
+    tick_bg       = "#ff0000";
+    tick_border   = "none";
+    tick_opacity  = 0.7;
+    tick_font     = "12px 'Droid Sans Mono' bold";
+    vert_offset   = 11;
+    horiz_offset  = 0;
 }
 
 -- Merge `theme.follow` table with `follow.default_theme`
