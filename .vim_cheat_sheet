@@ -100,6 +100,11 @@ zt, zz, zb : move line to the top, middle, bottom of the line
 
 :<C-f> : aka q: 
 
+u : undo
+<C-r> : redo
+g+, g- : "better" undo/redo
+:earlier, :later : used to undo/redo
+
 
 Insertion:
 ----------
