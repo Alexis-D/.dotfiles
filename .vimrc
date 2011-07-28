@@ -146,8 +146,8 @@ colo xoria256
 
 nnoremap <C-j> <C-w>j<C-w>_
 nnoremap <C-k> <C-w>k<C-w>_
-nnoremap <C-h> <C-w>h<C-w><Bar>
-nnoremap <C-l> <C-w>l<C-w><Bar>
+nnoremap <C-h> <C-w>h<C-w><bar>
+nnoremap <C-l> <C-w>l<C-w><bar>
 
 " ---
 
@@ -181,3 +181,6 @@ cmap w!! %!sudo tee > /dev/null %
 
 set statusline=%F\ %m%r%w%y\ %=(%L\ loc)\ %l,%v\ \ %P
 
+" --
+
+nnoremap <F3> :GundoToggle<cr>
