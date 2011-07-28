@@ -111,8 +111,8 @@ set autochdir " change le current directory pour celui du fichier
 
 " ---
 
-nmap j gj
-nmap k gk
+nnoremap j gj
+nnoremap k gk
 
 " ---
 
@@ -144,10 +144,10 @@ colo xoria256
 
 " ---
 
-nmap <C-j> <C-w>j<C-w>_
-nmap <C-k> <C-w>k<C-w>_
-nmap <C-h> <C-w>h<C-w><Bar>
-nmap <C-l> <C-w>l<C-w><Bar>
+nnoremap <C-j> <C-w>j<C-w>_
+nnoremap <C-k> <C-w>k<C-w>_
+nnoremap <C-h> <C-w>h<C-w><Bar>
+nnoremap <C-l> <C-w>l<C-w><Bar>
 
 " ---
 
@@ -174,12 +174,10 @@ nnoremap <leader><space> :noh<cr>
 
 " --
 
-inoremap jj <ESC>
-
-" --
-
 " when forget sudo
 cmap w!! %!sudo tee > /dev/null %
 
 " --
+
+set statusline=%F\ %m%r%w%y\ %=(%L\ loc)\ %l,%v\ \ %P
 
