@@ -83,6 +83,7 @@ search_engines = {
     github      = "http://github.com/",
     home        = "file:///home/alexis/",
     plus        = "https://plus.google.com/?hl=en&tab=wX",
+    maps        = "http://maps.google.com/",
 }
 
 -- Set google as fallback search engine
