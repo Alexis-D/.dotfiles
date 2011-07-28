@@ -22,6 +22,7 @@ Normal:
 ]} jump to the next unclosed }
 
 d/kw, y/kw, c/kw : delete, yank, change up to kw
+d?kw, y?kw, c?kw : delete, yank, change down to kw
 
 guu, gUU : lowercase, uppercase all line
 ga : show ASCII value of the char
@@ -69,6 +70,7 @@ C : same as c$
 "_ : black hole buffer (aka /dev/null)
 "* : primary buffer (text selected with mouse and pasted with middle click)
 "+ : "traditional" copy buffer <C-c>/<C-v>
+"% : filename
 
 :noh : cancel highlighting of the last search
 
@@ -82,6 +84,7 @@ ca(, ca{, ca[, caw, ca', ca", ca<, cap, cas : change around (), {}, [],
         w, '', "", <>, paragraph, sentence (important: movement, c may be replaced by d/...)
 
 s : same as cl
+s : same as ^C
 
 :help <C-v><C-f><cr> : display help for <C-f>
 
@@ -94,6 +97,8 @@ zt, zz, zb : move line to the top, middle, bottom of the line
 :make : run make
 :cw : show compile errors in a window
 :cn, :cp : go to previous, next compile error
+
+:<C-f> : aka q: 
 
 
 Insertion:
@@ -111,9 +116,13 @@ Insertion:
 
 <C-t>, <C-d> : indent, dedent (same as >>, << in insert mode)
 
-<C-y> : insert the letter above at the cursor pos
+<C-e> : insert the letter below at the cursor
+<C-y> : insert the letter above at the cursor
 
 <C-r>x : insert the content of the buffer x
+<C-r>= : compute an expression (bc style)
+
+<C-a> : insert previously inserted text
 
 
 Normal & Insertion:
@@ -126,8 +135,8 @@ Visual:
 -------
 
 O : jump to the other side of the selection
-aB, ab : select {block}, (block}
-iB, ib : select {inner block}, (inner block}
+aB, ab : select {block}, (block)
+iB, ib : select {inner block}, (inner block)
 
 
 Other:
