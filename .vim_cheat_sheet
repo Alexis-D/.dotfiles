@@ -90,7 +90,7 @@ s : same as ^C
 
 zt, zz, zb : move line to the top, middle, bottom of the line
 
-!!<command> : pass current line to a filter e.g. !!cut -d : -f 1
+!!<command> : (expand to :.!) pass current line to a filter e.g. !!cut -d : -f 1
 :%!<command> : all buffer to filter
 !<command> : apply command to the selection e.g. Vjj!sort
 
