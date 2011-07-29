@@ -1,12 +1,12 @@
 # Check for an interactive session
 [ -z "$PS1" ] && return
 
-#create an archive from a directory
+# create an archive from a directory
 mktar() { tar cvf  "${1%%/}.tar"     "${1%%/}/"; }
 mktgz() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
 mktbz() { tar cvjf "${1%%/}.tar.bz2" "${1%%/}/"; }
 
-#usage: remind 15m "Go lunch"
+# usage: remind 15m "Go lunch"
 remind()
 {
     sleep $1 && zenity --info --text "$2" &
@@ -15,11 +15,6 @@ remind()
 calc()
 {
     echo $@ | bc
-}
-
-wcat()
-{
-    wget -O - $1 2>/dev/null
 }
 
 # ex - extract an archive
@@ -39,10 +34,10 @@ ex ()
             *.zip)       unzip $1     ;;
             *.Z)         uncompress $1;;
             *.7z)        7z x $1      ;;
-            *)           echo -e "'$1' ne peut pas etre decompresse avec ex()" ;;
+            *)           echo -e "'$1' can't be uncompressed with ex()" ;;
         esac
     else
-        echo -e "\n'$1' n'est pas un fichier valide"
+        echo -e "\n'$1' is an invalid file"
     fi
 }
 
@@ -64,7 +59,6 @@ alias ....='cd ../../..'
 alias :q='exit'
 alias grep='grep --color=auto'
 
-#alias myip='echo My IP is `ifconfig | grep -Po "inet addr:(\d{1,3}\.?){4}  Bcast" | grep -Po "(\d{1,3}\.?){4}"`.'
 alias myip='echo `ifconfig | tr -d "\n" | sed -r "s/.*inet addr:(([0-9]{1,3}\.?){4})  Bcast.*/\1/"`'
 
 shopt -s checkwinsize
@@ -80,15 +74,10 @@ export EDITOR='vim'
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
 export SESSION='dwm'
 
-#use bash-completion if available (obviously...)
+# use bash-completion if available (obviously...)
 if [ -f /etc/bash_completion ]; then
 . /etc/bash_completion
 fi
-
-#complete -cf sudo
-#complete -cf man
-#complete -cd yaourt
-#complete -cf killall
 
 bind 'set match-hidden-files off'
 
@@ -102,7 +91,7 @@ tooLong ()
     fi
 }
 
-#PS1='`date +"%R"` < \e[1;37m\u\e[0m in \W > \$ '
+# e.g. 17:06 <alexis in ~> $ 
 PS1='\A <\[\e[1m\]\u\[\e[0m\] in $(tooLong)> \$ '
 PATH=$PATH:/opt/google-appengine
 
