@@ -40,7 +40,7 @@ g*, g# : search for words containing the word under cursor forward/backward
 q:, q/ : command, search history
 "/p, ":p : paste the last search, command
 
-[I : show line matching the word under the cursor
+[I : show lines matching the word under the cursor
 
 :## : go to line ## (like ##G)
 ##| : go to column ##
@@ -62,6 +62,11 @@ C : same as c$
 <C-w>w : cycle throught splits
 <C-w>s : horizontal split
 <C-w>v : vertical split
+<C-w>x : exchange current window with next one
+<C-w>q : quit window
+<C-w>p : go to previous window
+<C-w>H, <C-w>J, <C-w>K, <C-w>L : move window to left, bottom, top, right
+<C-w> : send window to a new tab
 
 ~ : flip case
 
@@ -78,10 +83,10 @@ C : same as c$
 
 <C-c> : to cancel a command (not <Esc>...)
 
-ci(, ci{, ci[, ciw, ci', ci", ci<, cip, cis : change inside (), {}, [],
-        w, '', "", <>, paragraph, sentence (important: movement, c may be replaced by d/...)
-ca(, ca{, ca[, caw, ca', ca", ca<, cap, cas : change around (), {}, [],
-        w, '', "", <>, paragraph, sentence (important: movement, c may be replaced by d/...)
+ci(, ci{, ci[, ciw, ci', ci", ci<, cip, cis, cit : change inside (), {}, [],
+        w, '', "", <>, paragraph, sentence, html tags (important: movement, c may be replaced by d/...)
+ca(, ca{, ca[, caw, ca', ca", ca<, cap, cas, cat : change around (), {}, [],
+        w, '', "", <>, paragraph, sentence, html tags (important: movement, c may be replaced by d/...)
 
 s : same as cl
 s : same as ^C
@@ -102,7 +107,6 @@ zt, zz, zb : move line to the top, middle, bottom of the line
 
 u : undo
 <C-r> : redo
-g+, g- : "better" undo/redo
 :earlier, :later : used to undo/redo
 
 
@@ -129,6 +133,8 @@ Insertion:
 
 <C-a> : insert previously inserted text
 
+<C-k><char1><char2> : insert digraph
+
 
 Normal & Insertion:
 -------------------
@@ -150,6 +156,10 @@ Other:
 :#,#s/old/new/ : search and replace between the to specified lines
 :s//new : replace the last search by new
 :g/kw/# : show all line containing kw with their line number
+:g/kw/|normal dd : delete all matching lines
+
+:m 5 : move current (or selected lines) after line 5
+:m 'a - 1 : move current (or selected lines) before mark a
 
 @:, @/, @@ : repeat last :command, /search, macro
 
