@@ -4,7 +4,7 @@ let mapleader = ','
 set nocompatible
 
 " enable mouse support
-set mouse=a 
+set mouse=a
 
 " enable syntax highlighting
 syntax on
@@ -72,12 +72,9 @@ set title
 " show the current line in a different color
 set cursorline
 
-" tell vim we paste something, and it shouldn't try to indent it
-set pastetoggle=<F2>
-
 " pwd
 " go to home by default
-cd ~
+cd
 " set the working directory to the one of the current buffer
 set autochdir
 
@@ -96,10 +93,15 @@ set noswapfile
 " the current line is always at (at least) 5 from the top/bottom of the window
 set scrolloff=5
 
-" number of color of the term
-set t_Co=256
-" colorscheme
-colo xoria256
+" tty
+if &term == 'linux'
+    colo default
+else
+    " number of color of the term
+    set t_Co=256
+    " colorscheme
+    colo xoria256
+end
 
 " used to maximise a window when switching to it
 nnoremap <C-j> <C-w>j<C-w>_
@@ -122,6 +124,16 @@ cmap w!! %!sudo tee > /dev/null %
 " show number of loc, and position in the file
 set statusline=%F\ %m%r%w%y\ %=(%L\ loc)\ %l,%v\ \ %P
 
+" some <F-somethings> mappings
+" tell vim we paste something, and it shouldn't try to indent it
+set pastetoggle=<F2>
 " must have : google for gundo.vim!
 nnoremap <F3> :GundoToggle<cr>
+" open the current folder
+nnoremap <F4> :NERDTreeToggle<cr>
+
+" show tabs and trailing spaces
+set list
+" characters to use
+set listchars=tab:→\ ,trail:·
 
