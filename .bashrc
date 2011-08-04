@@ -49,6 +49,7 @@ alias chmox='chmod +x'
 alias py='python'
 alias py2='python2'
 alias vi='vim'
+alias :e='vim'
 
 alias halt='sudo halt'
 alias updatedb='sudo updatedb'
@@ -72,7 +73,9 @@ export HISTFILESIZE=10000
 export BROWSER='luakit'
 export EDITOR='vim'
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
-export SESSION='dwm'
+export SESSION='wmii'
+
+export CDPATH='.:~/:~/Dev:~/Dev/python:~/Dev/c'
 
 # use bash-completion if available (obviously...)
 if [ -f /etc/bash_completion ]; then
