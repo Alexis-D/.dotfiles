@@ -30,24 +30,24 @@ VIEW_NAME='[0] [1]urxvt [2]web [3]multimedia [4]dev [5]bg [6]other [7] [8] [9]'
 #get the viewname from the number
 #e.g. getviewname 3 -> '[3]multimedia'
 getviewname(){ 
-    n=`expr $1 + 1`
-    echo $VIEW_NAME | cut -d ' ' -f $n
+	n=`expr $1 + 1`
+echo $VIEW_NAME | cut -d ' ' -f $n
 }
 
 set -- $(echo $WMII_NORMCOLORS $WMII_FOCUSCOLORS)
 export WMII_TERM="urxvt"
 
 if ! test -d "${WMII_CONFPATH%%:*}"; then
-    mkdir "${WMII_CONFPATH%%:*}"
-    res=$(wihack -type DIALOG xmessage -nearmouse -buttons Windows,Alt -print -fn $WMII_FONT \
-          "Welcome to wmii,$wi_newline$wi_newline" \
-          "Most of wmii's default key bindings make use of the$wi_newline" \
-          "Windows key, or equivalent. For keyboards lacking such$wi_newline" \
-          "a key, many users change this to the Alt key.$wi_newline$wi_newline" \
-          "Which would you prefer?")
-    [ "$res" = "Alt" ] && MODKEY=Mod1
-    echo "MODKEY=$MODKEY" >"${WMII_CONFPATH%%:*}/wmiirc_local"
-    chmod +x "${WMII_CONFPATH%%:*}/wmiirc_local"
+	mkdir "${WMII_CONFPATH%%:*}"
+	res=$(wihack -type DIALOG xmessage -nearmouse -buttons Windows,Alt -print -fn $WMII_FONT \
+		  "Welcome to wmii,$wi_newline$wi_newline" \
+		  "Most of wmii's default key bindings make use of the$wi_newline" \
+		  "Windows key, or equivalent. For keyboards lacking such$wi_newline" \
+		  "a key, many users change this to the Alt key.$wi_newline$wi_newline" \
+		  "Which would you prefer?")
+	[ "$res" = "Alt" ] && MODKEY=Mod1
+	echo "MODKEY=$MODKEY" >"${WMII_CONFPATH%%:*}/wmiirc_local"
+	chmod +x "${WMII_CONFPATH%%:*}/wmiirc_local"
 fi
 
 # Menu history
@@ -62,6 +62,8 @@ wmiir write /colrules <<!
 
 # Tagging Rules
 
+wmiir xwrite /ctl "view $(getviewname 2)"
+
 urxvt=`getviewname 1`
 web=`getviewname 2`
 multimedia=`getviewname 3`
@@ -73,14 +75,13 @@ tilda=`echo $VIEW_NAME | tr ' ' '+'`
 # /urxvt|xterm/ -> $urxvt
 
 wmiir write /tagrules <<!
-/opera|firefox|jumanji|luakit/ -> $web
-/chromium/ -> $web
+/opera|mozilla|chromium|jumanji|luakit/ -> $web
 /mplayer/ -> ~$multimedia
 /vlc|banshee/ -> $multimedia
 /geany/ -> $dev
-/transmission|linuxdcpp/ -> $bd
+/transmission|linuxdcpp/ -> $bg
 /gimp|*office*/ -> ~$other
-/tilda/ -> $tilda
+/tilda/ -> sel
 /.*/ -> sel
 !
 
@@ -127,8 +128,8 @@ Event Unresponsive
 		client=$1; shift
 		msg="The following client is not responding. What would you like to do?$wi_newline"
 		resp=$(wihack -transient $client \
-			      xmessage -nearmouse -buttons Kill,Wait -print
-			      -fn "${WMII_FONT%%,*}" "$msg $(wmiir read /client/sel/label)")
+				  xmessage -nearmouse -buttons Kill,Wait -print
+				  -fn "${WMII_FONT%%,*}" "$msg $(wmiir read /client/sel/label)")
 		if [ "$resp" = Kill ]; then
 			wmiir xwrite /client/$client/ctl slay &
 		fi
@@ -191,17 +192,13 @@ Action status
 
 #custom : resize window
 Key $MODKEY-Control-$LEFT
-    wmiir xwrite /tag/sel/ctl nudge sel sel left 10
+	wmiir xwrite /tag/sel/ctl nudge sel sel left 10
 Key $MODKEY-Control-$RIGHT
-    wmiir xwrite /tag/sel/ctl nudge sel sel right 10
+	wmiir xwrite /tag/sel/ctl nudge sel sel right 10
 Key $MODKEY-Control-$DOWN
-    wmiir xwrite /tag/sel/ctl nudge sel sel down 10
+	wmiir xwrite /tag/sel/ctl nudge sel sel down 10
 Key $MODKEY-Control-$UP
-    wmiir xwrite /tag/sel/ctl nudge sel sel up 10
-Key $MODKEY-i
-    tilda&
-    luakit&
-    wmiir xwrite /ctl view [2]web
+	wmiir xwrite /tag/sel/ctl nudge sel sel up 10
 
 # Key Bindings
 KeyGroup Moving around
@@ -209,7 +206,7 @@ Key $MODKEY-$LEFT   # Select the client to the left
 	wmiir xwrite /tag/sel/ctl select left
 Key $MODKEY-$RIGHT  # Select the client to the right
 	wmiir xwrite /tag/sel/ctl select right
-Key $MODKEY-$UP     # Select the client above
+Key $MODKEY-$UP	 # Select the client above
 	wmiir xwrite /tag/sel/ctl select up
 Key $MODKEY-$DOWN   # Select the client below
 	wmiir xwrite /tag/sel/ctl select down
@@ -218,7 +215,7 @@ Key $MODKEY-space   # Toggle between floating and managed layers
 	wmiir xwrite /tag/sel/ctl select toggle
 
 #KeyGroup Moving through stacks
-#Key $MODKEY-Control-$UP    # Select the stack above
+#Key $MODKEY-Control-$UP	# Select the stack above
 #	wmiir xwrite /tag/sel/ctl select up stack
 #Key $MODKEY-Control-$DOWN  # Select the stack below
 #	wmiir xwrite /tag/sel/ctl select down stack
@@ -228,7 +225,7 @@ Key $MODKEY-Shift-$LEFT   # Move selected client to the left
 	wmiir xwrite /tag/sel/ctl send sel left
 Key $MODKEY-Shift-$RIGHT  # Move selected client to the right
 	wmiir xwrite /tag/sel/ctl send sel right
-Key $MODKEY-Shift-$UP     # Move selected client up
+Key $MODKEY-Shift-$UP	 # Move selected client up
 	wmiir xwrite /tag/sel/ctl send sel up
 Key $MODKEY-Shift-$DOWN   # Move selected client down
 	wmiir xwrite /tag/sel/ctl send sel down
@@ -251,13 +248,34 @@ Key $MODKEY-m # Set column to max mode
 	wmiir xwrite /tag/sel/ctl colmode sel stack+max
 
 KeyGroup Running programs
-Key $MODKEY-a      # Open wmii actions menu
+Key $MODKEY-a	  # Open wmii actions menu
 	action $(wi_actions | wimenu -h "${hist}.actions" -n $histnum) &
-Key $MODKEY-p      # Open program menu
+Key $MODKEY-p	  # Open program menu
 	eval wmiir setsid "$(wimenu -h "${hist}.progs" -n $histnum <$progsfile)" &
 
 Key $MODKEY-Return # Launch a terminal
 	eval wmiir setsid $WMII_TERM &
+
+Key $MODKEY-Mod1-l
+	eval wmiir setsid luakit &
+
+Key $MODKEY-Mod1-f
+	eval wmiir setsid firefox &
+
+Key $MODKEY-Mod1-c
+	eval wmiir setsid chromium &
+
+Key $MODKEY-Mod1-o
+	eval wmiir setsid opera &
+
+Key $MODKEY-Mod1-v
+	eval wmiir setsid mplayer &
+
+Key $MODKEY-Mod1-b
+	eval wmiir setsid banshee &
+
+Key $MODKEY-Mod1-n
+	eval wmiir setsid thunar &
 
 KeyGroup Other
 Key $MODKEY-Control-t # Toggle all other key bindings
@@ -271,27 +289,27 @@ Key $MODKEY-Control-t # Toggle all other key bindings
 	esac
 
 KeyGroup Tag actions
-Key $MODKEY-t       # Change to another tag
-    #(tag=$(wi_tags | wimenu -h "${hist}.tags" -n 50) && wmiir xwrite /ctl view $tag) &
+Key $MODKEY-t	   # Change to another tag
+	(tag=$(wi_tags | wimenu -h "${hist}.tags" -n 50) && wmiir xwrite /ctl view $tag) &
 Key $MODKEY-Shift-t # Retag the selected client
-    tag=$(wi_tags | wimenu -h "${hist}.tags" -n 50) 
+	tag=$(wi_tags | wimenu -h "${hist}.tags" -n 50) 
 
-    for i in `echo $tag | tr '+' '\n'`
-    do
-        tags=$tags+`getviewname $i`
-    done
-    tags=`echo $tags | sed 's/.\(.*\)/\1/'`
+	for i in `echo $tag | tr '+' '\n'`
+	do
+		tags=$tags+`getviewname $i`
+	done
+	tags=`echo $tags | sed 's/.\(.*\)/\1/'`
 
-    echo $tags
+	echo $tags
 	c=$(wi_selclient)
 	wmiir xwrite /client/$c/tags $tags &
 !
 for i in 0 1 2 3 4 5 6 7 8 9; do
-            cat <<!
-Key $MODKEY-$i           # Move to the numbered view
-    wmiir xwrite /ctl view "`getviewname $i`"
-Key $MODKEY-Shift-$i     # Retag selected client with the numbered tag
-    wmiir xwrite /client/sel/tags "`getviewname $i`"
+			cat <<!
+Key $MODKEY-$i		   # Move to the numbered view
+	wmiir xwrite /ctl view "`getviewname $i`"
+Key $MODKEY-Shift-$i	 # Retag selected client with the numbered tag
+	wmiir xwrite /client/sel/tags "`getviewname $i`"
 !
 done
 }
@@ -328,3 +346,4 @@ done
 
 wi_eventloop
 
+# vim: noet
