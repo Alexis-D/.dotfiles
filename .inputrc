@@ -1,2 +1,2 @@
 # C-w works as *expected* (like M-<Backspace)
-#set bind-tty-special-chars Off
+set bind-tty-special-chars Off
