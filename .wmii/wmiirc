@@ -81,7 +81,7 @@ wmiir write /tagrules <<!
 /geany/ -> $dev
 /transmission|linuxdcpp/ -> $bg
 /gimp|*office*/ -> ~$other
-/tilda/ -> sel
+/tilda/ -> $tilda
 /.*/ -> sel
 !
 
