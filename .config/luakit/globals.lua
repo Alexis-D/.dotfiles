@@ -68,6 +68,7 @@ search_engines = {
     yt          = "http://www.youtube.com/results?search_query=%s",
     enfr        = "http://www.wordreference.com/enfr/%s",
     fren        = "http://www.wordreference.com/fren/%s",
+    so          = "http://stackoverflow.com/search?q=%s",
 
     -- better bookmarks :D
     gg          = "http://www.google.com/",
