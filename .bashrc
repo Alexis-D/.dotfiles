@@ -83,6 +83,7 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 bind 'set match-hidden-files off'
+bind '\C-w:backward-kill-word'
 
 tooLong () 
 {
