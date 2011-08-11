@@ -75,7 +75,7 @@ export EDITOR='vim'
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
 export SESSION='wmii'
 
-export CDPATH='.:~/:~/Dev:~/Dev/python:~/Dev/c'
+export CDPATH='.:~/:~/Dev:~/Dev/python:~/Dev/c:~/Music:~/Videos/Films:~/Videos/Séries'
 
 # use bash-completion if available (obviously...)
 if [ -f /etc/bash_completion ]; then
