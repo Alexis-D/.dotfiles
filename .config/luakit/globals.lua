@@ -60,31 +60,31 @@ soup.set_property("accept-policy", cookie_policy.always)
 -- it to avoid collisions with lua's string.format characters.
 -- See: http://www.lua.org/manual/5.1/manual.html#pdf-string.format
 search_engines = {
+    enfr        = "http://www.wordreference.com/enfr/%s",
+    fren        = "http://www.wordreference.com/fren/%s",
     g           = "https://encrypted.google.com/search?hl=fr&q=%s",
     gen         = "https://encrypted.google.com/search?hl=en&q=%s",
     goo         = "http://www.google.com/search?q=%s",
+    so          = "http://stackoverflow.com/search?q=%s",
     w           = "http://fr.wikipedia.org/w/index.php?title=Spécial:Recherche&search=%s",
+    wa          = "http://www.wolframalpha.com/input/?i=%s",
     wen         = "http://en.wikipedia.org/w/index.php?title=Special:Search&search=%s",
     yt          = "http://www.youtube.com/results?search_query=%s",
-    enfr        = "http://www.wordreference.com/enfr/%s",
-    fren        = "http://www.wordreference.com/fren/%s",
-    so          = "http://stackoverflow.com/search?q=%s",
 
     -- better bookmarks :D
-    gg          = "http://www.google.com/",
-    fb          = "http://www.facebook.com/",
-    hn          = "http://news.ycombinator.com/",
-    rss         = "http://www.google.com/reader/view/",
-    plurk       = "http://www.plurk.com/Cerium",
     edt         = "http://edt.polytech.unice.fr/etudiant?FD=1",
-    sdz         = "http://www.siteduzero.com/forum.html",
-    wa          = "http://www.wolframalpha.com/",
-    mail        = "https://mail.google.com/mail/u/0/?shva=1#mbox",
+    fb          = "http://www.facebook.com/",
+    gg          = "http://www.google.com/",
+    hn          = "http://news.ycombinator.com/",
     gitref      = "http://gitref.org/",
     github      = "http://github.com/",
     home        = "file:///home/alexis/",
-    plus        = "https://plus.google.com/?hl=en&tab=wX",
+    mail        = "https://mail.google.com/mail/u/0/?shva=1#mbox",
     maps        = "http://maps.google.com/",
+    plurk       = "http://www.plurk.com/Cerium",
+    plus        = "https://plus.google.com/?hl=en&tab=wX",
+    rss         = "http://www.google.com/reader/view/",
+    sdz         = "http://www.siteduzero.com/forum.html",
 }
 
 -- Set google as fallback search engine
