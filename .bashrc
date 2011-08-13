@@ -48,6 +48,7 @@ alias lar='la -R'
 alias chmox='chmod +x'
 alias py='python'
 alias py2='python2'
+alias managepy='python2 manage.py'
 alias vi='vim'
 alias :e='vim'
 
@@ -60,6 +61,7 @@ alias ....='cd ../../..'
 alias :q='exit'
 alias grep='grep --color=auto'
 
+alias mypublicip='curl ifconfig.me'
 alias myip='echo `ifconfig | tr -d "\n" | sed -r "s/.*inet addr:(([0-9]{1,3}\.?){4})  Bcast.*/\1/"`'
 
 shopt -s checkwinsize
@@ -75,7 +77,7 @@ export EDITOR='vim'
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
 export SESSION='wmii'
 
-export CDPATH='.:~/:~/Dev:~/Dev/python:~/Dev/c:~/Music:~/Videos/Films:~/Videos/Séries'
+export CDPATH='.:~/:~/Dev:~/Dev/python:~/Dev/c:~/Music:~/Videos:~/Videos/Films:~/Videos/Séries'
 
 # use bash-completion if available (obviously...)
 if [ -f /etc/bash_completion ]; then
