@@ -1,0 +1,10 @@
+set! browser.tabs.closeWindowWithLastTab=false
+set autocomplete=
+set passkeys+=mail.google.com:c
+set passkeys+=google.com/reader:np
+set hintkeys=fghjklrtyui
+set hlfind
+set incfind
+set defsearch=g
+map < :tabm -1<cr>
+map > :tabm +1<cr>
