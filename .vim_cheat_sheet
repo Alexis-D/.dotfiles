@@ -27,6 +27,7 @@ d?kw, y?kw, c?kw : delete, yank, change down to kw
 guu, gUU : lowercase, uppercase all line
 ga : show ASCII value of the char
 gv : reselect the last visual selection
+gi : go to insert mode at the same position as where insert mode was stopped
 
 *, # : search for word under cursor forward/backward
 g*, g# : search for words containing the word under cursor forward/backward
@@ -66,7 +67,7 @@ C : same as c$
 <C-w>q : quit window
 <C-w>p : go to previous window
 <C-w>H, <C-w>J, <C-w>K, <C-w>L : move window to left, bottom, top, right
-<C-w> : send window to a new tab
+<C-w>T : send window to a new tab
 
 ~ : flip case
 
@@ -89,7 +90,6 @@ ca(, ca{, ca[, caw, ca', ca", ca<, cap, cas, cat : change around (), {}, [],
         w, '', "", <>, paragraph, sentence, html tags (important: movement, c may be replaced by d/...)
 
 s : same as cl
-s : same as ^C
 
 :help <C-v><C-f><cr> : display help for <C-f>
 
@@ -103,7 +103,7 @@ zt, zz, zb : move line to the top, middle, bottom of the line
 :cw : show compile errors in a window
 :cn, :cp : go to previous, next compile error
 
-:<C-f> : aka q: 
+:<C-f> : aka q:
 
 u : undo
 <C-r> : redo
@@ -139,7 +139,7 @@ Insertion:
 Normal & Insertion:
 -------------------
 
-<C-LeftArrow>, <C-RightArrow> : jump to the begining of the next, previous word
+<C-LeftArrow>, <C-RightArrow> : b, w
 
 
 Visual:
