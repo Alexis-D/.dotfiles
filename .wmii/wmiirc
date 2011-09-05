@@ -75,7 +75,7 @@ tilda=`echo $VIEW_NAME | tr ' ' '+'`
 # /urxvt|xterm/ -> $urxvt
 
 wmiir write /tagrules <<!
-/opera|mozilla|chromium|jumanji|luakit/ -> $web
+/opera|firefox|mozilla|chromium|jumanji|luakit/ -> $web
 /mplayer/ -> ~$multimedia
 /vlc|banshee/ -> $multimedia
 /geany/ -> $dev
@@ -186,9 +186,9 @@ Action status
 		sleep 2
 	fi
 	echo "$WMII_NORMCOLORS" | wmiir create /rbar/status
-	while status | wmiir write /rbar/status; do
-		sleep 1
-	done
+	# while status | wmiir write /rbar/status; do
+	# 	sleep 1
+	# done
 
 #custom : resize window
 Key $MODKEY-Control-$LEFT
