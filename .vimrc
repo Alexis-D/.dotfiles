@@ -119,7 +119,10 @@ set gdefault
 nnoremap <leader><space> :noh<cr>
 
 " when forget sudo...
-cmap w!! %!sudo tee > /dev/null %
+cnoremap w!! %!sudo tee > /dev/null %
+
+" make the current file executable
+cnoremap chmox !chmod +x %
 
 " show number of loc, and position in the file
 set statusline=%F\ %m%r%w%y\ %=(%L\ loc)\ %l,%v\ \ %P
@@ -131,6 +134,8 @@ set pastetoggle=<F2>
 nnoremap <F3> :GundoToggle<cr>
 " open the current folder
 nnoremap <F4> :NERDTreeToggle<cr>
+" run the current file
+nnoremap <F5> :!./%<cr>
 
 " show tabs and trailing spaces
 set list
