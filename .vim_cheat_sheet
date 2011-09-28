@@ -91,6 +91,8 @@ ca(, ca{, ca[, caw, ca', ca", ca<, cap, cas, cat : change around (), {}, [],
 
 s : same as cl
 
+; : repeat the last t, T, f or F motion
+
 :help <C-v><C-f><cr> : display help for <C-f>
 
 zt, zz, zb : move line to the top, middle, bottom of the line
