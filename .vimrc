@@ -122,7 +122,7 @@ nnoremap <leader><space> :noh<cr>
 cnoremap w!! %!sudo tee > /dev/null %
 
 " make the current file executable
-cnoremap chmox !chmod +x %
+cnoremap chmox !chmod +x %<cr>
 
 " show number of loc, and position in the file
 set statusline=%F\ %m%r%w%y\ %=(%L\ loc)\ %l,%v\ \ %P
