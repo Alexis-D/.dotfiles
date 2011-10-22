@@ -49,6 +49,8 @@ alias chmox='chmod +x'
 alias py='python'
 alias py2='python2'
 alias py3='python3'
+alias ?='pydoc'
+alias ??='pydoc2'
 alias managepy='python2 manage.py'
 alias vi='vim'
 alias :e='vim'
@@ -73,10 +75,10 @@ export HISTCONTROL=ignoreboth
 export HISTSIZE=10000
 export HISTFILESIZE=10000
 
-export BROWSER='luakit'
+export BROWSER='firefox'
 export EDITOR='vim'
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
-export SESSION='wmii'
+export SESSION='startxfce4'
 
 export CDPATH='.:~/:~/Dev:~/Dev/python:~/Dev/c:~/Music:~/Videos:~/Videos/Films:~/Videos/Séries'
 
