@@ -28,6 +28,8 @@ guu, gUU : lowercase, uppercase all line
 ga : show ASCII value of the char
 gv : reselect the last visual selection
 gi : go to insert mode at the same position as where insert mode was stopped
+g^ : go the first non white character of the *screen* line
+gm : go to the middle of the current line
 
 *, # : search for word under cursor forward/backward
 g*, g# : search for words containing the word under cursor forward/backward
