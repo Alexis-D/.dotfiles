@@ -80,7 +80,7 @@ export EDITOR='vim'
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
 export SESSION='startxfce4'
 
-export CDPATH='.:~/:~/Dev:~/Dev/python:~/Dev/c:~/Music:~/Videos:~/Videos/Films:~/Videos/Séries'
+export CDPATH='.:~/:~/Dev:~/Dev/python:~/Dev/c:~/Music:~/Videos:~/Videos/Films:~/Videos/Séries:/usr/lib/'
 
 # use bash-completion if available (obviously...)
 if [ -f /etc/bash_completion ]; then
