@@ -142,3 +142,6 @@ set list
 " characters to use
 set listchars=tab:→\ ,trail:·
 
+" remove all charact on the line but not the line!
+nnoremap dD 0d$
+
