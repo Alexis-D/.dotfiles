@@ -10,8 +10,10 @@ import functools
 import itertools
 import math
 import operator
+import os
 from pprint import pprint
 import random
+import sys
 
 # just to be able to use fn OR functools
 # may have used two imports...
