@@ -18,3 +18,4 @@
     editor = vim
 [merge]
     tool = vimdiff
+
