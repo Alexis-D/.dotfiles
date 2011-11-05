@@ -49,6 +49,7 @@ alias chmox='chmod +x'
 alias py='python'
 alias py2='python2'
 alias py3='python3'
+alias irb='irb --readline -r irb/completion'
 alias ?='pydoc'
 alias ??='pydoc2'
 alias rubydoc='ri' # until I memoize ri ;)
