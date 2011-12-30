@@ -55,6 +55,7 @@ set shiftround
 " filetype specific settings
 filetype plugin indent on
 autocmd FileType make setlocal noexpandtab
+autocmd FileType go setlocal noexpandtab
 autocmd FileType haskell setlocal tabstop=2
 autocmd FileType haskell setlocal shiftwidth=2
 autocmd FileType ruby setlocal tabstop=2
@@ -144,4 +145,7 @@ set listchars=tab:→\ ,trail:·
 
 " remove all charact on the line but not the line!
 nnoremap dD 0d$
+
+" switch quickly between current and previous buffer
+nnoremap <leader><leader> <C-^>
 
