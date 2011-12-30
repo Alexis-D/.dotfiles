@@ -83,7 +83,8 @@ export EDITOR='vim'
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
 export SESSION='startxfce4'
 
-export CDPATH='.:~/:~/Dev:~/Dev/python:~/Dev/c:~/Music:~/Videos:~/Videos/Films:~/Videos/Séries:/usr/lib/'
+export CDPATH='.:~/:/usr/lib/'
+export PATH=$PATH:"$HOME/stuff/go/go/bin":"/opt/google-appengine"
 
 # use bash-completion if available (obviously...)
 if [ -f /etc/bash_completion ]; then
@@ -105,5 +106,4 @@ tooLong ()
 
 # e.g. 17:06 <alexis in ~> $ 
 PS1='\A <\[\e[1m\]\u\[\e[0m\] in $(tooLong)> \$ '
-PATH=$PATH:/opt/google-appengine
 
