@@ -5,6 +5,7 @@ if version_info.major >= 3:
     except:
         pass # bad :)
 
+import collections
 import copy
 import functools
 import itertools

@@ -55,6 +55,7 @@ alias ??='pydoc2'
 alias rubydoc='ri' # until I memoize ri ;)
 alias managepy='python2 manage.py'
 alias vi='vim'
+alias gi='git'
 alias :e='vim'
 
 alias halt='sudo halt'
