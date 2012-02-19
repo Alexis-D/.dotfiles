@@ -83,8 +83,8 @@ export EDITOR='vim'
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
 export SESSION='startxfce4'
 
-export CDPATH='.:~/:/usr/lib/'
-export PATH=$PATH:"$HOME/stuff/go/go/bin":"/opt/google-appengine"
+export CDPATH='.:~'
+export PATH=$PATH:"/opt/google-appengine:/opt/go/bin/"
 
 # use bash-completion if available (obviously...)
 if [ -f /etc/bash_completion ]; then
