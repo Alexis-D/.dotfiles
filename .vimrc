@@ -56,6 +56,7 @@ set shiftround
 filetype plugin indent on
 autocmd FileType make setlocal noexpandtab
 autocmd FileType go setlocal noexpandtab
+autocmd FileType latex setlocal noexpandtab
 autocmd FileType haskell setlocal tabstop=2
 autocmd FileType haskell setlocal shiftwidth=2
 autocmd FileType ruby setlocal tabstop=2
