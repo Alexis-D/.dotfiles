@@ -84,7 +84,7 @@ export PYTHONSTARTUP="$HOME/.pythonrc.py"
 export SESSION='startxfce4'
 
 export CDPATH='.:~'
-export PATH=$PATH:"/opt/google-appengine:/opt/go/bin/"
+export PATH=$PATH:"/opt/google-appengine/:/opt/go/bin/:~/bin/"
 
 # use bash-completion if available (obviously...)
 if [ -f /etc/bash_completion ]; then
@@ -107,3 +107,5 @@ tooLong ()
 # e.g. 17:06 <alexis in ~> $ 
 PS1='\A <\[\e[1m\]\u\[\e[0m\] in $(tooLong)> \$ '
 
+# pythonbrew (needed on Crunchbang to easily have multiple Python versions)
+[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
