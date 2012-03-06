@@ -107,5 +107,3 @@ tooLong ()
 # e.g. 17:06 <alexis in ~> $ 
 PS1='\A <\[\e[1m\]\u\[\e[0m\] in $(tooLong)> \$ '
 
-# pythonbrew (needed on Crunchbang to easily have multiple Python versions)
-[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
