@@ -70,8 +70,7 @@ Uptime:$alignr$uptime
 RAM:$alignr$mem/$memmax
 Swap usage:$alignr$swap/$swapmax
 Disk usage:$alignr${fs_used /}/${fs_size /}
-CPU usage:$alignr${cpu cpu0}%
-
+CPU usage:$alignr${cpubar cpu0 3,75}    ${cpu cpu0}%
 
 S H O R T C U T    K E Y S
 ${hr}
@@ -88,3 +87,10 @@ Super+l$alignr Lock Screen
 #Super+v$alignr Volume Control
 Super+x$alignr Logout
 #PrtSc$alignr Screenshot
+
+O P E N B O X    K E Y S
+${hr}
+Super+a$alignr Toggle Fullscreen
+Super+c$alignr Center Window
+Super+m$alignr Toggle Maximize
+

@@ -202,6 +202,22 @@
         <wrap>no</wrap>
       </action>
     </keybind>
+    <keybind key="W-c">
+        <action name="MoveResizeTo">
+            <x>center</x>
+            <y>center</y>
+            <width>3/4</width>
+            <height>3/4</height>
+        </action>
+    </keybind>
+    <keybind key="W-S-c">
+        <action name="MoveResizeTo">
+            <x>center</x>
+            <y>center</y>
+            <width>1/3</width>
+            <height>1/3</height>
+        </action>
+    </keybind>
     <keybind key="W-F1">
       <action name="Desktop">
         <desktop>1</desktop>
@@ -335,6 +351,14 @@
         <command>vlc</command>
       </action>
     </keybind>-->
+    <keybind key="W-a">
+      <action name="ToggleFullscreen">
+      </action>
+    </keybind>
+    <keybind key="W-m">
+      <action name="ToggleMaximize">
+      </action>
+    </keybind>
     <!--<keybind key="W-v">
       <action name="Execute">
         <startupnotify>
