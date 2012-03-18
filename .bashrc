@@ -46,6 +46,7 @@ alias la='ls -A'
 alias lar='la -R'
 
 alias chmox='chmod +x'
+alias fx='firefox'
 alias py='python'
 alias py2='python2'
 alias py3='python3'
