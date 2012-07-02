@@ -131,11 +131,9 @@ cnoremap w!! %!sudo tee > /dev/null %
 
 " list TODOs
 nnoremap <leader>t :%g/TODO/<cr>
+
 " make the current file executable
 cnoremap chmox !chmod +x %<cr>
-
-" list TODOs
-nnoremap <leader>t :%g/TODO/<cr>
 
 " show number of loc, and position in the file
 set statusline=%F\ %m%r%w%y\ %=(%L\ loc)\ %l,%v\ \ %P
@@ -163,3 +161,6 @@ nnoremap <leader><leader> <C-^>
 
 " provides _j to justify text: a-w-e-s-o-m-e
 runtime macros/justify.vim
+
+" TODOs!
+ab todo <esc>:r!whoami<cr>I<bs>TODO(<esc>ea):
