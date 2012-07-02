@@ -73,7 +73,9 @@ set showmatch
 set title
 
 " show the current line in a different color
-set cursorline
+autocmd WinEnter * setlocal cursorline
+autocmd BufEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
 
 " pwd
 " go to home by default
@@ -84,6 +86,10 @@ set autochdir
 " better j, k motion
 nnoremap j gj
 nnoremap k gk
+
+" c'mon use the 'normal' Y
+nnoremap Y y$
+
 
 " try to load some template files if availables
 autocmd BufNewFile * silent! 0r ~/.vim/tpl/%:e.tpl
@@ -113,7 +119,7 @@ nnoremap <C-h> <C-w>h<C-w><bar>
 nnoremap <C-l> <C-w>l<C-w><bar>
 
 " also increment/decrement character with <C-a>, <C-x>
-set nrformats=octal,hex,alpha
+set nrformats=hex,alpha
 
 " :s/??/!!/g without g, to come back to default add g
 set gdefault
@@ -124,8 +130,13 @@ nnoremap <leader><space> :noh<cr>
 " when forget sudo...
 cnoremap w!! %!sudo tee > /dev/null %
 
+" list TODOs
+nnoremap <leader>t :%g/TODO/<cr>
 " make the current file executable
 cnoremap chmox !chmod +x %<cr>
+
+" list TODOs
+nnoremap <leader>t :%g/TODO/<cr>
 
 " show number of loc, and position in the file
 set statusline=%F\ %m%r%w%y\ %=(%L\ loc)\ %l,%v\ \ %P
@@ -151,3 +162,5 @@ nnoremap dD 0d$
 " switch quickly between current and previous buffer
 nnoremap <leader><leader> <C-^>
 
+" provides _j to justify text: a-w-e-s-o-m-e
+runtime macros/justify.vim

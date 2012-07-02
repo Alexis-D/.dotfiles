@@ -66,7 +66,8 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias :q='exit'
-alias grep='grep --color=auto'
+alias grep='grep --color=auto -n'
+alias killbg='kill %{1..1000} 2>/dev/null'
 
 alias mypublicip='curl ifconfig.me'
 alias myip='echo `ifconfig | tr -d "\n" | sed -r "s/.*inet addr:(([0-9]{1,3}\.?){4})  Bcast.*/\1/"`'
@@ -105,6 +106,5 @@ tooLong ()
     fi
 }
 
-# e.g. 17:06 <alexis in ~> $ 
-PS1='\A <\[\e[1m\]\u\[\e[0m\] in $(tooLong)> \$ '
-
+# e.g. 17:06 <alexis in ~> (dev) $ 
+PS1='\A <\[\e[1;33m\]\u\[\e[0m\] in \[\e[1;35m\]$(tooLong)\[\e[0m\]>\[\e[1;36m\]$(__git_ps1)\[\e[0m\] \$ '
