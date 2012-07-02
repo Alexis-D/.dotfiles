@@ -90,7 +90,6 @@ nnoremap k gk
 " c'mon use the 'normal' Y
 nnoremap Y y$
 
-
 " try to load some template files if availables
 autocmd BufNewFile * silent! 0r ~/.vim/tpl/%:e.tpl
 
