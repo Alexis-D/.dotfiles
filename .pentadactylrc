@@ -18,5 +18,5 @@ set incfind
 " set defsearch=g
 map < :tabm -1<cr>
 map > :tabm +1<cr>
-colorscheme simple_dark
+colorscheme solarized-dark
 
