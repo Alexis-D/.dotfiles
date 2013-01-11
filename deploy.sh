@@ -10,7 +10,7 @@ cd
 
 for i in $(ls -A $OLDPWD)
 do
-    if [ "$i" != "deploy.sh" -a "$i" != ".git" ]
+    if [ "$i" != "deploy.sh" -a "$i" != ".git" -a "$i" != "README.md" ]
     then
         echo "Symlinking $i..."
         rm -rf $i && ln -s "$OLDPWD/$i"
