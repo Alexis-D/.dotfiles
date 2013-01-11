@@ -31,8 +31,6 @@ ex ()
 }
 
 alias ls='ls --color=auto'
-alias la='ls -A'
-alias lar='la -R'
 
 alias chmox='chmod +x'
 alias fx='firefox'
@@ -42,14 +40,8 @@ alias py3='python3'
 alias irb='irb --readline -r irb/completion'
 alias ?='pydoc'
 alias ??='pydoc2'
-alias rubydoc='ri' # until I memoize ri ;)
-alias managepy='python2 manage.py'
 alias vi='vim'
 alias gi='git'
-alias :e='vim'
-
-alias halt='sudo halt'
-alias updatedb='sudo updatedb'
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -59,7 +51,6 @@ alias grep='grep --color=auto -n'
 alias killbg='kill %{1..1000} 2>/dev/null'
 
 alias mypublicip='curl ifconfig.me'
-alias myip='echo `ifconfig | tr -d "\n" | sed -r "s/.*inet addr:(([0-9]{1,3}\.?){4})  Bcast.*/\1/"`'
 
 shopt -s checkwinsize
 shopt -s cdspell
