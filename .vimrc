@@ -163,3 +163,6 @@ runtime macros/justify.vim
 
 " TODOs!
 ab todo <esc>:r!whoami<cr>I<bs>TODO(<esc>ea):
+
+" Let Pathogen magic happen
+execute pathogen#infect()
