@@ -6,17 +6,6 @@ mktar() { tar cvf  "${1%%/}.tar"     "${1%%/}/"; }
 mktgz() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
 mktbz() { tar cvjf "${1%%/}.tar.bz2" "${1%%/}/"; }
 
-# usage: remind 15m "Go lunch"
-remind()
-{
-    sleep $1 && zenity --info --text "$2" &
-}
-
-calc()
-{
-    echo $@ | bc
-}
-
 # ex - extract an archive
 # usage: ex <file>
 ex ()
@@ -95,6 +84,7 @@ fi
 
 bind 'set match-hidden-files off'
 bind '\C-w:backward-kill-word'
+stty stop '' # disable ^S
 
 tooLong () 
 {
