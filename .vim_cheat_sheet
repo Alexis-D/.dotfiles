@@ -94,6 +94,7 @@ ca(, ca{, ca[, caw, ca', ca", ca<, cap, cas, cat : change around (), {}, [],
 s : same as cl
 
 ; : repeat the last t, T, f or F motion
+, : repeat the last t, T, f or F motion in the opposite direction
 
 :help <C-v><C-f><cr> : display help for <C-f>
 
@@ -159,6 +160,7 @@ Other:
 
 :#,#s/old/new/ : search and replace between the to specified lines
 :s//new : replace the last search by new
+:%s/word//n : get the number of occurences of old
 :g/kw/# : show all line containing kw with their line number
 :g/kw/|normal dd : delete all matching lines
 
