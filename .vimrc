@@ -60,6 +60,8 @@ autocmd FileType latex setlocal noexpandtab
 autocmd FileType tex setlocal noexpandtab
 autocmd FileType haskell setlocal tabstop=2
 autocmd FileType haskell setlocal shiftwidth=2
+autocmd FileType javascript setlocal tabstop=2
+autocmd FileType javascript setlocal shiftwidth=2
 autocmd FileType ruby setlocal tabstop=2
 autocmd FileType ruby setlocal shiftwidth=2
 
@@ -89,9 +91,6 @@ nnoremap k gk
 
 " c'mon use the 'normal' Y
 nnoremap Y y$
-
-" try to load some template files if availables
-autocmd BufNewFile * silent! 0r ~/.vim/tpl/%:e.tpl
 
 " no backup when overwritting a file
 set nobackup
