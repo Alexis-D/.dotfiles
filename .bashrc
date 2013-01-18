@@ -31,6 +31,7 @@ ex ()
 }
 
 alias ls='ls --color=auto'
+alias venv='virtualenv'
 
 alias chmox='chmod +x'
 alias fx='firefox'
@@ -87,5 +88,12 @@ tooLong ()
     fi
 }
 
-# e.g. 17:06 <alexis in ~> (dev) $ 
-PS1='\A <\[\e[1;33m\]\u\[\e[0m\] in \[\e[1;35m\]$(tooLong)\[\e[0m\]>\[\e[1;36m\]$(__git_ps1)\[\e[0m\] \$ '
+check="\[\033[01;37m\]\$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\342\234\223\"; else echo \"\[\033[01;31m\]\342\234\227\"; fi)\[\e[0m\]"
+time="\A"
+user="\[\e[1;37m\]\u\[\e[0m\]" # 33
+host="\[\e[1;34m\]\u\[\e[0m\]"
+dir="\[\e[1;32m\]$(tooLong)\[\e[0m\]"
+branch="\[\e[1;36m\]$(__git_ps1 | cut -b 2-)\[\e[0m\]"
+root="\$"
+# e.g. ✓ 16:33 <alexis @ alexis in ~/.dotfiles> (master) $
+PS1="$check $time <$user @ $host in $dir> $branch $root "
