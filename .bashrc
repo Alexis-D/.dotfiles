@@ -92,8 +92,8 @@ check="\[\033[01;37m\]\$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\342\234\
 time="\A"
 user="\[\e[1;37m\]\u\[\e[0m\]" # 33
 host="\[\e[1;34m\]\H\[\e[0m\]"
-dir="\[\e[1;32m\]$(tooLong)\[\e[0m\]"
-branch="\[\e[1;36m\]$(__git_ps1 | cut -b 2-)\[\e[0m\]"
+dir="\[\e[1;32m\]\$(tooLong)\[\e[0m\]"
+branch="\[\e[1;36m\]\$(__git_ps1)\[\e[0m\]"
 root="\$"
 # e.g. ✓ 16:33 <alexis @ alexis in ~/.dotfiles> (master) $
-PS1="$check $time <$user @ $host in $dir> $branch $root "
+PS1="$check $time <$user @ $host in $dir>$branch $root "
