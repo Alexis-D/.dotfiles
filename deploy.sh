@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+echo "Update repository..."
+git pull
+
 echo "Getting Pathogen..."
 curl -Sso .vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
@@ -16,3 +19,9 @@ do
         rm -rf $i && ln -s "$OLDPWD/$i"
     fi
 done
+
+echo "Sourcing .bashrc..."
+. .bashrc
+
+echo "Restoring location..."
+cd $OLDPWD
