@@ -8,7 +8,7 @@ mktbz() { tar cvjf "${1%%/}.tar.bz2" "${1%%/}/"; }
 
 # ex - extract an archive
 # usage: ex <file>
-ex ()
+ex()
 {
     if [ -f $1 ] ; then
         case $1 in
@@ -78,7 +78,7 @@ bind 'set match-hidden-files off'
 bind '\C-w:backward-kill-word'
 stty stop '' # disable ^S
 
-tooLong () 
+tooLong()
 {
     pfad="`pwd`"
     if [[ ${#pfad} -lt 30 ]]; then
@@ -88,12 +88,23 @@ tooLong ()
     fi
 }
 
+gitBranch() {
+    gitBranch=$(__git_ps1 '(%s)' 2>/dev/null || echo -en '\b')
+
+    if [ "$gitBranch" == '' ]
+    then
+        echo -en '\b'
+    else
+        echo -n $gitBranch
+    fi
+}
+
 check="\[\033[01;37m\]\$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\342\234\223\"; else echo \"\[\033[01;31m\]\342\234\227\"; fi)\[\e[0m\]"
 time="\A"
 user="\[\e[1;37m\]\u\[\e[0m\]" # 33
 host="\[\e[1;34m\]\H\[\e[0m\]"
 dir="\[\e[1;32m\]\$(tooLong)\[\e[0m\]"
-branch="\[\e[1;36m\]\$(__git_ps1 '(%s)' || '')\[\e[0m\]"
+branch="\[\e[1;36m\]\$(gitBranch)\[\e[0m\]"
 root="\\$"
 # e.g. ✓ 16:33 <alexis @ alexis in ~/.dotfiles> (master) $
 PS1="$check $time <$user @ $host in $dir> $branch $root "
