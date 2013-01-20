@@ -89,14 +89,7 @@ tooLong()
 }
 
 gitBranch() {
-    gitBranch=$(__git_ps1 '(%s)' 2>/dev/null || echo -en '\b')
-
-    if [ "$gitBranch" == '' ]
-    then
-        echo -en '\b'
-    else
-        echo -n $gitBranch
-    fi
+    __git_ps1 2>/dev/null
 }
 
 check="\[\033[01;37m\]\$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\342\234\223\"; else echo \"\[\033[01;31m\]\342\234\227\"; fi)\[\e[0m\]"
@@ -107,4 +100,4 @@ dir="\[\e[1;32m\]\$(tooLong)\[\e[0m\]"
 branch="\[\e[1;36m\]\$(gitBranch)\[\e[0m\]"
 root="\\$"
 # e.g. ✓ 16:33 <alexis @ alexis in ~/.dotfiles> (master) $
-PS1="$check $time <$user @ $host in $dir> $branch $root "
+PS1="$check $time <$user @ $host in $dir>$branch $root "
