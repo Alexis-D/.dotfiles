@@ -80,9 +80,9 @@ stty stop '' # disable ^S
 
 tooLong()
 {
-    pfad="`pwd`"
+    pfad=${PWD/#$HOME/\~}
     if [[ ${#pfad} -lt 30 ]]; then
-        echo -n "${pfad/\/home\/$USER/~}"
+        echo -n "${pfad}"
     else 
         echo -n ".../`basename "$pfad"`"
     fi
@@ -95,7 +95,7 @@ gitBranch() {
 check="\[\033[01;37m\]\$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\[\342\234\223\]\"; else echo \"\[\033[01;31m\]\[\342\234\227\]\"; fi)\[\e[0m\]"
 time="\A"
 user="\[\e[1;37m\]\u\[\e[0m\]" # 33
-host="\[\e[1;34m\]\H\[\e[0m\]"
+host="\[\e[1;34m\]\h\[\e[0m\]"
 dir="\[\e[1;32m\]\$(tooLong)\[\e[0m\]"
 branch="\[\e[1;36m\]\$(gitBranch)\[\e[0m\]"
 root="\\$"
