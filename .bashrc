@@ -100,4 +100,4 @@ dir="\[\e[1;32m\]\$(tooLong)\[\e[0m\]"
 branch="\[\e[1;36m\]\$(gitBranch)\[\e[0m\]"
 root="\\$"
 # e.g. ✓ 16:33 <alexis @ alexis in ~/.dotfiles> (master) $
-PS1="$check $time <$user @ $host in $dir>$branch $root "
+PS1="$check $time $user @ $host in $dir$branch $root "
