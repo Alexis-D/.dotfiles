@@ -4,7 +4,10 @@ let mapleader = ','
 set nocompatible
 
 " enable mouse support
-set mouse=a
+" set mouse=a
+
+" utf-8, all the time
+set encoding=utf-8
 
 " enable syntax highlighting
 syntax on
@@ -13,7 +16,7 @@ syntax on
 filetype plugin on
 
 " maximum lenght of inserted line (it's broken if wider)
-autocmd FileType text setlocal textwidth=78
+setlocal textwidth=78
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
