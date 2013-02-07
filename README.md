@@ -4,6 +4,10 @@ Reminder to myself, how to deploy the files:
     cd .dotfiles
     . deploy.sh
 
-Vim plugins are managed (as much as possible) using the excellent Pathogen plugin created by Tim Pope.
+Vim plugins are managed (as much as possible) using the excellent Pathogen
+plugin created by Tim Pope.
 
 Submodules are used where possible.
+
+You'll need to `sudo pip install flake8` first (not done in the deploy script
+because it requires root).
