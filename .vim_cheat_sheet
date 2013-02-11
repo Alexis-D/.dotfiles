@@ -114,6 +114,8 @@ u : undo
 <C-r> : redo
 :earlier, :later : used to undo/redo
 
++, -: got the 1st non-blank character of the previous/next line
+
 
 Insertion:
 ----------
