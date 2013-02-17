@@ -9,5 +9,5 @@ plugin created by Tim Pope.
 
 Submodules are used where possible.
 
-You'll need to `sudo pip install flake8` first (not done in the deploy script
-because it requires root).
+You'll need to `sudo pip install flake8 virtualenv virtualenvwrapper` first
+(not done in the deploy script because it requires root).

@@ -74,6 +74,11 @@ if [ -f /etc/bash_completion ]; then
 . /etc/bash_completion
 fi
 
+# use virtualenvwrapper, if available...
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+. /usr/local/bin/virtualenvwrapper.sh
+fi
+
 bind 'set match-hidden-files off'
 bind \C-w:backward-kill-word
 bind -x '"\C-d":deactivate || exit'
