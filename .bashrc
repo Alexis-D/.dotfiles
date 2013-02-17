@@ -75,8 +75,13 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 bind 'set match-hidden-files off'
-bind '\C-w:backward-kill-word'
+bind \C-w:backward-kill-word
+bind -x '"\C-d":deactivate || exit'
 stty stop '' # disable ^S
+
+exit() {
+    deactivate || builtin exit
+}
 
 tooLong()
 {
