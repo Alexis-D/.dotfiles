@@ -30,44 +30,40 @@ ex()
     fi
 }
 
-alias ls='ls --color=auto'
-alias venv='virtualenv'
-
-alias chmox='chmod +x'
-alias fx='firefox'
-alias py='python'
-alias py2='python2'
-alias py3='python3'
-alias irb='irb --readline -r irb/completion'
-alias ?='pydoc'
-alias ??='pydoc2'
-alias vi='vim'
-alias gi='git'
-
-alias ..='cd ..'
-alias ...='cd ../..'
 alias ....='cd ../../..'
-alias :q='exit'
+alias ...='cd ../..'
+alias ..='cd ..'
+alias .='PS1= builtin .'
+alias :q=exit
+alias ?=pydoc
+alias ??=pydoc2
+alias chmox='chmod +x'
+alias fx=firefox
+alias gi=git
 alias grep='grep --color=auto -n'
+alias irb='irb --readline -r irb/completion'
 alias killbg='kill %{1..1000} 2>/dev/null'
-
+alias ls='ls --color=auto'
 alias mypublicip='curl ifconfig.me'
+alias py2=python2
+alias py3=python3
+alias py=python
+alias venv=mkvirtualenv
+alias vi=vim
 
 shopt -s checkwinsize
 shopt -s cdspell
 
-export HISTCONTROL=ignoredups
+export BROWSER=firefox
+export CDPATH=.:~
+export EDITOR=vim
 export HISTCONTROL=ignoreboth
-export HISTSIZE=10000
+export HISTCONTROL=ignoredups
 export HISTFILESIZE=10000
-
-export BROWSER='firefox'
-export EDITOR='vim'
-export PYTHONSTARTUP="$HOME/.pythonrc.py"
-export SESSION='startxfce4'
-
-export CDPATH='.:~'
-export PATH=$PATH:"/opt/google-appengine/:/opt/go/bin/:~/bin/"
+export HISTSIZE=10000
+export PYTHONSTARTUP=~/.pythonrc.py
+export WORKON_HOME=~/.virtualenvs
+export VIRTUALENVWRAPPER_HOOK_DIR=~/.virtualenvs_hooks
 
 # use bash-completion if available (obviously...)
 if [ -f /etc/bash_completion ]; then
