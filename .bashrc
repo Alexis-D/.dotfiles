@@ -53,6 +53,7 @@ alias vi=vim
 
 shopt -s checkwinsize
 shopt -s cdspell
+shopt -s globstar
 
 export BROWSER=firefox
 export CDPATH=.:~
