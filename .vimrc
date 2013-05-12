@@ -168,5 +168,9 @@ runtime macros/justify.vim
 " TODOs!
 ab todo <esc>:r!whoami<cr>I<bs>TODO(<esc>ea):
 
+" open splits right & bottom, rather than left and top
+set splitbelow
+set splitright
+
 " Let Pathogen magic happen
 execute pathogen#infect()
