@@ -8,7 +8,7 @@ set autocomplete=
 " a reply to all
 " [ archive and previous, ] archive and next
 set passkeys+=mail.google.com:cjkoera[]
-set passkeys+=google.com/reader:npr
+set passkeys+=theoldreader.com:npr/
 set passkeys+=docs.google.com/viewer:jk
 " set passkeys+=encrypted.google.com/search:jko/
 " set passkeys+=google.com/search:jko/
