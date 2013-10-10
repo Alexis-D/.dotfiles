@@ -86,8 +86,10 @@ autocmd WinLeave * setlocal nocursorline
 
 " go to home by default
 cd
-" set the working directory to the one of the current buffer
-set autochdir
+" use vim-rooter for 'smart' cwd
+let g:rooter_patterns = ['.git/', '.hg/']
+let g:rooter_change_directory_for_non_project_files = 1
+autocmd BufEnter * :Rooter
 
 " better j, k motion
 nnoremap j gj
