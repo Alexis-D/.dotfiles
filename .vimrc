@@ -58,17 +58,21 @@ set shiftround
 
 " filetype specific settings
 filetype plugin indent on
-autocmd FileType make setlocal noexpandtab
-autocmd FileType go setlocal noexpandtab
-autocmd FileType latex setlocal noexpandtab
-autocmd FileType tex setlocal noexpandtab
-autocmd FileType haskell setlocal tabstop=2
-autocmd FileType haskell setlocal shiftwidth=2
-autocmd FileType javascript setlocal tabstop=2
-autocmd FileType javascript setlocal shiftwidth=2
-autocmd FileType ruby setlocal tabstop=2
-autocmd FileType ruby setlocal shiftwidth=2
-autocmd FileType python map <buffer> <F6> :call Flake8()<CR>
+
+augroup indentgroup
+    autocmd!
+    autocmd FileType make setlocal noexpandtab
+    autocmd FileType go setlocal noexpandtab
+    autocmd FileType latex setlocal noexpandtab
+    autocmd FileType tex setlocal noexpandtab
+    autocmd FileType haskell setlocal tabstop=2
+    autocmd FileType haskell setlocal shiftwidth=2
+    autocmd FileType javascript setlocal tabstop=2
+    autocmd FileType javascript setlocal shiftwidth=2
+    autocmd FileType ruby setlocal tabstop=2
+    autocmd FileType ruby setlocal shiftwidth=2
+    autocmd BufWritePost *.py call Flake8()
+augroup END
 
 " :h hidden
 set hidden
@@ -80,16 +84,22 @@ set showmatch
 set title
 
 " show the current line in a different color
-autocmd WinEnter * setlocal cursorline
-autocmd BufEnter * setlocal cursorline
-autocmd WinLeave * setlocal nocursorline
+augroup cursorlinegroup
+    autocmd!
+    autocmd WinEnter * setlocal cursorline
+    autocmd BufEnter * setlocal cursorline
+    autocmd WinLeave * setlocal nocursorline
+augroup END
 
 " go to home by default
 cd
 " use vim-rooter for 'smart' cwd
 let g:rooter_patterns = ['.git/', '.hg/']
 let g:rooter_change_directory_for_non_project_files = 1
-autocmd BufEnter * :Rooter
+augroup rootergroup
+    autocmd!
+    autocmd BufEnter * :Rooter
+augroup END
 
 " better j, k motion
 nnoremap j gj
@@ -168,7 +178,7 @@ nnoremap <leader><leader> <C-^>
 runtime macros/justify.vim
 
 " TODOs!
-ab todo <esc>:r!whoami<cr>I<bs>TODO(<esc>ea):
+iab todo <esc>:r!whoami<cr>I<bs>TODO(<esc>ea):
 
 " open splits right & bottom, rather than left and top
 set splitbelow
@@ -179,6 +189,7 @@ au BufRead,BufNewFile *.md set filetype=markdown
 
 " use current project dir or current dir
 let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_show_hidden = 1
 
 " Let Pathogen magic happen
 execute pathogen#infect()
