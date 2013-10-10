@@ -38,6 +38,7 @@ set smartcase
 set background=dark
 
 " show line numbers
+set relativenumber
 set number
 
 " show the command while typing
@@ -83,7 +84,6 @@ autocmd WinEnter * setlocal cursorline
 autocmd BufEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
 
-" pwd
 " go to home by default
 cd
 " set the working directory to the one of the current buffer
@@ -171,6 +171,12 @@ ab todo <esc>:r!whoami<cr>I<bs>TODO(<esc>ea):
 " open splits right & bottom, rather than left and top
 set splitbelow
 set splitright
+
+" set the 'right' filetype for .md files
+au BufRead,BufNewFile *.md set filetype=markdown
+
+" use current project dir or current dir
+let g:ctrlp_working_path_mode = 'ra'
 
 " Let Pathogen magic happen
 execute pathogen#infect()

@@ -16,3 +16,15 @@
 [submodule ".vim/bundle/vim-bufferline"]
 	path = .vim/bundle/vim-bufferline
 	url = https://github.com/bling/vim-bufferline.git
+[submodule ".vim/bundle/vim-eunuch"]
+	path = .vim/bundle/vim-eunuch
+	url = https://github.com/tpope/vim-eunuch.git
+[submodule ".vim/bundle/vim-signature"]
+	path = .vim/bundle/vim-signature
+	url = https://github.com/kshenoy/vim-signature.git
+[submodule ".vim/bundle/vim-unimpaired"]
+	path = .vim/bundle/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired.git
+[submodule ".vim/bundle/ctrlp.vim"]
+	path = .vim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
