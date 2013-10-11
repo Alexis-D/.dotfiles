@@ -192,5 +192,11 @@ au BufRead,BufNewFile *.md set filetype=markdown
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 1
 
+" readline-like motions for command mode
+cnoremap <C-a> <home>
+cnoremap <C-f> <right>
+cnoremap <C-b> <left>
+cnoremap <C-h> <bs>
+
 " Let Pathogen magic happen
 execute pathogen#infect()
