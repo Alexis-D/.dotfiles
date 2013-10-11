@@ -164,6 +164,7 @@ nnoremap <leader><space> :noh<cr>
 
 " autocomplete list for command mode
 set wildmenu
+set wildcharm=<C-i>
 
 " easy buffer switching
 nnoremap <leader><leader> :CtrlPBuffer<cr>
