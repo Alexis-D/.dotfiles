@@ -138,18 +138,6 @@ set nrformats=hex,alpha
 " :s/??/!!/g without g, to come back to default add g
 set gdefault
 
-" hide previous search results
-nnoremap <leader><space> :noh<cr>
-
-" when forget sudo...
-cnoremap w!! %!sudo tee > /dev/null %
-
-" list TODOs
-nnoremap <leader>t :%g/TODO/<cr>
-
-" make the current file executable
-cnoremap chmox !chmod +x %<cr>
-
 " show number of loc, and position in the file
 set statusline=%F\ %m%r%w%y\ %=(%L\ loc)\ %l,%v\ \ %P
 
@@ -171,8 +159,21 @@ set listchars=tab:→\ ,trail:·
 " remove all charact on the line but not the line!
 nnoremap dD 0d$
 
+" hide previous search results
+nnoremap <leader><space> :noh<cr>
+
 " switch quickly between current and previous buffer
-nnoremap <leader><leader> <C-^>
+nnoremap <leader>p <C-^>
+
+" easy buffer switching
+set wildmenu
+set wildcharm=<C-i>
+nnoremap <leader><leader> :b <C-i>
+
+" open a file relative to current file directory
+cnoremap E e %:p:h<C-i>
+cnoremap Vs vs %:p:h<C-i>
+cnoremap Sp sp %:p:h<C-i>
 
 " provides _j to justify text: a-w-e-s-o-m-e
 runtime macros/justify.vim
