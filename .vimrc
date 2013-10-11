@@ -162,13 +162,11 @@ nnoremap dD 0d$
 " hide previous search results
 nnoremap <leader><space> :noh<cr>
 
-" switch quickly between current and previous buffer
-nnoremap <leader>p <C-^>
+" autocomplete list for command mode
+set wildmenu
 
 " easy buffer switching
-set wildmenu
-set wildcharm=<C-i>
-nnoremap <leader><leader> :b <C-i>
+nnoremap <leader><leader> :CtrlPBuffer<cr>
 
 " open a file relative to current file directory
 cnoremap E e %:p:h<C-i>
