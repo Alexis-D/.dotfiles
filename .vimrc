@@ -170,9 +170,9 @@ set wildcharm=<C-i>
 nnoremap <leader><leader> :CtrlPBuffer<cr>
 
 " open a file relative to current file directory
-cnoremap E e %:p:h<C-i>
-cnoremap Vs vs %:p:h<C-i>
-cnoremap Sp sp %:p:h<C-i>
+cnoremap <expr> E getcmdtype() ==# ':' && getcmdpos() ==# 1 ? 'e %:p:h<C-i>' : 'E'
+cnoremap <expr> Vs getcmdtype() ==# ':' && getcmdpos() ==# 1 ? 'vs %:p:h<C-i>' : 'Vs'
+cnoremap <expr> Sp getcmdtype() ==# ':' && getcmdpos() ==# 1 ? 'sp %:p:h<C-i>' : 'Sp'
 
 " provides _j to justify text: a-w-e-s-o-m-e
 runtime macros/justify.vim
