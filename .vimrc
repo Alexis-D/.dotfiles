@@ -177,6 +177,9 @@ cnoremap <expr> Sp getcmdtype() ==# ':' && getcmdpos() ==# 1 ? 'sp %:p:h<C-i>' :
 " provides _j to justify text: a-w-e-s-o-m-e
 runtime macros/justify.vim
 
+" smart %
+runtime macros/matchit.vim
+
 " TODOs!
 ia todo TODO(<cr><cr>):<esc>k!!whoami<cr>JVkJxh%la
 
