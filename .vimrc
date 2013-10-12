@@ -178,7 +178,7 @@ cnoremap <expr> Sp getcmdtype() ==# ':' && getcmdpos() ==# 1 ? 'sp %:p:h<C-i>' :
 runtime macros/justify.vim
 
 " TODOs!
-iab todo <esc>:r!whoami<cr>I<bs>TODO(<esc>ea):
+ia todo TODO(<cr><cr>):<esc>k!!whoami<cr>JVkJxh%la
 
 " open splits right & bottom, rather than left and top
 set splitbelow
