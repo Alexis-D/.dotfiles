@@ -135,8 +135,42 @@ set nrformats=hex,alpha
 " :s/??/!!/g without g, to come back to default add g
 set gdefault
 
-" show number of loc, and position in the file
-set statusline=%F\ %m%r%w%y\ %=(%L\ loc)\ %l,%v\ \ %P
+" red
+hi User1 ctermfg=0 ctermbg=1
+
+set statusline=
+" filename
+set statusline+=%F\ 
+" filetype
+set statusline+=%y
+" filename
+set statusline+=%1*%m%*
+" readonly
+set statusline+=%1*%r%*
+" align right
+set statusline+=%=
+" position
+set statusline+=%l×%v\ 
+" number of lines
+set statusline+=(%L\ loc)\ 
+" position in file in percentage
+set statusline+=%P
+
+" always show
+set laststatus=2
+
+function! StatusLineDefaultHighlight()
+    hi StatusLine ctermfg=0 ctermbg=10 gui=bold
+endfunction
+
+if version >= 700
+    augroup statuslinegroup
+        autocmd!
+        au BufEnter * call StatusLineDefaultHighlight()
+        au InsertEnter * hi StatusLine ctermbg=13 gui=bold
+        au InsertLeave * call StatusLineDefaultHighlight()
+    augroup END
+endif
 
 " some <F-somethings> mappings
 " tell vim we paste something, and it shouldn't try to indent it
@@ -158,6 +192,9 @@ nnoremap dD 0d$
 
 " hide previous search results
 nnoremap <leader><space> :noh<cr>
+
+" show marks
+nnoremap <leader>b :marks<cr>
 
 " autocomplete list for command mode
 set wildmenu
