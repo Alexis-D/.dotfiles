@@ -3,9 +3,6 @@ let mapleader = ','
 " no need to be compatible with vim
 set nocompatible
 
-" enable mouse support
-" set mouse=a
-
 " utf-8, all the time
 set encoding=utf-8
 
