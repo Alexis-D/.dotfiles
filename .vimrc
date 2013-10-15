@@ -194,7 +194,10 @@ nnoremap dD 0d$
 nnoremap <leader><space> :noh<cr>
 
 " show marks
-nnoremap <leader>b :marks<cr>
+nnoremap <leader>m :marks<cr>
+
+" show buffers
+nnoremap <leader>b :ls<cr>
 
 " autocomplete list for command mode
 set wildmenu
