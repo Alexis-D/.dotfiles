@@ -150,7 +150,7 @@ set statusline+=%1*%r%*
 " align right
 set statusline+=%=
 " position
-set statusline+=%l×%v\ 
+set statusline+=%2v×%-3l\ 
 " number of lines
 set statusline+=(%L\ loc)\ 
 " position in file in percentage
