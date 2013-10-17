@@ -4,6 +4,9 @@ Useful shortcuts for Vim
 Normal:
 -------
 
+ge: end of prev word
+zz, zt, zb: position window relative to cursor
+
 [{ : go to the begining of a block of {}
 ]} : go to the end of a block of {}
 [/ or [* : go to the begining of a C comment /**/
