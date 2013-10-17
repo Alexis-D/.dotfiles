@@ -14,7 +14,7 @@
     st = status -s
     unstage = reset HEAD
     last = log -1 HEAD
-    updateAllSubmodules = submodule foreach git pull origin master
+    update-all-submodules = submodule foreach git pull origin master
 [core]
     editor = vim
 [merge]
