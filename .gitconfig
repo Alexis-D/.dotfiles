@@ -12,6 +12,8 @@
     br = branch
     me = merge
     st = status -s
+    l = log --graph --all --date=relative\
+        --pretty=format:'%C(cyan)%h%Creset %s %C(green)[%an/%cr]%Creset%C(red)%d%Creset'
     unstage = reset HEAD
     last = log -1 HEAD
     update-all-submodules = submodule foreach git pull origin master
