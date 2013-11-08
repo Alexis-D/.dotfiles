@@ -163,14 +163,12 @@ function! StatusLineDefaultHighlight()
     hi StatusLine ctermfg=0 ctermbg=10 gui=bold
 endfunction
 
-if version >= 700
-    augroup statuslinegroup
-        autocmd!
-        au BufEnter * call StatusLineDefaultHighlight()
-        au InsertEnter * hi StatusLine ctermbg=13 gui=bold
-        au InsertLeave * call StatusLineDefaultHighlight()
-    augroup END
-endif
+augroup statuslinegroup
+    autocmd!
+    autocmd BufEnter * call StatusLineDefaultHighlight()
+    autocmd InsertEnter * hi StatusLine ctermbg=13 gui=bold
+    autocmd InsertLeave * call StatusLineDefaultHighlight()
+augroup END
 
 " some <F-somethings> mappings
 " tell vim we paste something, and it shouldn't try to indent it
@@ -225,7 +223,10 @@ set splitbelow
 set splitright
 
 " set the 'right' filetype for .md files
-au BufRead,BufNewFile *.md set filetype=markdown
+augroup markdowngroup
+    autocmd!
+    autocmd BufRead,BufNewFile *.md set filetype=markdown
+augroup END
 
 " use current project dir or current dir
 let g:ctrlp_working_path_mode = 'ra'
@@ -236,6 +237,13 @@ cnoremap <C-a> <home>
 cnoremap <C-f> <right>
 cnoremap <C-b> <left>
 cnoremap <C-h> <bs>
+
+" set program used by K in normal mode
+augroup Kgroup
+    autocmd!
+    autocmd FileType python setlocal keywordprg=pydoc
+    autocmd FileType vim setlocal keywordprg=:help
+augroup END
 
 " Let Pathogen magic happen
 execute pathogen#infect()
