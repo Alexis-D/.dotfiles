@@ -56,7 +56,6 @@ shopt -s cdspell
 shopt -s globstar
 
 export BROWSER=firefox
-export CDPATH=.:~
 export EDITOR=vim
 export HISTCONTROL=ignoreboth
 export HISTCONTROL=ignoredups
@@ -90,8 +89,8 @@ tooLong()
     fi
 }
 
-gitBranch() {
-    __git_ps1 2>/dev/null
+git-branch() {
+    __git_ps1 %s 2>/dev/null
 }
 
 check="\[\033[01;37m\]\$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\342\[\234\223\]\"; else echo \"\[\033[01;31m\]\342\[\234\227\]\"; fi)\[\e[0m\]"
@@ -99,7 +98,7 @@ time="\A"
 user="\[\e[1;37m\]\u\[\e[0m\]"
 host="\[\e[1;34m\]\h\[\e[0m\]"
 dir="\[\e[1;32m\]\$(tooLong)\[\e[0m\]"
-branch="\[\e[1;36m\]\$(gitBranch)\[\e[0m\]"
+branch="\[\e[1;36m\]\$(git-branch)\[\e[0m\]"
 root="\\$"
 # e.g. ✓ 16:33 <alexis @ alexis in ~/.dotfiles> (master) $
 PS1=" $check $time $user @ $host in $dir$branch $root "
