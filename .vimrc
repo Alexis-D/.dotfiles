@@ -189,13 +189,13 @@ set listchars=tab:→\ ,trail:·
 nnoremap dD 0d$
 
 " hide previous search results
-nnoremap <leader><space> :noh<cr>
+nnoremap <silent> <leader><space> :noh<cr>
 
 " show marks
-nnoremap <leader>m :marks<cr>
+nnoremap <silent> <leader>m :marks<cr>
 
 " show buffers
-nnoremap <leader>b :ls<cr>
+nnoremap <silent> <leader>b :ls<cr>
 
 " autocomplete list for command mode
 set wildmenu
@@ -225,7 +225,10 @@ set splitright
 " set the 'right' filetype for .md files
 augroup markdowngroup
     autocmd!
-    autocmd BufRead,BufNewFile *.md set filetype=markdown
+    autocmd BufRead,BufNewFile *.md setlocal filetype=markdown
+    autocmd FileType markdown setlocal spell
+    autocmd FileType markdown setlocal spelllang=en_us
+    autocmd FileType markdown setlocal complete+=kspell
 augroup END
 
 " use current project dir or current dir
