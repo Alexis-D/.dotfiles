@@ -61,6 +61,7 @@ export HISTCONTROL=ignoreboth
 export HISTCONTROL=ignoredups
 export HISTFILESIZE=10000
 export HISTSIZE=10000
+export PATH=~/bin:$PATH
 export PYTHONSTARTUP=~/.pythonrc.py
 export WORKON_HOME=~/.virtualenvs
 export VIRTUALENVWRAPPER_HOOK_DIR=~/.virtualenvs_hooks
@@ -79,7 +80,7 @@ bind 'set match-hidden-files off'
 bind \C-w:backward-kill-word
 stty stop '' # disable ^S
 
-tooLong()
+too-long()
 {
     pfad=${PWD/#$HOME/\~}
     if [[ ${#pfad} -lt 30 ]]; then
@@ -90,14 +91,14 @@ tooLong()
 }
 
 git-branch() {
-    __git_ps1 %s 2>/dev/null
+    __git_ps1 2>/dev/null
 }
 
 check="\[\033[01;37m\]\$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\342\[\234\223\]\"; else echo \"\[\033[01;31m\]\342\[\234\227\]\"; fi)\[\e[0m\]"
 time="\A"
 user="\[\e[1;37m\]\u\[\e[0m\]"
 host="\[\e[1;34m\]\h\[\e[0m\]"
-dir="\[\e[1;32m\]\$(tooLong)\[\e[0m\]"
+dir="\[\e[1;32m\]\$(too-long)\[\e[0m\]"
 branch="\[\e[1;36m\]\$(git-branch)\[\e[0m\]"
 root="\\$"
 # e.g. ✓ 16:33 <alexis @ alexis in ~/.dotfiles> (master) $
