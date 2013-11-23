@@ -35,7 +35,9 @@ set smartcase
 set background=dark
 
 " show line numbers
-set relativenumber
+if version >= 740
+    set relativenumber
+endif
 set number
 
 " show the command while typing
@@ -225,7 +227,7 @@ set splitright
 " set the 'right' filetype for .md files
 augroup markdowngroup
     autocmd!
-    autocmd BufRead,BufNewFile *.md setlocal filetype=markdown
+    autocmd BufRead,BufNewFile,BufWrite *.md setlocal filetype=markdown
     autocmd FileType markdown setlocal spell
     autocmd FileType markdown setlocal spelllang=en_us
     autocmd FileType markdown setlocal complete+=kspell
