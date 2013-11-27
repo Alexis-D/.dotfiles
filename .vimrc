@@ -100,6 +100,9 @@ augroup rootergroup
     autocmd BufEnter * :Rooter
 augroup END
 
+" disable entering ex mode through Q
+nnoremap Q <nop>
+
 " better j, k motion
 nnoremap j gj
 nnoremap k gk
@@ -187,9 +190,6 @@ set list
 " characters to use
 set listchars=tab:→\ ,trail:·
 
-" remove all charact on the line but not the line!
-nnoremap dD 0d$
-
 " hide previous search results
 nnoremap <silent> <leader><space> :noh<cr>
 
@@ -249,6 +249,9 @@ augroup Kgroup
     autocmd FileType python setlocal keywordprg=pydoc
     autocmd FileType vim setlocal keywordprg=:help
 augroup END
+
+" when encrypting any file, use the much stronger blowfish algorithm
+set cryptmethod=blowfish
 
 " Let Pathogen magic happen
 execute pathogen#infect()
