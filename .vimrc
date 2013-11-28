@@ -250,8 +250,10 @@ augroup Kgroup
     autocmd FileType vim setlocal keywordprg=:help
 augroup END
 
-" when encrypting any file, use the much stronger blowfish algorithm
-set cryptmethod=blowfish
+if version >= 730
+    " when encrypting any file, use the much stronger blowfish algorithm
+    set cryptmethod=blowfish
+endif
 
 " Let Pathogen magic happen
 execute pathogen#infect()
