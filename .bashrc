@@ -44,7 +44,7 @@ alias gi=git
 alias grep='grep --color=auto -n'
 alias irb='irb --readline -r irb/completion'
 alias killbg='kill %{1..1000} 2>/dev/null'
-alias ls='ls --color=auto'
+alias ls='LS_COLORS=auto ls'
 alias mypublicip='curl ifconfig.me'
 alias py2=python2
 alias py3=python3
@@ -69,12 +69,22 @@ export VIRTUALENVWRAPPER_HOOK_DIR=~/.virtualenvs_hooks
 
 # use bash-completion if available (obviously...)
 if [ -f /etc/bash_completion ]; then
-. /etc/bash_completion
+    . /etc/bash_completion
+fi
+
+# for MacOS
+if [ -f /usr/local/etc/bash_completion ]; then
+    . /usr/local/etc/bash_completion
 fi
 
 # use virtualenvwrapper, if available...
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-. /usr/local/bin/virtualenvwrapper.sh
+    . /usr/local/bin/virtualenvwrapper.sh
+fi
+
+# for __git_ps1
+if [ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]; then
+    . /usr/local/etc/bash_completion.d/git-prompt.sh
 fi
 
 bind 'set match-hidden-files off'
