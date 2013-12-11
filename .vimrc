@@ -35,7 +35,7 @@ set smartcase
 set background=dark
 
 " show line numbers
-if version >= 740
+if version >= 704
     set relativenumber
 endif
 set number
@@ -250,7 +250,7 @@ augroup Kgroup
     autocmd FileType vim setlocal keywordprg=:help
 augroup END
 
-if version >= 730
+if version >= 703
     " when encrypting any file, use the much stronger blowfish algorithm
     set cryptmethod=blowfish
 endif
