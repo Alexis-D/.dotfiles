@@ -46,6 +46,7 @@ alias irb='irb --readline -r irb/completion'
 alias killbg='kill %{1..1000} 2>/dev/null'
 alias ls='LS_COLORS=auto ls'
 alias mypublicip='curl ifconfig.me'
+alias p='cd ~/Documents/Palantir'
 alias py2=python2
 alias py3=python3
 alias py=python
