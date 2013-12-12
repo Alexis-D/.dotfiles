@@ -204,7 +204,10 @@ set wildmenu
 set wildcharm=<C-i>
 
 " easy buffer switching
-nnoremap <leader><leader> :CtrlPBuffer<cr>
+nnoremap <silent> <leader><leader> :CtrlPBuffer<cr>
+
+" easy file opening
+nnoremap <silent> <leader>e :CtrlP<cr>
 
 " open a file relative to current file directory
 cnoremap <expr> E getcmdtype() ==# ':' && getcmdpos() ==# 1 ? 'e %:p:h<C-i>' : 'E'
