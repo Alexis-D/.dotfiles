@@ -35,36 +35,35 @@ alias ....='cd ../../..'
 alias ...='cd ../..'
 alias ..='cd ..'
 alias .='PS1= builtin .'
-alias :q=exit
 alias ?=pydoc
 alias ??=pydoc2
-alias chmox='chmod +x'
-alias fx=firefox
-alias gi=git
+alias doc='cd ~/Documents'
+alias down='cd ~/Downloads'
 alias grep='grep --color=auto -n'
-alias irb='irb --readline -r irb/completion'
 alias killbg='kill %{1..1000} 2>/dev/null'
-alias ls='LS_COLORS=auto ls'
-alias mypublicip='curl ifconfig.me'
-alias p='cd ~/Documents/Palantir'
+alias ls='ls --color=auto'
 alias py2=python2
 alias py3=python3
 alias py=python
 alias venv=mkvirtualenv
 alias vi=vim
 
+# Palantir's aliases
+alias p='cd ~/Documents/Palantir'
+alias qs='cd ~/Documents/Palantir/Mac_QS_3.11.1.2'
+
 shopt -s checkwinsize
 shopt -s cdspell
 shopt -s globstar
 
-export BROWSER=firefox
 export EDITOR=vim
 export HISTCONTROL=ignoreboth
 export HISTCONTROL=ignoredups
 export HISTFILESIZE=10000
 export HISTSIZE=10000
-export JAVA_HOME=/usr
-export PATH=~/bin:/usr/local/bin:$PATH
+# use gnu coreutils on Mac (and use the right man pages)
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+export PATH="~/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:$PATH"
 export PYTHONSTARTUP=~/.pythonrc.py
 export WORKON_HOME=~/.virtualenvs
 export VIRTUALENVWRAPPER_HOOK_DIR=~/.virtualenvs_hooks
