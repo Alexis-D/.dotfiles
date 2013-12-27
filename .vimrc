@@ -246,6 +246,10 @@ cnoremap <C-f> <right>
 cnoremap <C-b> <left>
 cnoremap <C-h> <bs>
 
+" close omnicomplete preview window
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
 " set program used by K in normal mode
 augroup Kgroup
     autocmd!
