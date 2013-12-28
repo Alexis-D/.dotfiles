@@ -7,7 +7,7 @@ echo "Getting Pathogen..."
 curl -Sso .vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
 echo "Init/update submodules..."
-git submodule update --init
+git submodule update --init --recursive
 
 cd
 
