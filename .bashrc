@@ -48,22 +48,30 @@ alias py=python
 alias venv=mkvirtualenv
 alias vi=vim
 
-# Palantir's aliases
+# Palantir's stuff
 alias p='cd ~/Documents/Palantir'
-alias qs='cd ~/Documents/Palantir/Mac_QS_3.11.1.2'
+alias 3.11='cd ~/Documents/Palantir/Mac_QS_3.11.1.2'
+alias 3.12='cd ~/Documents/Palantir/Mac_QS_3.12.4.1'
+alias vcd='cd ~/Documents/Palantir/cloudera/'
+alias vvi='vim scp://cloudera@localhost:2222/'
+alias vssh='ssh cloudera@localhost -p 2222'
+alias vsshfs='sshfs cloudera@localhost:/home/cloudera ~/Documents/Palantir/cloudera/ -p 2222'
 
 shopt -s checkwinsize
 shopt -s cdspell
 shopt -s globstar
+shopt -s histappend
 
 export EDITOR=vim
 export HISTCONTROL=ignoreboth
 export HISTCONTROL=ignoredups
 export HISTFILESIZE=10000
 export HISTSIZE=10000
+export JAVA_HOME=`/usr/libexec/java_home`
 # use gnu coreutils on Mac (and use the right man pages)
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export PATH="~/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:$PATH"
+export PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
 export PYTHONSTARTUP=~/.pythonrc.py
 export WORKON_HOME=~/.virtualenvs
 export VIRTUALENVWRAPPER_HOOK_DIR=~/.virtualenvs_hooks
