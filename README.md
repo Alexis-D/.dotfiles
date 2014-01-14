@@ -1,13 +1,21 @@
-Reminder to myself, how to deploy the files:
+How to deploy the files:
 
-    git clone https://github.com/Alexis-D/.dotfiles.git
+    git clone --recursive https://github.com/Alexis-D/.dotfiles.git
     cd .dotfiles
     . deploy.sh
 
-Vim plugins are managed (as much as possible) using the excellent Pathogen
-plugin created by Tim Pope.
+Vim plugins are managed using Pathogen (see
+[tpope/vim-pathogen](https://github.com/tpope/vim-pathogen).
 
-Submodules are used where possible.
+Remember to `sudo pip install flake8 virtualenv virtualenvwrapper` the 1st
+time to get some python-related tools.
 
-You'll need to `sudo pip install flake8 virtualenv virtualenvwrapper` first
-(not done in the deploy script because it requires root).
+Other stuff that's worth installing, but not handled here:
+
+* [Homebrew](http://brew.sh/)
+* [f.lux](http://justgetflux.com/)
+* [`ssh-installkeys`](http://www.catb.org/~esr/ssh-installkeys/) or `ssh-copy-id`
+  ([man page](http://linux.die.net/man/1/ssh-copy-id))
+* [`sshfs`](http://fuse.sourceforge.net/sshfs.html)
+* [KeyRemap4MacBook](https://pqrs.org/macosx/keyremap4macbook/)
+* [`bash-completion`](http://bash-completion.alioth.debian.org/)
