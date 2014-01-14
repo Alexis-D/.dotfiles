@@ -5,7 +5,7 @@ How to deploy the files:
     . deploy.sh
 
 Vim plugins are managed using Pathogen (see
-[tpope/vim-pathogen](https://github.com/tpope/vim-pathogen).
+[tpope/vim-pathogen](https://github.com/tpope/vim-pathogen)).
 
 Remember to `sudo pip install flake8 virtualenv virtualenvwrapper` the 1st
 time to get some python-related tools.
