@@ -231,7 +231,6 @@ set splitright
 augroup markdowngroup
     autocmd!
     autocmd BufRead,BufNewFile,BufWrite *.md setlocal filetype=markdown
-    autocmd FileType markdown setlocal spell
     autocmd FileType markdown setlocal spelllang=en_us
     autocmd FileType markdown setlocal complete+=kspell
 augroup END
@@ -263,6 +262,12 @@ augroup Kgroup
     autocmd!
     autocmd FileType python setlocal keywordprg=pydoc
     autocmd FileType vim setlocal keywordprg=:help
+augroup END
+
+augroup palantirgroup
+    autocmd!
+    autocmd BufRead,BufNewFile,BufWrite *.po setlocal filetype=po
+    autocmd FileType po setlocal noexpandtab
 augroup END
 
 if version >= 703

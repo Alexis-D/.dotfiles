@@ -37,3 +37,6 @@
 [submodule ".vim/bundle/jedi-vim"]
 	path = .vim/bundle/jedi-vim
 	url = https://github.com/davidhalter/jedi-vim.git
+[submodule ".vim/bundle/pig.vim"]
+	path = .vim/bundle/pig.vim
+	url = https://github.com/motus/pig.vim.git
