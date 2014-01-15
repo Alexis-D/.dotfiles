@@ -67,7 +67,7 @@ export HISTCONTROL=ignoreboth
 export HISTCONTROL=ignoredups
 export HISTFILESIZE=10000
 export HISTSIZE=10000
-export JAVA_HOME=`/usr/libexec/java_home`
+export JAVA_HOME=`/usr/libexec/java_home 2>/dev/null`
 # use gnu coreutils on Mac (and use the right man pages)
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export PATH="~/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:$PATH"
