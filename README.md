@@ -19,3 +19,5 @@ Other stuff that's worth installing, but not handled here:
 * [`sshfs`](http://fuse.sourceforge.net/sshfs.html)
 * [KeyRemap4MacBook](https://pqrs.org/macosx/keyremap4macbook/)
 * [`bash-completion`](http://bash-completion.alioth.debian.org/)
+* [Spectacle](http://spectacleapp.com/)
+* [z](https://github.com/rupa/z)
