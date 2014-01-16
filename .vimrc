@@ -208,6 +208,9 @@ runtime macros/justify.vim
 " smart %
 runtime macros/matchit.vim
 
+" man page inside vim
+runtime ftplugin/man.vim
+
 " TODOs!
 ia todo TODO(<cr><cr>):<esc>k!!whoami<cr>JVkJxh%la
 
