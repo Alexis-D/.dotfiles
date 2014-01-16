@@ -270,6 +270,12 @@ augroup palantirgroup
     autocmd FileType po setlocal noexpandtab
 augroup END
 
+augroup fugitivegroup
+    autocmd!
+    " automatically get rid of fugitive buffers
+    autocmd BufReadPost fugitive://* set bufhidden=delete
+augroup END
+
 if version >= 703
     " when encrypting any file, use the much stronger blowfish algorithm
     set cryptmethod=blowfish
