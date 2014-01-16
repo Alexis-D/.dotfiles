@@ -56,6 +56,7 @@ alias vcd='cd ~/Documents/Palantir/cloudera/'
 alias vvi='vim scp://cloudera@localhost:2222/'
 alias vssh='ssh cloudera@localhost -p 2222'
 alias vsshfs='sshfs cloudera@localhost:/home/cloudera ~/Documents/Palantir/cloudera/ -p 2222'
+alias dropbox='sshfs adaboville@dropbox-west.palantir.com:/ ~/Documents/Palantir/dropbox/'
 
 shopt -s checkwinsize
 shopt -s cdspell
@@ -84,6 +85,11 @@ fi
 # for MacOS
 if [ -f /usr/local/etc/bash_completion ]; then
     . /usr/local/etc/bash_completion
+fi
+
+Z=`brew --prefix 2>/dev/null`/etc/profile.d/z.sh
+if [ -f $Z ]; then
+    . $Z
 fi
 
 # use virtualenvwrapper, if available...
