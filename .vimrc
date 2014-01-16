@@ -90,15 +90,8 @@ augroup cursorlinegroup
     autocmd WinLeave * setlocal nocursorline
 augroup END
 
-" go to home by default
-cd
-" use vim-rooter for 'smart' cwd
-let g:rooter_patterns = ['.git/', '.hg/']
-let g:rooter_change_directory_for_non_project_files = 1
-augroup rootergroup
-    autocmd!
-    autocmd BufEnter * :Rooter
-augroup END
+" pwd = directory of current file
+set autochdir
 
 " disable entering ex mode through Q
 nnoremap Q <nop>
@@ -208,11 +201,6 @@ nnoremap <silent> <leader><leader> :CtrlPBuffer<cr>
 
 " easy file opening
 nnoremap <silent> <leader>e :CtrlP<cr>
-
-" open a file relative to current file directory
-cnoremap <expr> E getcmdtype() ==# ':' && getcmdpos() ==# 1 ? 'e %:p:h<C-i>' : 'E'
-cnoremap <expr> Vs getcmdtype() ==# ':' && getcmdpos() ==# 1 ? 'vs %:p:h<C-i>' : 'Vs'
-cnoremap <expr> Sp getcmdtype() ==# ':' && getcmdpos() ==# 1 ? 'sp %:p:h<C-i>' : 'Sp'
 
 " provides _j to justify text: a-w-e-s-o-m-e
 runtime macros/justify.vim
