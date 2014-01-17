@@ -139,6 +139,8 @@ hi User1 ctermfg=0 ctermbg=1
 set statusline=
 " filename
 set statusline+=%F\ 
+" git status
+set statusline+=%{fugitive#statusline()}
 " filetype
 set statusline+=%y
 " filename
