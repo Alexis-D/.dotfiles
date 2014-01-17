@@ -70,6 +70,8 @@ augroup indentgroup
     autocmd FileType javascript setlocal shiftwidth=2
     autocmd FileType ruby setlocal tabstop=2
     autocmd FileType ruby setlocal shiftwidth=2
+    autocmd BufRead,BufNewFile,BufWrite *.tsv setlocal filetype=tsv
+    autocmd FileType tsv setlocal noexpandtab
     autocmd BufWritePost *.py call Flake8()
 augroup END
 
