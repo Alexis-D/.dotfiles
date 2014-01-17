@@ -52,11 +52,9 @@ alias vi=vim
 alias p='cd ~/Documents/Palantir'
 alias 3.11='cd ~/Documents/Palantir/Mac_QS_3.11.1.2'
 alias 3.12='cd ~/Documents/Palantir/Mac_QS_3.12.4.1'
-alias vcd='cd ~/Documents/Palantir/cloudera/'
-alias vvi='vim scp://cloudera@localhost:2222/'
-alias vssh='ssh cloudera@localhost -p 2222'
-alias vsshfs='sshfs cloudera@localhost:/home/cloudera ~/Documents/Palantir/cloudera/ -p 2222'
-alias dropbox='sshfs adaboville@dropbox-west.palantir.com:/ ~/Documents/Palantir/dropbox/'
+alias pig='/opt/palantir/hadoopServer/bin/unix/pig.sh'
+alias hadoop='/opt/palantir/hadoopServer/bin/unix/hadoop.sh'
+alias hfs='/opt/palantir/hadoopServer/bin/unix/hadoop.sh fs'
 
 shopt -s checkwinsize
 shopt -s cdspell
