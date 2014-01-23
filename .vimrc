@@ -129,6 +129,12 @@ nnoremap <C-k> <C-w>k<C-w>_
 nnoremap <C-h> <C-w>h<C-w><bar>
 nnoremap <C-l> <C-w>l<C-w><bar>
 
+" works in macvim at least
+nnoremap <C-tab> :tabnext<cr>
+nnoremap <C-S-tab> :tabprevious<cr>
+inoremap <C-tab> <esc>:tabnext<cr>
+inoremap <C-S-tab> <esc>:tabprevious<cr>
+
 " also increment/decrement character with <C-a>, <C-x>
 set nrformats=hex,alpha
 
