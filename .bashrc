@@ -39,7 +39,8 @@ alias ?=pydoc
 alias ??=pydoc2
 alias doc='cd ~/Documents'
 alias down='cd ~/Downloads'
-alias grep='grep --color=auto -n'
+alias grep='egrep --color=auto -n -I'
+alias fgrep='fgrep --color=auto -n -I'
 alias killbg='kill %{1..1000} 2>/dev/null'
 alias ls='ls --color=auto'
 alias py2=python2
