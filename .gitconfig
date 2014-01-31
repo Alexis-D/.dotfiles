@@ -12,6 +12,7 @@
     br = branch
     me = merge
     st = status -s
+    pop = stash pop
     l = log --graph --all --date=relative\
         --pretty=format:'%C(cyan)%h%Creset %s %C(green)[%an/%cr]%Creset%C(red)%d%Creset'
     unstage = reset HEAD
