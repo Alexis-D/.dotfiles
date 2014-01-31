@@ -135,6 +135,9 @@ nnoremap <C-S-tab> :tabprevious<cr>
 inoremap <C-tab> <esc>:tabnext<cr>
 inoremap <C-S-tab> <esc>:tabprevious<cr>
 
+" no need for scrollbars
+set guioptions-=rL
+
 " also increment/decrement character with <C-a>, <C-x>
 set nrformats=hex,alpha
 
