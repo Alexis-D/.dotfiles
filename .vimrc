@@ -101,6 +101,8 @@ nnoremap Q <nop>
 " better j, k motion
 nnoremap j gj
 nnoremap k gk
+nnoremap gj j
+nnoremap gk k
 
 " c'mon use the 'normal' Y
 nnoremap Y y$
