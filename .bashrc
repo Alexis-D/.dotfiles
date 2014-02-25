@@ -51,11 +51,7 @@ alias vi=vim
 
 # Palantir's stuff
 alias p='cd ~/Documents/Palantir'
-alias 3.11='cd ~/Documents/Palantir/Mac_QS_3.11.1.2'
-alias 3.12='cd ~/Documents/Palantir/Mac_QS_3.12.4.1'
-alias pig='/opt/palantir/hadoopServer/bin/unix/pig.sh'
-alias hadoop='/opt/palantir/hadoopServer/bin/unix/hadoop.sh'
-alias hfs='/opt/palantir/hadoopServer/bin/unix/hadoop.sh fs'
+alias pdom='~/Documents/Palantir/Mac_QS_3.12.4.1/scripts/StartPDOM.command'
 
 shopt -s checkwinsize
 shopt -s cdspell

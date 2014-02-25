@@ -125,6 +125,9 @@ else
     colo xoria256
 end
 
+" easy window cycling
+nnoremap <Tab> <C-w>w
+
 " used to maximise a window when switching to it
 nnoremap <C-j> <C-w>j<C-w>_
 nnoremap <C-k> <C-w>k<C-w>_
