@@ -126,7 +126,7 @@ else
 end
 
 " easy window cycling
-nnoremap <Tab> <C-w>w
+nnoremap <S-Tab> <C-w>w
 
 " used to maximise a window when switching to it
 nnoremap <C-j> <C-w>j<C-w>_
@@ -213,6 +213,7 @@ nnoremap <silent> <leader>b :ls<cr>
 " autocomplete list for command mode
 set wildmenu
 set wildcharm=<C-i>
+set wildignore+=*.class,*/.git/*,*/.hg/*
 
 " easy buffer switching
 nnoremap <silent> <leader><leader> :CtrlPBuffer<cr>
