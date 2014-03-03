@@ -18,6 +18,7 @@
     unstage = reset HEAD
     last = log -1 HEAD
     update-all-submodules = submodule foreach git pull origin master
+    forget=update-index --assume-unchanged
 [core]
     editor = vim
 [merge]
