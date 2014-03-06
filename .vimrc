@@ -213,7 +213,7 @@ nnoremap <silent> <leader>b :ls<cr>
 " autocomplete list for command mode
 set wildmenu
 set wildcharm=<C-i>
-set wildignore+=*.class,*/.git/*,*/.hg/*
+set wildignore+=*.class,*.jar,*/.git/*,*/.hg/*
 
 " easy buffer switching
 nnoremap <silent> <leader><leader> :CtrlPBuffer<cr>
