@@ -42,16 +42,19 @@ alias down='cd ~/Downloads'
 alias grep='egrep --color=auto -n -I'
 alias fgrep='fgrep --color=auto -n -I'
 alias killbg='kill %{1..1000} 2>/dev/null'
+alias log="gawk '{ print strftime(\"%Y-%m-%d %H:%M:%S\") \" - \" \$0 }'"
 alias ls='ls --color=auto'
 alias py2=python2
 alias py3=python3
 alias py=python
+alias reload='history -n'
 alias venv=mkvirtualenv
 alias vi=vim
 
 # Palantir's stuff
 alias p='cd ~/Documents/Palantir'
 alias pdom='~/Documents/Palantir/Mac_QS_3.12.4.1/scripts/StartPDOM.command'
+alias gradle='./gradlew'
 
 shopt -s checkwinsize
 shopt -s cdspell
@@ -67,7 +70,7 @@ export JAVA_HOME=`/usr/libexec/java_home 2>/dev/null`
 # use gnu coreutils on Mac (and use the right man pages)
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export PATH="~/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:$PATH"
-export PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
+export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 export PYTHONSTARTUP=~/.pythonrc.py
 export WORKON_HOME=~/.virtualenvs
 export VIRTUALENVWRAPPER_HOOK_DIR=~/.virtualenvs_hooks
