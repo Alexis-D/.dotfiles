@@ -71,6 +71,7 @@ augroup indentgroup
     autocmd FileType ruby setlocal tabstop=2
     autocmd FileType ruby setlocal shiftwidth=2
     autocmd BufRead,BufNewFile,BufWrite *.tsv setlocal filetype=tsv
+    autocmd BufRead,BufNewFile,BufWrite *.pql setlocal filetype=haskell
     autocmd FileType tsv setlocal noexpandtab
     autocmd BufWritePost *.py call Flake8()
 augroup END
@@ -215,8 +216,8 @@ set wildmenu
 set wildcharm=<C-i>
 set wildignore+=*.class,*.jar,*/.git/*,*/.hg/*
 
-" easy buffer switching
-nnoremap <silent> <leader><leader> :CtrlPBuffer<cr>
+" access MRU files
+nnoremap <silent> <C-m> :CtrlPMRUFiles<cr>
 
 " easy file opening
 nnoremap <silent> <leader>e :CtrlP<cr>
