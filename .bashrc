@@ -22,6 +22,8 @@ ex()
             *.tbz2)      tar xjvf $1 ;;
             *.tgz)       tar xzvf $1 ;;
             *.zip)       unzip $1 ;;
+            *.par)       unzip $1 ;;
+            *.jar)       unzip $1 ;;
             *.Z)         uncompress $1 ;;
             *.7z)        7z x $1 ;;
             *)           echo -e "'$1' can't be uncompressed with ex()" ;;
@@ -39,6 +41,7 @@ alias ?=pydoc
 alias ??=pydoc2
 alias doc='cd ~/Documents'
 alias down='cd ~/Downloads'
+alias eclipse='/Applications/eclipse/Eclipse.app/Contents/MacOS/eclipse'
 alias grep='egrep --color=auto -n -I'
 alias fgrep='fgrep --color=auto -n -I'
 alias killbg='kill %{1..1000} 2>/dev/null'
@@ -54,7 +57,6 @@ alias vi=vim
 # Palantir's stuff
 alias p='cd ~/Documents/Palantir'
 alias pdom='~/Documents/Palantir/Mac_QS_3.12.4.1/scripts/StartPDOM.command'
-alias gradle='./gradlew'
 
 shopt -s checkwinsize
 shopt -s cdspell
@@ -106,7 +108,8 @@ stty stop '' # disable ^S
 
 too-long()
 {
-    pfad=${PWD/#$HOME/\~}
+    DIR=$(realpath -s $PWD)
+    pfad=${DIR/#$HOME/\~}
     if [[ ${#pfad} -lt 30 ]]; then
         echo -n "${pfad}"
     else 
