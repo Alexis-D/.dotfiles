@@ -255,6 +255,9 @@ let g:jedi#popup_on_dot = 0
 " use buffers rather than tabs:wq
 let g:jedi#use_tabs_not_buffers = 0
 
+" temporarily disable stuff that clutter copy/pasted stuff
+command! Clean set nonu! nornu! nolist!
+
 " readline-like motions for command mode
 cnoremap <C-a> <home>
 cnoremap <C-f> <right>
