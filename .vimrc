@@ -219,9 +219,6 @@ set wildignore+=*.class,*.jar,*/.git/*,*/.hg/*
 " access MRU files
 nnoremap <silent> <C-m> :CtrlPMRUFiles<cr>
 
-" easy file opening
-nnoremap <silent> <leader>e :CtrlP<cr>
-
 " provides _j to justify text: a-w-e-s-o-m-e
 runtime macros/justify.vim
 
@@ -295,6 +292,9 @@ if version >= 703
     " when encrypting any file, use the much stronger blowfish algorithm
     set cryptmethod=blowfish
 endif
+
+" investigate why do I need this, some day
+unmap <cr>
 
 " Let Pathogen magic happen
 execute pathogen#infect()
