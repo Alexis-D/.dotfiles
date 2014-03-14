@@ -254,6 +254,8 @@ let g:ctrlp_show_hidden = 1
 let g:jedi#popup_on_dot = 0
 " use buffers rather than tabs:wq
 let g:jedi#use_tabs_not_buffers = 0
+" do not show arguments when pressing (
+let g:jedi#show_call_signatures = 0
 
 " temporarily disable stuff that clutter copy/pasted stuff
 command! Clean set nonu! nornu! nolist!
@@ -274,7 +276,6 @@ augroup END
 " set program used by K in normal mode
 augroup Kgroup
     autocmd!
-    autocmd FileType python setlocal keywordprg=pydoc
     autocmd FileType vim setlocal keywordprg=:help
 augroup END
 
