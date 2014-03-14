@@ -108,8 +108,7 @@ stty stop '' # disable ^S
 
 too-long()
 {
-    DIR=$(realpath -s $PWD)
-    pfad=${DIR/#$HOME/\~}
+    pfad=${PWD/#$HOME/\~}
     if [[ ${#pfad} -lt 30 ]]; then
         echo -n "${pfad}"
     else 
@@ -118,7 +117,7 @@ too-long()
 }
 
 git-branch() {
-    __git_ps1 2>/dev/null
+    __git_ps1 ' (%s)' 2>/dev/null
 }
 
 check="\[\033[01;37m\]\$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\342\[\234\223\]\"; else echo \"\[\033[01;31m\]\342\[\234\227\]\"; fi)\[\e[0m\]"
