@@ -135,6 +135,12 @@ nnoremap <C-k> <C-w>k<C-w>_
 nnoremap <C-h> <C-w>h<C-w><bar>
 nnoremap <C-l> <C-w>l<C-w><bar>
 
+" snap! resizing w/o need for ^W
+nnoremap <S-left> 3<C-w><
+nnoremap <S-right> 3<C-w>>
+nnoremap <S-up> 3<C-w>+
+nnoremap <S-down> 3<C-w>-
+
 " works in macvim at least
 nnoremap <C-tab> :tabnext<cr>
 nnoremap <C-S-tab> :tabprevious<cr>
@@ -214,10 +220,10 @@ nnoremap <silent> <leader>b :ls<cr>
 " autocomplete list for command mode
 set wildmenu
 set wildcharm=<C-i>
-set wildignore+=*.class,*.jar,*/.git/*,*/.hg/*
+set wildignore+=*.class,*.jar,*/.git/*,*/.hg/*,*.DS_Store
 
 " access MRU files
-nnoremap <silent> <C-m> :CtrlPMRUFiles<cr>
+nnoremap <C-s> :CtrlPMRUFiles<cr>
 
 " provides _j to justify text: a-w-e-s-o-m-e
 runtime macros/justify.vim
@@ -230,6 +236,9 @@ runtime ftplugin/man.vim
 
 " TODOs!
 ia todo TODO(<cr><cr>):<esc>k!!whoami<cr>JVkJxh%la
+
+" FIXMEs!
+ia fixme FIXME(<cr><cr>):<esc>k!!whoami<cr>JVkJxh%la
 
 " open splits right & bottom, rather than left and top
 set splitbelow
@@ -256,6 +265,7 @@ let g:jedi#show_call_signatures = 0
 
 " temporarily disable stuff that clutter copy/pasted stuff
 command! Clean set nonu! nornu! nolist!
+nnoremap <backspace> :Clean<cr>
 
 " readline-like motions for command mode
 cnoremap <C-a> <home>
@@ -292,9 +302,6 @@ if version >= 703
     " when encrypting any file, use the much stronger blowfish algorithm
     set cryptmethod=blowfish
 endif
-
-" investigate why do I need this, some day
-unmap <cr>
 
 " Let Pathogen magic happen
 execute pathogen#infect()
