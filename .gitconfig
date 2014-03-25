@@ -6,19 +6,23 @@
     status = auto
     branch = auto
 [alias]
+    br = branch
     ci = commit
     co = checkout
     di = diff
-    br = branch
+    last = log -1 HEAD
     me = merge
-    st = status -s
     pop = stash pop
+    st = status -s
+
+    forget = update-index --assume-unchanged
     l = log --graph --all --date=relative\
         --pretty=format:'%C(cyan)%h%Creset %s %C(green)[%an/%cr]%Creset%C(red)%d%Creset'
     unstage = reset HEAD
-    last = log -1 HEAD
     update-all-submodules = submodule foreach git pull origin master
-    forget=update-index --assume-unchanged
+
+    remotes = remote -v
+    branches = branch -va
 [core]
     editor = vim
 [merge]
@@ -27,3 +31,5 @@
     default = current
 [push]
     default = current
+[rerere]
+    enabled = true
