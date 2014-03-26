@@ -15,14 +15,18 @@
     pop = stash pop
     st = status -s
 
+    edit-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; vim -p `f`"
+    add-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; git add `f`"
     forget = update-index --assume-unchanged
     l = log --graph --all --date=relative\
         --pretty=format:'%C(cyan)%h%Creset %s %C(green)[%an/%cr]%Creset%C(red)%d%Creset'
-    unstage = reset HEAD
     update-all-submodules = submodule foreach git pull origin master
 
-    remotes = remote -v
+    amend = commit --amend
     branches = branch -va
+    drop-last = reset --soft HEAD^
+    remotes = remote -v
+    unstage = reset HEAD
 [core]
     editor = vim
 [merge]
