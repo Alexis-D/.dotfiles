@@ -33,6 +33,28 @@ ex()
     fi
 }
 
+up-pg()
+{
+    cd ~/.pg
+    git submodule foreach --recursive git pull
+    find . -type f -regex '.*\.\(groovy\|java\|po\)' -regextype posix-egrep > cscope.files
+    cscope -b
+    cd $OLDPWD
+}
+
+pg()
+{
+    cd ~/.pg
+    if [[ $1 = "-i" ]]; then
+        shift
+        lower=`echo "$*" | tr '[:upper:]' '[:lower:]'`
+        cscope -CL6 "$lower" | sed s_^_~/.pg/_
+    else
+        cscope -L6 "$*" | sed s_^_~/.pg/_
+    fi
+    cd $OLDPWD
+}
+
 alias ....='cd ../../..'
 alias ...='cd ../..'
 alias ..='cd ..'
@@ -45,6 +67,7 @@ alias eclipse='/Applications/eclipse/Eclipse.app/Contents/MacOS/eclipse'
 alias grep='egrep --color=auto -n -I'
 alias fgrep='fgrep --color=auto -n -I'
 alias killbg='kill %{1..1000} 2>/dev/null'
+alias less='less -F -X' # Causes less to automatically exit if the entire file can be displayed on the first screen.
 alias log="gawk '{ print strftime(\"%Y-%m-%d %H:%M:%S\") \" - \" \$0 }'"
 alias ls='ls --color=auto'
 alias py2=python2
