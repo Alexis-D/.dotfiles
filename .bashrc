@@ -74,6 +74,7 @@ alias py2=python2
 alias py3=python3
 alias py=python
 alias reload='history -n'
+alias sed='sed -E'
 alias venv=mkvirtualenv
 alias vi=vim
 
