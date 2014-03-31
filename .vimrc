@@ -220,7 +220,7 @@ nnoremap <silent> <leader>b :ls<cr>
 " autocomplete list for command mode
 set wildmenu
 set wildcharm=<C-i>
-set wildignore+=*.class,*.jar,*/.git/*,*/.hg/*,*.DS_Store
+set wildignore+=*.class,*.jar,*/.git/*,*/.hg/*,*.DS_Store,*/build/*,*/ecbuild/*
 
 " access MRU files
 nnoremap <C-s> :CtrlPMRUFiles<cr>
