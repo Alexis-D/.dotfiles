@@ -255,6 +255,7 @@ augroup END
 " use current project dir or current dir
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_mruf_max = 1000
 
 " use <C-space> for completion
 let g:jedi#popup_on_dot = 0
