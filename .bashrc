@@ -90,8 +90,8 @@ shopt -s histappend
 export EDITOR=vim
 export HISTCONTROL=ignoreboth
 export HISTCONTROL=ignoredups
-export HISTFILESIZE=10000
-export HISTSIZE=10000
+export HISTFILESIZE=100000
+export HISTSIZE=100000
 export GREP_OPTIONS='--exclude-dir=.git --exclude-dir=build --exclude-dir=ecbuild --exclude-dir=.hg --exclude-dir=bin --exclude-dir=target'
 export JAVA_HOME=`/usr/libexec/java_home 2>/dev/null`
 # use gnu coreutils on Mac (and use the right man pages)
