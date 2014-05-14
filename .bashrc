@@ -55,6 +55,11 @@ pg()
     cd $OLDPWD
 }
 
+popen()
+{
+    qlmanage -p $1 &>/dev/null &
+}
+
 alias ....='cd ../../..'
 alias ...='cd ../..'
 alias ..='cd ..'
@@ -88,8 +93,8 @@ shopt -s globstar
 shopt -s histappend
 
 export EDITOR=vim
-export HISTCONTROL=ignoreboth
-export HISTCONTROL=ignoredups
+export HISTCONTROL=ignorespace
+export HISTTIMEFORMAT='%F %T - '
 export HISTFILESIZE=100000
 export HISTSIZE=100000
 export GREP_OPTIONS='--exclude-dir=.git --exclude-dir=build --exclude-dir=ecbuild --exclude-dir=.hg --exclude-dir=bin --exclude-dir=target'
