@@ -147,15 +147,19 @@ too-long()
 }
 
 git-branch() {
-    __git_ps1 ' (%s)' 2>/dev/null
+    plusminus=$'\u00b1'
+    dirty=$([[ `git status --porcelain 2>/dev/null` != '' ]] && echo -n " $plusminus")
+    __git_ps1 " (%s$dirty)" 2>/dev/null
 }
 
-check="\[\033[01;37m\]\$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\342\[\234\223\]\"; else echo \"\[\033[01;31m\]\342\[\234\227\]\"; fi)\[\e[0m\]"
+mark=$'\u2713'
+cross=$'\u2717'
+check="\[\033[01;37m\]\$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\"$mark; else echo \"\[\033[01;31m\]\"$cross; fi)\[\e[0m\]"
 time="\A"
 user="\[\e[1;37m\]\u\[\e[0m\]"
 host="\[\e[1;34m\]\h\[\e[0m\]"
 dir="\[\e[1;32m\]\$(too-long)\[\e[0m\]"
 branch="\[\e[1;36m\]\$(git-branch)\[\e[0m\]"
 root="\\$"
-# e.g. ✓ 16:33 <alexis @ alexis in ~/.dotfiles> (master) $
+# e.g. ✓ 16:33 <alexis @ alexis in ~/.dotfiles> (master ±) $
 PS1=" $check $time $user @ $host in $dir$branch $root "
