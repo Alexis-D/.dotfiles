@@ -26,6 +26,7 @@
     branches = branch -va
     drop-last = reset --soft HEAD^
     remotes = remote -v
+    tags = tag -l
     unstage = reset HEAD
 [core]
     editor = vim
