@@ -145,7 +145,7 @@ too-long()
     pfad=${PWD/#$HOME/\~}
     if [[ ${#pfad} -lt 30 ]]; then
         echo -n "${pfad}"
-    else 
+    else
         echo -n ".../`basename "$pfad"`"
     fi
 }
