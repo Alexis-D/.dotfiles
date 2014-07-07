@@ -274,6 +274,9 @@ cnoremap <C-f> <right>
 cnoremap <C-b> <left>
 cnoremap <C-h> <bs>
 
+" 'disable' netrw history
+let g:netrw_home = '/dev/null'
+
 augroup closepreviewgroup
     autocmd!
     " close omnicomplete preview window
