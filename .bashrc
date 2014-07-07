@@ -36,6 +36,9 @@ ex()
 # open vim help from the shell, e.g. :h holy-grail
 :h() { vim -c "help $1" -c only; }
 
+# use vim as man to be able to jump between man pages
+man() { vim -c "Man $*" -c only -c 'set nolist'; }
+
 up-pg()
 {
     cd ~/.pg
