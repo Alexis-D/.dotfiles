@@ -224,6 +224,7 @@ set wildignore+=*.class,*.jar,*/.git/*,*/.hg/*,*.DS_Store,*/build/*,*/ecbuild/*
 
 " access MRU files
 nnoremap <C-s> :CtrlPMRUFiles<cr>
+nnoremap <C-n> :CtrlPFunky<cr>
 
 " provides _j to justify text: a-w-e-s-o-m-e
 runtime macros/justify.vim
@@ -244,18 +245,28 @@ ia fixme FIXME(<cr><cr>):<esc>k!!whoami<cr>JVkJxh%la
 set splitbelow
 set splitright
 
+" make J smart about joining comments + better comments format
+set formatoptions+=jc
+
 " set the 'right' filetype for .md files
 augroup markdowngroup
     autocmd!
     autocmd BufRead,BufNewFile,BufWrite *.md setlocal filetype=markdown
     autocmd FileType markdown setlocal spelllang=en_us
     autocmd FileType markdown setlocal complete+=kspell
+    autocmd FileType markdown setlocal formatoptions+=n1
 augroup END
 
 " use current project dir or current dir
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_mruf_max = 1000
+let g:ctrlp_extensions = ['funky']
+let g:ctrlp_clear_cache_on_exit = 0
+
+if executable('ag')
+    let g:ctrlp_user_command = 'ag --nogroup --nocolor -g "" %s'
+endif
 
 " use <C-space> for completion
 let g:jedi#popup_on_dot = 0
