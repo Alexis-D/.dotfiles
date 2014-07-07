@@ -33,6 +33,9 @@ ex()
     fi
 }
 
+# open vim help from the shell, e.g. :h holy-grail
+:h() { vim -c "help $1" -c only; }
+
 up-pg()
 {
     cd ~/.pg
