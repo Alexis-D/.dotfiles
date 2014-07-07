@@ -75,7 +75,9 @@ alias eclipse='/Applications/eclipse/Eclipse.app/Contents/MacOS/eclipse'
 alias grep='egrep --color=auto -n -I'
 alias fgrep='fgrep --color=auto -n -I'
 alias killbg='kill %{1..1000} 2>/dev/null'
-alias less='less -F -X' # Causes less to automatically exit if the entire file can be displayed on the first screen.
+# Causes less to automatically exit if the entire file can be displayed on the
+# first screen. + display colors
+alias less='less -F -X -R'
 alias log="gawk '{ print strftime(\"%Y-%m-%d %H:%M:%S\") \" - \" \$0 }'"
 alias ls='ls --color=auto'
 alias py2=python2
