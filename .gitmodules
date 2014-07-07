@@ -58,3 +58,12 @@
 [submodule ".vim/bundle/vim-puppet"]
 	path = .vim/bundle/vim-puppet
 	url = https://github.com/rodjek/vim-puppet.git
+[submodule ".vim/bundle/groovyindent"]
+	path = .vim/bundle/groovyindent
+	url = https://github.com/vim-scripts/groovyindent.git
+[submodule ".vim/bundle/vim-characterize"]
+	path = .vim/bundle/vim-characterize
+	url = https://github.com/tpope/vim-characterize.git
+[submodule ".vim/bundle/ctrlp-funky"]
+	path = .vim/bundle/ctrlp-funky
+	url = https://github.com/tacahiroy/ctrlp-funky.git
