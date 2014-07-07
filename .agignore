@@ -1,0 +1,8 @@
+*.class
+*.jar
+*.pyc
+.DS_Store
+/.git/
+/.hg/
+/build/
+/ecbuild/
