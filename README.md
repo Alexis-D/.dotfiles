@@ -17,7 +17,8 @@ Other stuff that's worth installing, but not handled here:
 * [`ssh-installkeys`](http://www.catb.org/~esr/ssh-installkeys/) or `ssh-copy-id`
   ([man page](http://linux.die.net/man/1/ssh-copy-id))
 * [`sshfs`](http://fuse.sourceforge.net/sshfs.html)
-* [KeyRemap4MacBook](https://pqrs.org/macosx/keyremap4macbook/)
+* [Karabiner](https://pqrs.org/osx/karabiner/)
+  / [Seil](https://pqrs.org/osx/karabiner/seil.html.en)
 * [`bash-completion`](http://bash-completion.alioth.debian.org/)
 * [Spectacle](http://spectacleapp.com/)
 * [z](https://github.com/rupa/z)
