@@ -105,7 +105,7 @@ export HISTTIMEFORMAT='%F %T - '
 export HISTFILESIZE=100000
 export HISTSIZE=100000
 export GREP_OPTIONS='--color=auto -n -I --exclude-dir=.git --exclude-dir=build --exclude-dir=ecbuild --exclude-dir=.hg --exclude-dir=bin --exclude-dir=target'
-export JAVA_HOME=`/usr/libexec/java_home 2>/dev/null`
+export JAVA_HOME=$(/usr/libexec/java_home -v '1.6')
 # use gnu coreutils on Mac (and use the right man pages)
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export PATH="~/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:$PATH"
@@ -113,6 +113,18 @@ export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 export PYTHONSTARTUP=~/.pythonrc.py
 export WORKON_HOME=~/.virtualenvs
 export VIRTUALENVWRAPPER_HOOK_DIR=~/.virtualenvs_hooks
+
+java6() {
+    JAVA_HOME=`/usr/libexec/java_home -v '1.6'` "$@"
+}
+
+java7() {
+    JAVA_HOME=`/usr/libexec/java_home -v '1.7'` "$@"
+}
+
+java8() {
+    JAVA_HOME=`/usr/libexec/java_home -v '1.8'` "$@"
+}
 
 # use bash-completion if available (obviously...)
 if [ -f /etc/bash_completion ]; then
