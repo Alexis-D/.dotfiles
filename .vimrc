@@ -306,6 +306,11 @@ augroup palantirgroup
     autocmd FileType po setlocal noexpandtab
 augroup END
 
+augroup gradlegroup
+    autocmd!
+    autocmd BufRead,BufNewFile,BufWrite *.gradle setlocal filetype=groovy
+augroup END
+
 augroup fugitivegroup
     autocmd!
     " automatically get rid of fugitive buffers
