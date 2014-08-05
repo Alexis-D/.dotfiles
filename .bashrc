@@ -14,7 +14,7 @@ ex()
         case $1 in
             *.tar.bz2)   tar xjvf $1 ;;
             *.tar.gz)    tar xzvf $1 ;;
-            *.tar.xz)    tar Jxvf $1 ;;
+            *.tar.xz)    tar xJvf $1 ;;
             *.bz2)       bunzip2 $1 ;;
             *.rar)       unrar x $1 ;;
             *.gz)        gunzip $1 ;;
@@ -27,6 +27,26 @@ ex()
             *.Z)         uncompress $1 ;;
             *.7z)        7z x $1 ;;
             *)           echo -e "'$1' can't be uncompressed with ex()" ;;
+        esac
+    else
+        echo -e "\n'$1' is an invalid file"
+    fi
+}
+
+list()
+{
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)   tar tjf $1 ;;
+            *.tar.gz)    tar tzf $1 ;;
+            *.tar.xz)    tar tJf $1 ;;
+            *.tar)       tar tf $1 ;;
+            *.tbz2)      tar tjf $1 ;;
+            *.tgz)       tar tzf $1 ;;
+            *.zip)       unzip -l $1 ;;
+            *.par)       unzip -l $1 ;;
+            *.jar)       jar tf $1 ;;
+            *)           echo -e "'$1' can't be listed with list()" ;;
         esac
     else
         echo -e "\n'$1' is an invalid file"
