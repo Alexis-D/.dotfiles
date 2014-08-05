@@ -103,7 +103,8 @@ alias ??=pydoc2
 alias doc='cd ~/Documents'
 alias down='cd ~/Downloads'
 alias eclipse='/Applications/eclipse/Eclipse.app/Contents/MacOS/eclipse'
-alias grep=egrep
+alias grep='grep -E --color=auto -n -I'
+alias fgrep='grep --color=auto -n -I'
 alias killbg='kill %{1..1000} 2>/dev/null'
 # Causes less to automatically exit if the entire file can be displayed on the
 # first screen. + display colors
@@ -132,7 +133,8 @@ export HISTCONTROL=ignorespace
 export HISTTIMEFORMAT='%F %T - '
 export HISTFILESIZE=100000
 export HISTSIZE=100000
-export GREP_OPTIONS='--color=auto -n -I --exclude-dir=.git --exclude-dir=build --exclude-dir=ecbuild --exclude-dir=.hg --exclude-dir=bin --exclude-dir=target'
+export GRADLE_OPTS=-Xmx2g
+export GREP_OPTIONS='--exclude-dir=.git --exclude-dir=build --exclude-dir=ecbuild --exclude-dir=.hg --exclude-dir=bin --exclude-dir=target'
 export JAVA_HOME=$(/usr/libexec/java_home -v '1.6')
 # use gnu coreutils on Mac (and use the right man pages)
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
