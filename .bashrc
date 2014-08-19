@@ -162,8 +162,8 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # for MacOS
-if [ -f /usr/local/etc/bash_completion ]; then
-    . /usr/local/etc/bash_completion
+if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
+    . $(brew --prefix)/share/bash-completion/bash_completion
 fi
 
 Z=`brew --prefix 2>/dev/null`/etc/profile.d/z.sh
