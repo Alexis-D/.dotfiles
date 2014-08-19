@@ -67,3 +67,6 @@
 [submodule ".vim/bundle/ctrlp-funky"]
 	path = .vim/bundle/ctrlp-funky
 	url = https://github.com/tacahiroy/ctrlp-funky.git
+[submodule ".vim/bundle/scratch.vim"]
+	path = .vim/bundle/scratch.vim
+	url = https://github.com/vim-scripts/scratch.vim.git
