@@ -278,6 +278,9 @@ let g:jedi#show_call_signatures = 0
 command! Clean set nonu! nornu! nolist!
 nnoremap <backspace> :Clean<cr>
 
+cnoreabbrev <expr> G ((getcmdtype() is# ':' && getcmdline() is# 'G')?('ProjectRootExe grep'):('G'))
+
+
 " readline-like motions for command mode
 cnoremap <C-a> <home>
 cnoremap <C-f> <right>
