@@ -46,9 +46,6 @@
 [submodule ".vim/bundle/targets.vim"]
 	path = .vim/bundle/targets.vim
 	url = https://github.com/wellle/targets.vim.git
-[submodule ".vim/bundle/vim-yankstack"]
-	path = .vim/bundle/vim-yankstack
-	url = https://github.com/maxbrunsfeld/vim-yankstack.git
 [submodule ".vim/bundle/vim-visual-star-search"]
 	path = .vim/bundle/vim-visual-star-search
 	url = https://github.com/nelstrom/vim-visual-star-search.git
