@@ -137,8 +137,8 @@ export GRADLE_OPTS=-Xmx2g
 export GREP_OPTIONS='--exclude-dir=.git --exclude-dir=build --exclude-dir=ecbuild --exclude-dir=.hg --exclude-dir=bin --exclude-dir=target'
 export JAVA_HOME=$(/usr/libexec/java_home -v '1.6')
 # use gnu coreutils on Mac (and use the right man pages)
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-export PATH="~/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:$PATH"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
+export PATH="~/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/bin:$PATH"
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 export PYTHONSTARTUP=~/.pythonrc.py
 export WORKON_HOME=~/.virtualenvs
