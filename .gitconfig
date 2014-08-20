@@ -32,6 +32,7 @@
     editor = vim
 [merge]
     tool = vimdiff
+    ff = false
 [pull]
     default = current
 [push]
