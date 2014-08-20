@@ -261,7 +261,7 @@ augroup END
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_mruf_max = 1000
-let g:ctrlp_extensions = ['funky', 'line']
+let g:ctrlp_extensions = ['line']
 
 if executable('ag')
     let g:ctrlp_user_command = 'ag --nogroup --nocolor -g "" %s'
