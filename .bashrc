@@ -123,6 +123,12 @@ alias vi=vim
 alias p='cd ~/Documents/Palantir'
 alias pdom='~/Documents/Palantir/Mac_QS_3.12.4.1/scripts/StartPDOM.command'
 
+# tz are hard!
+alias fr='TZ=Europe/Paris date'
+alias ny='TZ=America/New_York date'
+alias sf='TZ=US/Pacific date'
+alias uk='TZ=Europe/London date'
+
 shopt -s checkwinsize
 shopt -s cdspell
 shopt -s globstar
