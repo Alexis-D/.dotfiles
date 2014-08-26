@@ -245,8 +245,13 @@ ia fixme FIXME(<cr><cr>):<esc>k!!whoami<cr>JVkJxh%la
 set splitbelow
 set splitright
 
-" make J smart about joining comments + better comments format
-set formatoptions+=jc
+" make J smart about joining comments
+if version >= 704 " introduced in 7.3.541
+    set formatoptions+=j
+endif
+
+" better comments format
+set formatoptions+=c
 
 " set the 'right' filetype for .md files
 augroup markdowngroup
