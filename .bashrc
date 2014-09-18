@@ -53,6 +53,45 @@ list()
     fi
 }
 
+bump() {
+    if [[ $# -ne 1 ]]
+    then
+        exit 1;
+    elif ! git rev-parse 2>&-
+    then
+        exit 2;
+    fi
+
+    currentVersion=$(git tag | egrep '^v\d+.\d+.\d+$' | sed 's/^v//' | sort -V | tail -n 1)
+
+    case $1 in
+        major)
+            newVersion=$(echo $currentVersion | awk -F. '{ printf "%d.0.0", $1 + 1 }') ;;
+
+        minor)
+            newVersion=$(echo $currentVersion | awk -F. '{ printf "%d.%d.0", $1, $2 + 1 }') ;;
+
+        patch)
+            newVersion=$(echo $currentVersion | awk -F. '{ printf "%d.%d.%d", $1, $2, $3 + 1 }') ;;
+
+        *) exit 3;;
+    esac
+
+    git checkout develop &&
+    git pull --rebase &&
+    git checkout master &&
+    git pull --rebase &&
+    git merge --no-ff -m "Update to $newVersion" develop &&
+    git tag v$newVersion &&
+    git push --tags &&
+    git push &&
+    git checkout develop &&
+    git merge --ff master &&
+    git push &&
+    echo &&
+    echo "Successfully bumped version to $newVersion"
+}
+
 # open vim help from the shell, e.g. :h holy-grail
 :h() { vim -c "help $1" -c only; }
 
