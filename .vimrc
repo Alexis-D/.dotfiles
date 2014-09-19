@@ -236,10 +236,10 @@ runtime macros/matchit.vim
 runtime ftplugin/man.vim
 
 " TODOs!
-ia todo TODO(<cr><cr>):<esc>k!!whoami<cr>JVkJxh%la
+ia todo TODO(<cr><esc>cc<cr><esc>cc):<esc>k!!whoami<cr>JVkJxh%la
 
 " FIXMEs!
-ia fixme FIXME(<cr><cr>):<esc>k!!whoami<cr>JVkJxh%la
+ia fixme FIXME(<cr><esc>cc<cr><esc>cc):<esc>k!!whoami<cr>JVkJxh%la
 
 " open splits right & bottom, rather than left and top
 set splitbelow
