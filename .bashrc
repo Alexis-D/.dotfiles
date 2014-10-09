@@ -56,10 +56,10 @@ list()
 bump() {
     if [[ $# -ne 1 ]]
     then
-        exit 1;
+        return 1
     elif ! git rev-parse 2>&-
     then
-        exit 2;
+        return 2
     fi
 
     currentVersion=$(git tag | egrep '^v\d+.\d+.\d+$' | sed 's/^v//' | sort -V | tail -n 1)
@@ -74,7 +74,7 @@ bump() {
         patch)
             newVersion=$(echo $currentVersion | awk -F. '{ printf "%d.%d.%d", $1, $2, $3 + 1 }') ;;
 
-        *) exit 3;;
+        *) return 3 ;;
     esac
 
     git checkout develop &&
