@@ -62,6 +62,7 @@ bump() {
         return 2
     fi
 
+    git fetch  # fetch to get the most recent tags
     currentVersion=$(git tag | egrep '^v\d+.\d+.\d+$' | sed 's/^v//' | sort -V | tail -n 1)
 
     case $1 in
