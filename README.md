@@ -10,7 +10,7 @@ Vim plugins are managed using Pathogen (see
 Remember to `sudo pip install flake8 virtualenv virtualenvwrapper` the 1st
 time to get some python-related tools.
 
-### Other stuff that's worth installing, but not handled here:
+### Other stuff that's worth installing, but not handled here
 
 * [Homebrew](http://brew.sh/) (remember to install `coreutils`, `findutils`,
   `gawk`, `gnu-sed`, `screen`, `python3`, `bash`, ...)
