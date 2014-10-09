@@ -22,3 +22,18 @@ Other stuff that's worth installing, but not handled here:
 * [`bash-completion`](http://bash-completion.alioth.debian.org/)
 * [Spectacle](http://spectacleapp.com/)
 * [z](https://github.com/rupa/z)
+
+### A note about keyboard configuration
+
+1. `System Preferences > Keyboard > Modifier Keys > Caps Lock (⇪) Key: ^ Control`
+2. Karabiner: `Control_L to Control_L (+ When you type Control_L only, send Escape)`
+3. Karabiner's `private.xml`:
+
+        <item>
+            <name>Shift Right to Control A</name>
+            <identifier>private.shift_right_to_ctrl_a</identifier>
+            <autogen>__KeyToKey__ KeyCode::SHIFT_R, KeyCode::A, ModifierFlag::CONTROL_L</autogen>
+        </item>
+
+4. Seil: Other Keys, `Change Escape: 80` (which is `F19`, and the use that to change
+   iTerm's preferences, `⌘,`).
