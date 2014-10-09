@@ -206,7 +206,7 @@ nnoremap <F5> :!./%<cr>
 " show tabs and trailing spaces
 set list
 " characters to use
-set listchars=tab:→\ ,trail:·
+set listchars=tab:→\ ,trail:·,extends:▶,precedes:◀
 
 " hide previous search results
 nnoremap <silent> <leader><space> :noh<cr>
