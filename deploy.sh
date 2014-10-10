@@ -41,26 +41,6 @@ fi
 ./karabiner.sh &>/dev/null
 ./seil.sh &>/dev/null
 
-# broken
-# if hash ioreg defaults
-# then
-#     prefix='com.apple.keyboard.modifiermapping.'
-#     ids=$(ioreg -n IOHIDKeyboard -r |
-#         \grep -e '"VendorID"' -e '"ProductID"' |
-#         \sed 'N;s/\n//' |
-#         \sed -E 's/.*"VendorID" = ([0-9]+).+"ProductID" = ([0-9]+).*/\1-\2-0/')
-# 
-#     for id in $ids
-#     do
-#         defaults -currentHost write -g $prefix$id '
-#         ({
-#             HIDKeyboardModifierMappingDst = 2;
-#             HIDKeyboardModifierMappingSrc = 0;
-#         })
-#         '
-#     done
-# fi
-
 echo "Restoring location..."
 cd $OLDPWD
 
