@@ -14,15 +14,55 @@ cd
 
 for i in $(ls -A $OLDPWD)
 do
-    if [ "$i" != "deploy.sh" -a "$i" != ".git" -a "$i" != "README.md" ]
+    if [ "$i" != "deploy.sh" -a "$i" != ".git" -a "$i" != "README.md" -a "$i" != "karabiner.sh" -a "$i" != "seil.sh" ]
     then
         echo "Symlinking $i..."
-        rm -rf $i && ln -s "$OLDPWD/$i"
+        rm -rf "$i" && ln -s "$OLDPWD/$i"
     fi
 done
 
-echo "Sourcing .bashrc..."
-. .bashrc
+echo "Restoring keyboard settings..."
+
+if [ -d ~/Library/Application\ Support/Karabiner/ ]
+then
+    cat > ~/Library/Application\ Support/Karabiner/private.xml <<EOF
+<?xml version="1.0"?>
+<root>
+    <item>
+        <name>Shift Right to Control A</name>
+        <identifier>private.shift_right_to_ctrl_a</identifier>
+        <autogen>__KeyToKey__ KeyCode::SHIFT_R, KeyCode::A, ModifierFlag::CONTROL_L</autogen>
+    </item>
+</root>
+EOF
+fi
+
+# /dev/null in case this is ran on non-MacOS
+./karabiner.sh &>/dev/null
+./seil.sh &>/dev/null
+
+# broken
+# if hash ioreg defaults
+# then
+#     prefix='com.apple.keyboard.modifiermapping.'
+#     ids=$(ioreg -n IOHIDKeyboard -r |
+#         \grep -e '"VendorID"' -e '"ProductID"' |
+#         \sed 'N;s/\n//' |
+#         \sed -E 's/.*"VendorID" = ([0-9]+).+"ProductID" = ([0-9]+).*/\1-\2-0/')
+# 
+#     for id in $ids
+#     do
+#         defaults -currentHost write -g $prefix$id '
+#         ({
+#             HIDKeyboardModifierMappingDst = 2;
+#             HIDKeyboardModifierMappingSrc = 0;
+#         })
+#         '
+#     done
+# fi
 
 echo "Restoring location..."
 cd $OLDPWD
+
+echo "Sourcing .bashrc..."
+. .bashrc
