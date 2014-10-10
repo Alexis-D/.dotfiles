@@ -30,6 +30,7 @@
     unstage = reset HEAD
 [core]
     editor = vim
+    excludesfile = ~/.cvsignore
 [merge]
     tool = vimdiff
     ff = false
