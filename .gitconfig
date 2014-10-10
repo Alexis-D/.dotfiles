@@ -18,6 +18,7 @@
     edit-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; vim -p `f`"
     add-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; git add `f`"
     forget = update-index --assume-unchanged
+    unforget = update-index --no-assume-unchanged
     l = log --graph --all --date=relative\
         --pretty=format:'%C(cyan)%h%Creset %s %C(green)[%an/%cr]%Creset%C(red)%d%Creset'
     update-all-submodules = submodule foreach git pull origin master
