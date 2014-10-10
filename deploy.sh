@@ -31,7 +31,7 @@ then
     <item>
         <name>Shift Right to Control A</name>
         <identifier>private.shift_right_to_ctrl_a</identifier>
-        <autogen>__KeyToKey__ KeyCode::SHIFT_R, KeyCode::A, ModifierFlag::CONTROL_L</autogen>
+        <autogen>__KeyOverlaidModifier__ KeyCode::SHIFT_R, KeyCode::SHIFT_R, KeyCode::A, ModifierFlag::CONTROL_L</autogen>
     </item>
 </root>
 EOF
