@@ -8,7 +8,7 @@ $cli set keycode_lang6 76
 /bin/echo -n .
 $cli set keycode_ssapex_l4 111
 /bin/echo -n .
-$cli set enable_capslock 0
+$cli set enable_capslock 1
 /bin/echo -n .
 $cli set enable_jis_xfer 0
 /bin/echo -n .
@@ -132,7 +132,7 @@ $cli set keycode_int7 76
 /bin/echo -n .
 $cli set enable_int8 0
 /bin/echo -n .
-$cli set keycode_capslock 51
+$cli set keycode_capslock 59
 /bin/echo -n .
 $cli set enable_option_r 0
 /bin/echo -n .

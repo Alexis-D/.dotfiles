@@ -26,6 +26,4 @@ time to get some python-related tools.
 
 ### A note about keyboard configuration
 
-1. `System Preferences > Keyboard > Modifier Keys > Caps Lock (⇪) Key:
-   ^ Control`
-2. Remaining steps are automated by `deploy.sh`.
+1. `deploy.sh` does all the magic.
