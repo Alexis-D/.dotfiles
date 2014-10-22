@@ -14,7 +14,7 @@ cd
 
 for i in $(ls -A $OLDPWD)
 do
-    if [ "$i" != "deploy.sh" -a "$i" != ".git" -a "$i" != "README.md" -a "$i" != "karabiner.sh" -a "$i" != "seil.sh" ]
+    if [ "$i" != "deploy.sh" -a "$i" != ".git" -a "$i" != "README.md" -a "$i" != "karabiner.sh" -a "$i" != "seil.sh" -a "$i" != "com.googlecode.iterm2.plist" ]
     then
         echo "Symlinking $i..."
         rm -rf "$i" && ln -s "$OLDPWD/$i"
