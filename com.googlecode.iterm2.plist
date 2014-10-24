@@ -25,7 +25,7 @@
 	<key>Control</key>
 	<integer>1</integer>
 	<key>CopyLastNewline</key>
-	<true/>
+	<false/>
 	<key>CopySelection</key>
 	<true/>
 	<key>Custom Color Presets</key>
@@ -671,13 +671,13 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>329 366 924 485 0 0 1920 1178 </string>
+	<string>2258 497 924 485 1440 0 2560 1418 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>768 786 384 129 0 0 1920 1178 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>2404 81 592 584 1920 -240 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1920 1200 0 0 1920 1178 </string>
+	<string>0 650 730 528 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1440 962 650 456 1440 0 2560 1418 </string>
 	<key>NeverWarnAboutShortLivedSessions_85F0F6F0-0433-4554-A113-1230F40F8865</key>
@@ -1485,7 +1485,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-10-21T22:48:34Z</date>
+	<date>2014-10-24T13:53:23Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
