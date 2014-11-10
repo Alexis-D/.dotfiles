@@ -55,9 +55,9 @@ list()
 
 bump() {
     if [[ $# -ne 1 ]]; then
-        return
+        return 1
     elif ! git rev-parse 2>/dev/null; then
-        return
+        return 2
     fi
 
     git fetch  # fetch to get the most recent tags
