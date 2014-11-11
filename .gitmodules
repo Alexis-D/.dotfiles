@@ -55,9 +55,6 @@
 [submodule ".vim/bundle/vim-characterize"]
 	path = .vim/bundle/vim-characterize
 	url = https://github.com/tpope/vim-characterize.git
-[submodule ".vim/bundle/scratch.vim"]
-	path = .vim/bundle/scratch.vim
-	url = https://github.com/vim-scripts/scratch.vim.git
 [submodule ".vim/bundle/vim-projectroot"]
 	path = .vim/bundle/vim-projectroot
 	url = https://github.com/dbakker/vim-projectroot.git
