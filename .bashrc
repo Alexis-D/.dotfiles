@@ -174,32 +174,21 @@ java8() {
 }
 
 # use bash-completion if available (obviously...)
-if [[ -f /etc/bash_completion ]]; then
-    . /etc/bash_completion
-fi
+[[ -f /etc/bash_completion ]] && . /etc/bash_completion
 
 if hash brew 2>/dev/null; then
     # for MacOS
     BASH_COMPLETION=$(brew --prefix)/share/bash-completion/bash_completion
-    if [[ -f "$BASH_COMPLETION" ]]; then
-        . "$BASH_COMPLETION"
-    fi
-
     Z=$(brew --prefix)/etc/profile.d/z.sh
-    if [[ -f "$Z" ]]; then
-        . "$Z"
-    fi
+    [[ -f "$BASH_COMPLETION" ]] && . "$BASH_COMPLETION"
+    [[ -f "$Z" ]] && . "$Z"
 fi
 
 # use virtualenvwrapper, if available...
-if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then
-    . /usr/local/bin/virtualenvwrapper.sh
-fi
+[[ -f /usr/local/bin/virtualenvwrapper.sh ]] && . /usr/local/bin/virtualenvwrapper.sh
 
 # for __git_ps1
-if [[ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]]; then
-    . /usr/local/etc/bash_completion.d/git-prompt.sh
-fi
+[[ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]] && . /usr/local/etc/bash_completion.d/git-prompt.sh
 
 bind 'set match-hidden-files off'
 bind \C-w:backward-kill-word
