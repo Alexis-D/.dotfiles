@@ -61,7 +61,7 @@ bump() {
     fi
 
     git fetch  # fetch to get the most recent tags
-    currentVersion=$(git tag | egrep '^v\d+.\d+.\d+$' | sed 's/^v//' | sort -V | tail -n 1)
+    local currentVersion=$(git tag | egrep '^v\d+.\d+.\d+$' | sed 's/^v//' | sort -V | tail -n 1)
 
     case $1 in
         major)
@@ -196,7 +196,7 @@ stty stop '' # disable ^S
 
 too-long()
 {
-    pfad=${PWD/#$HOME/\~}
+    local pfad=${PWD/#$HOME/\~}
     if [[ ${#pfad} -lt 30 ]]; then
         echo -n "${pfad}"
     else
@@ -205,8 +205,8 @@ too-long()
 }
 
 git-branch() {
-    plusminus=$'\u00b1'
-    dirty=$([[ `git status --porcelain 2>/dev/null` != '' ]] && echo -n " $plusminus")
+    local plusminus=$'\u00b1'
+    local dirty=$([[ `git status --porcelain 2>/dev/null` != '' ]] && echo -n " $plusminus")
     __git_ps1 " (%s$dirty)" 2>/dev/null
 }
 
