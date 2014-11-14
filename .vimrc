@@ -168,7 +168,7 @@ set statusline+=%F\
 set statusline+=%{fugitive#statusline()}
 " filetype
 set statusline+=%y
-" filename
+" modified flag
 set statusline+=%1*%m%*
 " readonly
 set statusline+=%1*%r%*
