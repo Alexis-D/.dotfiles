@@ -124,6 +124,8 @@ else
     set t_Co=256
     " colorscheme
     colo xoria256
+    " ~, precedes/extends listchars, and showbreaks
+    hi NonText term=bold ctermfg=12 gui=bold guifg=Blue
 end
 
 " easy window cycling
@@ -206,7 +208,10 @@ nnoremap <F5> :!./%<cr>
 " show tabs and trailing spaces
 set list
 " characters to use
-set listchars=tab:→\ ,trail:·,extends:▶,precedes:◀
+set listchars=tab:→\ ,trail:·,extends:»,precedes:«
+
+" hint that a line is to long
+set showbreak=»\ 
 
 " hide previous search results
 nnoremap <silent> <leader><space> :noh<cr>
@@ -283,8 +288,11 @@ let g:jedi#show_call_signatures = 0
 command! Clean set nonu! nornu! nolist!
 nnoremap <backspace> :Clean<cr>
 
+" grep from the root of a project
 cnoreabbrev <expr> G ((getcmdtype() is# ':' && getcmdline() is# 'G')?('ProjectRootExe grep'):('G'))
 
+" display all weird chars as a single char wide char
+command! CleanUpBytes :%s/\v([^[:print:]]|[^\x00-\x7f])/×/
 
 " readline-like motions for command mode
 cnoremap <C-a> <home>
