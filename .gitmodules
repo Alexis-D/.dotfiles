@@ -58,3 +58,6 @@
 [submodule ".vim/bundle/vim-projectroot"]
 	path = .vim/bundle/vim-projectroot
 	url = https://github.com/dbakker/vim-projectroot.git
+[submodule ".vim/bundle/vim-end-wise"]
+	path = .vim/bundle/vim-end-wise
+	url = https://github.com/tpope/vim-endwise.git
