@@ -105,6 +105,10 @@ popen()
     qlmanage -p $1 &>/dev/null &
 }
 
+nowrap() {
+    cut -c1-$COLUMNS
+}
+
 alias ....='cd ../../..'
 alias ...='cd ../..'
 alias ..='cd ..'
