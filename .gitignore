@@ -1,4 +1,5 @@
 .config/configstore/
 .config/fish/
 .config/gtk-2.0/
+.config/xm1/
 .vim/autoload/pathogen.vim
