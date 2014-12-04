@@ -122,6 +122,9 @@ alias down='cd ~/Downloads'
 alias eclipse='/Applications/eclipse/Eclipse.app/Contents/MacOS/eclipse'
 alias grep='grep -E --color=auto -n -I'
 alias fgrep='fgrep --color=auto -n -I'
+alias ipy='ipython --no-confirm-exit'
+alias ipy2='ipython2 --no-confirm-exit'
+alias ipy3='ipython3 --no-confirm-exit'
 alias killbg='kill %{1..1000} 2>/dev/null'
 # Causes less to automatically exit if the entire file can be displayed on the
 # first screen. + display colors
