@@ -73,7 +73,7 @@ augroup indentgroup
     autocmd BufRead,BufNewFile,BufWrite *.tsv setlocal filetype=tsv
     autocmd BufRead,BufNewFile,BufWrite *.pql setlocal filetype=haskell
     autocmd FileType tsv setlocal noexpandtab
-    autocmd BufWritePost *.py call Flake8()
+    " autocmd BufWritePost *.py call Flake8()
 augroup END
 
 " :h hidden
