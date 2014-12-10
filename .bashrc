@@ -120,6 +120,7 @@ alias ?=pydoc
 alias ??=pydoc2
 alias down='cd ~/Downloads'
 alias eclipse='/Applications/eclipse/Eclipse.app/Contents/MacOS/eclipse'
+alias fix-mbp-camera='sudo killall VDCAssistant'
 alias grep='grep -E --color=auto -n -I'
 alias fgrep='fgrep --color=auto -n -I'
 alias ipy='ipython --no-confirm-exit'
