@@ -165,8 +165,18 @@ export GRADLE_OPTS=-Xmx2g
 [[ -x /usr/libexec/java_home ]] && export JAVA_HOME=$(/usr/libexec/java_home -v '1.6')
 
 # use gnu coreutils on Mac (and use the right man pages)
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
-export PATH="~/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/bin:$PATH"
+export MANPATH="/usr/local/opt/coreutils/share/man/:$MANPATH"
+export MANPATH="/usr/local/opt/gnu-sed/share/man/:$MANPATH"
+export MANPATH="/usr/local/opt/grep/share/man/:$MANPATH"
+export MANPATH="/usr/local/opt/findutils/share/man/:$MANPATH"
+
+export PATH="~/bin:$PATH"
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/grep/bin/:$PATH"
+export PATH="/usr/local/opt/findutils/bin/:$PATH"
+export PATH="/usr/local/bin:$PATH"
+
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 export PYTHONSTARTUP=~/.pythonrc.py
 export WORKON_HOME=~/.virtualenvs
