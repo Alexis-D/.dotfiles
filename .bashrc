@@ -91,6 +91,18 @@ bump() {
     echo "Successfully bumped version to $newVersion"
 }
 
+java6() {
+    JAVA_HOME=`/usr/libexec/java_home -v '1.6'` "$@"
+}
+
+java7() {
+    JAVA_HOME=`/usr/libexec/java_home -v '1.7'` "$@"
+}
+
+java8() {
+    JAVA_HOME=`/usr/libexec/java_home -v '1.8'` "$@"
+}
+
 # Less Colors for Man Pages
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
 export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
@@ -179,20 +191,8 @@ export PATH="/usr/local/bin:$PATH"
 
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 export PYTHONSTARTUP=~/.pythonrc.py
-export WORKON_HOME=~/.virtualenvs
 export VIRTUALENVWRAPPER_HOOK_DIR=~/.virtualenvs_hooks
-
-java6() {
-    JAVA_HOME=`/usr/libexec/java_home -v '1.6'` "$@"
-}
-
-java7() {
-    JAVA_HOME=`/usr/libexec/java_home -v '1.7'` "$@"
-}
-
-java8() {
-    JAVA_HOME=`/usr/libexec/java_home -v '1.8'` "$@"
-}
+export WORKON_HOME=~/.virtualenvs
 
 # use bash-completion if available (obviously...)
 [[ -f /etc/bash_completion ]] && . /etc/bash_completion
