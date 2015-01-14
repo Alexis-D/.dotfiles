@@ -130,6 +130,7 @@ alias ..='cd ..'
 alias .='PS1= builtin .'
 alias ?=pydoc
 alias ??=pydoc2
+alias csv="awk -vFPAT='([^,]+)|(\"[^\"]+\")'"
 alias down='cd ~/Downloads'
 alias eclipse='/Applications/eclipse/Eclipse.app/Contents/MacOS/eclipse'
 alias fix-mbp-camera='sudo killall VDCAssistant'
