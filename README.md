@@ -27,3 +27,11 @@ time to get some python-related tools.
 ### A note about keyboard configuration
 
 1. `deploy.sh` does all the magic.
+
+### A note about Homebrew and useful formulas...
+
+    brew tap homebrew/dupes
+    brew tap homebrew/versions
+    brew install caskroom/cask/brew-cask
+
+    brew install bash homebrew/versions/bash-completion2 coreutils findutils gawk git gnu-sed homebrew/dupes/grep homebrew/dupes/gzip netcat homebrew/dupes/screen ssh-copy-id the_silver_searcher tofrodos tree unrar watch z
