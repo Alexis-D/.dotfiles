@@ -34,4 +34,5 @@ time to get some python-related tools.
     brew tap homebrew/versions
     brew install caskroom/cask/brew-cask
 
-    brew install bash homebrew/versions/bash-completion2 coreutils findutils gawk git gnu-sed homebrew/dupes/grep homebrew/dupes/gzip netcat homebrew/dupes/screen ssh-copy-id the_silver_searcher tofrodos tree unrar watch z
+    brew install bash homebrew/versions/bash-completion2 coreutils findutils gawk git gnu-sed homebrew/dupes/grep homebrew/dupes/gzip netcat python python3 homebrew/dupes/screen ssh-copy-id the_silver_searcher tofrodos tree unrar watch z
+    brew cask install flux karabiner seil spectacle
