@@ -121,6 +121,23 @@ nowrap() {
     cut -c1-$COLUMNS
 }
 
+kgrep() {
+    # usage: kgrep [-i] [-9] pattern
+    if [[ $# == 0 ]]; then
+        return 1
+    fi
+
+    until [[ $# == 1 ]]; do
+        [[ $1 = "-i" ]] && i=-i
+        [[ $1 = "-9" ]] && nine=-9
+        shift
+    done
+
+    pattern="$1"
+
+    ps aux | \grep $i "[${pattern:0:1}]${pattern:1}" | awk '{print $2}' | xargs kill $nine
+}
+
 # http://stackoverflow.com/a/16178979/2813687
 color() (set -o pipefail; "$@" 2>&1>&3 | sed $'s,.*,\e[31m&\e[m,' >&2)3>&1
 
