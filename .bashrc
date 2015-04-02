@@ -193,7 +193,7 @@ export HISTTIMEFORMAT='%F %T - '
 export HISTFILESIZE=100000
 export HISTSIZE=100000
 export GRADLE_OPTS=-Xmx2g
-[[ -x /usr/libexec/java_home ]] && export JAVA_HOME=$(/usr/libexec/java_home -v '1.6')
+[[ -x /usr/libexec/java_home ]] && export JAVA_HOME=$(/usr/libexec/java_home -v '1.7')
 
 # use gnu coreutils on Mac (and use the right man pages)
 export MANPATH="/usr/local/opt/coreutils/share/man/:$MANPATH"
