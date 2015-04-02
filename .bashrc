@@ -179,6 +179,7 @@ alias pdom='~/Documents/Palantir/Mac_QS_3.12.4.1/scripts/StartPDOM.command'
 alias fr='TZ=Europe/Paris date'
 alias ny='TZ=America/New_York date'
 alias sf='TZ=US/Pacific date'
+alias tk='TZ=Asia/Tokyo date'
 alias uk='TZ=Europe/London date'
 
 shopt -s checkwinsize
