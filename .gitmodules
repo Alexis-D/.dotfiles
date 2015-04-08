@@ -58,3 +58,9 @@
 [submodule ".vim/bundle/vim-end-wise"]
 	path = .vim/bundle/vim-end-wise
 	url = https://github.com/tpope/vim-endwise.git
+[submodule ".vim/bundle/vim-sleuth"]
+	path = .vim/bundle/vim-sleuth
+	url = https://github.com/tpope/vim-sleuth.git
+[submodule ".vim/bundle/tabline.vim"]
+	path = .vim/bundle/tabline.vim
+	url = https://github.com/mkitt/tabline.vim.git
