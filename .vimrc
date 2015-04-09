@@ -229,7 +229,6 @@ set wildignore+=*.class,*.jar,*/.git/*,*/.hg/*,*.DS_Store,*/build/*,*/ecbuild/*
 
 " access MRU files
 nnoremap <C-s> :CtrlPMRUFiles<cr>
-nnoremap <C-n> :CtrlPFunky<cr>
 
 " provides _j to justify text: a-w-e-s-o-m-e
 runtime macros/justify.vim
@@ -273,6 +272,7 @@ let g:ctrlp_show_hidden = 1
 let g:ctrlp_mruf_max = 1000
 let g:ctrlp_extensions = ['line']
 let g:ctrlp_root_markers=['.root']
+let g:ctrlp_mruf_exclude = '.*\.fugitiveblame$'
 
 if executable('ag')
     let g:ctrlp_user_command = 'ag --nogroup --nocolor -g "" %s'
