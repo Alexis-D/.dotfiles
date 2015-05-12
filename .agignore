@@ -2,7 +2,8 @@
 *.jar
 *.pyc
 .DS_Store
-/.git/
-/.hg/
-/build/
-/ecbuild/
+.git
+.hg
+build
+ecbuild
+node_modules
