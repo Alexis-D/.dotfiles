@@ -7,7 +7,7 @@
 Vim plugins are managed using Pathogen (see
 [tpope/vim-pathogen](https://github.com/tpope/vim-pathogen)).
 
-Remember to `sudo pip install flake8 virtualenv virtualenvwrapper` the 1st
+Remember to `sudo pip install data_hacks flake8 virtualenv virtualenvwrapper` the 1st
 time to get some python-related tools.
 
 ### Other stuff that's worth installing, but not handled here
@@ -34,5 +34,5 @@ time to get some python-related tools.
     brew tap homebrew/versions
     brew install caskroom/cask/brew-cask
 
-    brew install bash homebrew/versions/bash-completion2 coreutils findutils gawk git gnu-sed homebrew/dupes/grep homebrew/dupes/gzip netcat python python3 homebrew/dupes/screen ssh-copy-id the_silver_searcher tofrodos tree unrar watch youtube-dl z
+    brew install bash homebrew/versions/bash-completion2 coreutils distribution findutils gawk git gnu-sed homebrew/dupes/grep homebrew/dupes/gzip netcat python python3 homebrew/dupes/screen ssh-copy-id the_silver_searcher tofrodos tree unrar watch youtube-dl z
     brew cask install caffeine flux karabiner seil spectacle
