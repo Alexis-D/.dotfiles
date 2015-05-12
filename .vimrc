@@ -301,15 +301,21 @@ cnoremap <C-f> <right>
 cnoremap <C-b> <left>
 cnoremap <C-h> <bs>
 
+" switch with the last tab (similar <C-^> for buffers)
+" http://stackoverflow.com/a/2120168/2813687
+let g:lasttab = 1
+nnoremap <leader><leader> :exe "tabn ".g:lasttab<CR>
+au TabLeave * let g:lasttab = tabpagenr()
+
 " 'disable' netrw history
 let g:netrw_home = '/dev/null'
 
-augroup closepreviewgroup
-    autocmd!
-    " close omnicomplete preview window
-    autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-    autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-augroup END
+" augroup closepreviewgroup
+"     autocmd!
+"     " close omnicomplete preview window
+"     autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+"     autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+" augroup END
 
 " set program used by K in normal mode
 augroup Kgroup
