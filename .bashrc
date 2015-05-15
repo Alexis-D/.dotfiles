@@ -168,6 +168,7 @@ alias py=python
 alias reload='history -n'
 alias sed='sed -E'
 alias stitle='echo -ne "\033k$HOSTNAME\033\\"'
+alias tree='tree -C'
 alias venv=mkvirtualenv
 alias vi=vim
 
