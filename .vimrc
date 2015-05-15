@@ -276,6 +276,7 @@ let g:ctrlp_mruf_exclude = '.*\.fugitiveblame$'
 
 if executable('ag')
     let g:ctrlp_user_command = 'ag --nogroup --nocolor -g "" %s'
+    set grepprg=ag\ --nogroup\ --nocolor
 endif
 
 " use <C-space> for completion
