@@ -65,13 +65,13 @@ bump() {
 
     case $1 in
         major)
-            newVersion=$(echo $currentVersion | awk -F. '{ printf "%d.0.0", $1 + 1 }') ;;
+            local newVersion=$(echo "$currentVersion" | awk -F. '{ printf "%d.0.0", $1 + 1 }') ;;
 
         minor)
-            newVersion=$(echo $currentVersion | awk -F. '{ printf "%d.%d.0", $1, $2 + 1 }') ;;
+            local newVersion=$(echo "$currentVersion" | awk -F. '{ printf "%d.%d.0", $1, $2 + 1 }') ;;
 
         patch)
-            newVersion=$(echo $currentVersion | awk -F. '{ printf "%d.%d.%d", $1, $2, $3 + 1 }') ;;
+            local newVersion=$(echo "$currentVersion" | awk -F. '{ printf "%d.%d.%d", $1, $2, $3 + 1 }') ;;
 
         *) return 3 ;;
     esac
@@ -81,7 +81,7 @@ bump() {
     git checkout master &&
     git pull --rebase &&
     git merge --no-ff -m "Update to $newVersion" develop &&
-    git tag v$newVersion &&
+    git tag "v$newVersion" &&
     git push --tags &&
     git push &&
     git checkout develop &&
@@ -92,15 +92,15 @@ bump() {
 }
 
 java6() {
-    JAVA_HOME=`/usr/libexec/java_home -v '1.6'` "$@"
+    JAVA_HOME=$(/usr/libexec/java_home -v '1.6') "$@"
 }
 
 java7() {
-    JAVA_HOME=`/usr/libexec/java_home -v '1.7'` "$@"
+    JAVA_HOME=$(/usr/libexec/java_home -v '1.7') "$@"
 }
 
 java8() {
-    JAVA_HOME=`/usr/libexec/java_home -v '1.8'` "$@"
+    JAVA_HOME=$(/usr/libexec/java_home -v '1.8') "$@"
 }
 
 # Less Colors for Man Pages
@@ -114,28 +114,11 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
 popen()
 {
-    qlmanage -p $1 &>/dev/null &
+    qlmanage -p "$1" &>/dev/null &
 }
 
 nowrap() {
     cut -c1-$COLUMNS
-}
-
-kgrep() {
-    # usage: kgrep [-i] [-9] pattern
-    if [[ $# == 0 ]]; then
-        return 1
-    fi
-
-    until [[ $# == 1 ]]; do
-        [[ $1 = "-i" ]] && i=-i
-        [[ $1 = "-9" ]] && nine=-9
-        shift
-    done
-
-    pattern="$1"
-
-    ps aux | \grep $i "[${pattern:0:1}]${pattern:1}" | awk '{print $2}' | xargs kill $nine
 }
 
 # http://stackoverflow.com/a/16178979/2813687
@@ -148,7 +131,6 @@ alias .='PS1= builtin .'
 alias ?=pydoc
 alias ??=pydoc2
 alias csv="awk -vFPAT='([^,]+)|(\"[^\"]+\")'"
-alias down='cd ~/Downloads'
 alias eclipse='/Applications/eclipse/Eclipse.app/Contents/MacOS/eclipse'
 alias fix-mbp-camera='sudo killall VDCAssistant'
 alias grep='grep -E --color=auto -n -I'
@@ -156,11 +138,9 @@ alias fgrep='fgrep --color=auto -n -I'
 alias ipy='ipython --no-confirm-exit'
 alias ipy2='ipython2 --no-confirm-exit'
 alias ipy3='ipython3 --no-confirm-exit'
-alias killbg='kill %{1..1000} 2>/dev/null'
 # Causes less to automatically exit if the entire file can be displayed on the
 # first screen. + display colors
 alias less='less -F -X -R'
-alias log="gawk '{ print strftime(\"%Y-%m-%d %H:%M:%S\") \" - \" \$0 }'"
 alias ls='ls --color=auto'
 alias py2=python2
 alias py3=python3
@@ -171,10 +151,6 @@ alias stitle='echo -ne "\033k$HOSTNAME\033\\"'
 alias tree='tree -C'
 alias venv=mkvirtualenv
 alias vi=vim
-
-# Palantir's stuff
-alias p='cd ~/Documents/Palantir'
-alias pdom='~/Documents/Palantir/Mac_QS_3.12.4.1/scripts/StartPDOM.command'
 
 # tz are hard!
 alias fr='TZ=Europe/Paris date'
@@ -203,7 +179,7 @@ export MANPATH="/usr/local/opt/gnu-sed/share/man/:$MANPATH"
 export MANPATH="/usr/local/opt/grep/share/man/:$MANPATH"
 export MANPATH="/usr/local/opt/findutils/share/man/:$MANPATH"
 
-export PATH="~/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
@@ -234,7 +210,7 @@ fi
 [[ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]] && . /usr/local/etc/bash_completion.d/git-prompt.sh
 
 bind 'set match-hidden-files off'
-bind \C-w:backward-kill-word
+bind C-w:backward-kill-word
 stty stop '' # disable ^S
 
 too-long()
@@ -243,13 +219,13 @@ too-long()
     if [[ ${#pfad} -lt 30 ]]; then
         echo -n "${pfad}"
     else
-        echo -n ".../`basename "$pfad"`"
+        echo -n ".../$(basename "$pfad")"
     fi
 }
 
 git-branch() {
     local plusminus=$'\u00b1'
-    local dirty=$([[ `git status --porcelain 2>/dev/null` != '' ]] && echo -n " $plusminus")
+    local dirty=$([[ $(git status --porcelain 2>/dev/null) != '' ]] && echo -n " $plusminus")
     __git_ps1 " (%s$dirty)" 2>/dev/null
 }
 
