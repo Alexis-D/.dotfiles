@@ -1,0 +1,4 @@
+source ~/.vimrc
+nnoremap ,o :action OptimizeImports<cr>
+nnoremap ,r :action ReformatCode<cr>
+nnoremap ,c :action RenameElement<cr>
