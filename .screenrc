@@ -1,4 +1,15 @@
 startup_message off
-caption always "%{= kw}%-w%{= BW}[%n %t]%{-}%+w %-= %?%E%{= kM}%?%?%FACTIVE - %?@%H - %LD %d %LM - %c%{-}"
+caption always "%?%F%{= gk}%:%{= kc}%?%-w%?%F%{= mk}%:%{= kc}%?[%n %t]%?%F%{= gk}%:%{= kc}%?%+w %-= @%H - %LD %d %LM - %c%{-}"
+
 vbell off
 altscreen on
+shell bash
+
+# F2 puts Screen into resize mode. Resize regions using hjkl keys.
+bindkey ^Ar eval "command -c rsz" # enter resize mode
+
+# use hjkl keys to resize regions
+bind -c rsz h eval "resize -h -1" "command -c rsz"
+bind -c rsz j eval "resize -v -1" "command -c rsz"
+bind -c rsz k eval "resize -v +1" "command -c rsz"
+bind -c rsz l eval "resize -h +1" "command -c rsz"
