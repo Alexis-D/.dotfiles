@@ -5,25 +5,29 @@ git pull
 
 echo "Getting Pathogen..."
 mkdir -p .vim/autoload
-curl -Sso .vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+curl -LSso .vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
 echo "Init/update submodules..."
 git submodule update --init --recursive
 
 cd
-
-for i in $(ls -A $OLDPWD)
+find "$OLDPWD"\
+    -maxdepth 1\
+    -mindepth 1\
+    ! -name deploy.sh\
+    ! -name .git\
+    ! -name README.md\
+    ! -name karabiner.sh\
+    ! -name seil.sh\
+    ! -name com.googlecode.iterm2.plist\
+    -print0 | while IFS= read -d $'\0' -r file
 do
-    if [ "$i" != "deploy.sh" -a "$i" != ".git" -a "$i" != "README.md" -a "$i" != "karabiner.sh" -a "$i" != "seil.sh" -a "$i" != "com.googlecode.iterm2.plist" ]
-    then
-        echo "Symlinking $i..."
-        rm -rf "$i" && ln -s "$OLDPWD/$i"
-    fi
+    rm -rf "${file##*/}" && ln -s "$file"
 done
 
 echo "Restoring keyboard settings..."
 
-if [ -d ~/Library/Application\ Support/Karabiner/ ]
+if [[ -d ~/Library/Application\ Support/Karabiner/ ]]
 then
     cat > ~/Library/Application\ Support/Karabiner/private.xml <<EOF
 <?xml version="1.0"?>
@@ -70,6 +74,39 @@ then
             KeyCode::QUOTE, ModifierFlag::SHIFT_L
         </autogen>
     </item>
+    <item>
+        <name>Simultaneous ui triggers ^A→</name>
+        <identifier>private.ui_to_ctrla_tab</identifier>
+        <only>{{UBIQUITOUS_VIM_BINDINGS_IGNORE_APPS}}</only>
+        <autogen>
+            __SimultaneousKeyPresses__
+            KeyCode::U, KeyCode::I,
+            KeyCode::A, ModifierFlag::CONTROL_L,
+            KeyCode::TAB
+        </autogen>
+    </item>
+    <item>
+        <name>Simultaneous hj triggers ^Ap</name>
+        <identifier>private.hj_to_ctrla_p</identifier>
+        <only>{{UBIQUITOUS_VIM_BINDINGS_IGNORE_APPS}}</only>
+        <autogen>
+            __SimultaneousKeyPresses__
+            KeyCode::H, KeyCode::J,
+            KeyCode::A, ModifierFlag::CONTROL_L,
+            KeyCode::P
+        </autogen>
+    </item>
+    <item>
+        <name>Simultaneous kl triggers ^An</name>
+        <identifier>private.kl_to_ctrla_n</identifier>
+        <only>{{UBIQUITOUS_VIM_BINDINGS_IGNORE_APPS}}</only>
+        <autogen>
+            __SimultaneousKeyPresses__
+            KeyCode::K, KeyCode::L,
+            KeyCode::A, ModifierFlag::CONTROL_L,
+            KeyCode::N
+        </autogen>
+    </item>
 </root>
 EOF
 fi
@@ -79,7 +116,7 @@ fi
 ./seil.sh &>/dev/null
 
 echo "Restoring location..."
-cd $OLDPWD
+cd - &>/dev/null
 
-echo "Sourcing .bashrc..."
-. .bashrc
+echo "Sourcing ~/.bashrc..."
+. ~/.bashrc
