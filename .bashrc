@@ -265,5 +265,5 @@ stitle() {
 [[ "$TERM_PROGRAM" != "iTerm.app" ]] && stitle
 
 ((BASH_MAJOR_VERSION < 4)) && (
-    echo -n $'\nBash < 4.x; some features'
+    echo -n $'\nBash < 4.x; some features '
     echo $'(e.g. advanced autocompletion) won\'t be available.\n') || true
