@@ -1,5 +1,7 @@
 # Check for an interactive session
-[ -z "$PS1" ] && return
+[[ -z "$PS1" ]] && return
+
+BASH_MAJOR_VERSION=${BASH_VERSION%%.*}
 
 # create an archive from a directory
 mktar() { tar cvf  "${1%%/}.tar"     "${1%%/}/"; }
@@ -8,8 +10,7 @@ mktbz() { tar cvjf "${1%%/}.tar.bz2" "${1%%/}/"; }
 
 # ex - extract an archive
 # usage: ex <file>
-ex()
-{
+ex() {
     if [[ -f "$1" ]]; then
         case "$1" in
             *.tar.bz2)   tar xjvf "$1" ;;
@@ -33,8 +34,7 @@ ex()
     fi
 }
 
-list()
-{
+list() {
     if [[ -f "$1" ]]; then
         case "$1" in
             *.tar.bz2)   tar tjf "$1" ;;
@@ -61,17 +61,24 @@ bump() {
     fi
 
     git fetch  # fetch to get the most recent tags
-    local currentVersion=$(git tag | egrep '^v\d+.\d+.\d+$' | sed 's/^v//' | sort -V | tail -n 1)
+    local currentVersion=$(git tag
+        | egrep '^v\d+.\d+.\d+$'
+        | sed 's/^v//'
+        | sort -V
+        | tail -n 1)
 
     case $1 in
         major)
-            local newVersion=$(echo "$currentVersion" | awk -F. '{ printf "%d.0.0", $1 + 1 }') ;;
+            local newVersion=$(echo "$currentVersion"
+                | awk -F. '{ printf "%d.0.0", $1 + 1 }') ;;
 
         minor)
-            local newVersion=$(echo "$currentVersion" | awk -F. '{ printf "%d.%d.0", $1, $2 + 1 }') ;;
+            local newVersion=$(echo "$currentVersion"
+                | awk -F. '{ printf "%d.%d.0", $1, $2 + 1 }') ;;
 
         patch)
-            local newVersion=$(echo "$currentVersion" | awk -F. '{ printf "%d.%d.%d", $1, $2, $3 + 1 }') ;;
+            local newVersion=$(echo "$currentVersion"
+                | awk -F. '{ printf "%d.%d.%d", $1, $2, $3 + 1 }') ;;
 
         *) return 3 ;;
     esac
@@ -112,8 +119,7 @@ export LESS_TERMCAP_so=$'\E[1;31m'        # begin standout-mode - info box
 export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
-popen()
-{
+popen() {
     qlmanage -p "$1" &>/dev/null &
 }
 
@@ -147,7 +153,6 @@ alias py3=python3
 alias py=python
 alias reload='history -n'
 alias sed='sed -E'
-alias stitle='echo -ne "\033k$HOSTNAME\033\\"'
 alias tree='tree -C'
 alias venv=mkvirtualenv
 alias vi=vim
@@ -162,7 +167,7 @@ alias utc='TZ=UTC date'
 
 shopt -s checkwinsize
 shopt -s cdspell
-shopt -s globstar
+(( BASH_MAJOR_VERSION > 3 )) && shopt -s globstar
 shopt -s histappend
 
 export EDITOR=vim
@@ -171,7 +176,8 @@ export HISTTIMEFORMAT='%F %T - '
 export HISTFILESIZE=100000
 export HISTSIZE=100000
 export GRADLE_OPTS=-Xmx2g
-[[ -x /usr/libexec/java_home ]] && export JAVA_HOME=$(/usr/libexec/java_home -v '1.7')
+[[ -x /usr/libexec/java_home ]] &&
+    export JAVA_HOME=$(/usr/libexec/java_home -v '1.7')
 
 # use gnu coreutils on Mac (and use the right man pages)
 export MANPATH="/usr/local/opt/coreutils/share/man/:$MANPATH"
@@ -193,28 +199,31 @@ export VIRTUALENVWRAPPER_HOOK_DIR=~/.virtualenvs_hooks
 export WORKON_HOME=~/.virtualenvs
 
 # use bash-completion if available (obviously...)
-[[ -f /etc/bash_completion ]] && . /etc/bash_completion
+((BASH_MAJOR_VERSION > 3)) && [[ -f /etc/bash_completion ]] &&
+    . /etc/bash_completion
 
 if hash brew 2>/dev/null; then
     # for MacOS
     BASH_COMPLETION=$(brew --prefix)/share/bash-completion/bash_completion
     Z=$(brew --prefix)/etc/profile.d/z.sh
-    [[ -f "$BASH_COMPLETION" ]] && . "$BASH_COMPLETION"
+    ((BASH_MAJOR_VERSION > 3)) && [[ -f "$BASH_COMPLETION" ]] &&
+        . "$BASH_COMPLETION"
     [[ -f "$Z" ]] && . "$Z"
 fi
 
 # use virtualenvwrapper, if available...
-[[ -f /usr/local/bin/virtualenvwrapper.sh ]] && . /usr/local/bin/virtualenvwrapper.sh
+[[ -f /usr/local/bin/virtualenvwrapper.sh ]] &&
+    . /usr/local/bin/virtualenvwrapper.sh
 
 # for __git_ps1
-[[ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]] && . /usr/local/etc/bash_completion.d/git-prompt.sh
+[[ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]] &&
+    . /usr/local/etc/bash_completion.d/git-prompt.sh
 
 bind 'set match-hidden-files off'
 bind C-w:backward-kill-word
 stty stop '' # disable ^S
 
-too-long()
-{
+too-long() {
     local pfad=${PWD/#$HOME/\~}
     if [[ ${#pfad} -lt 30 ]]; then
         echo -n "${pfad}"
@@ -224,19 +233,37 @@ too-long()
 }
 
 git-branch() {
-    local plusminus=$'\u00b1'
-    local dirty=$([[ $(git status --porcelain 2>/dev/null) != '' ]] && echo -n " $plusminus")
+    local plusminus=+-
+    ((BASH_MAJOR_VERSION > 3)) && plusminus=$'\u00b1'
+    local dirty=$(
+        [[ $(git status --porcelain 2>/dev/null) != '' ]] &&
+        echo -n " $plusminus")
     __git_ps1 " (%s$dirty)" 2>/dev/null
 }
 
-mark=$'\u2713'
-cross=$'\u2717'
-check="\[\033[01;37m\]\$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\"$mark; else echo \"\[\033[01;31m\]\"$cross; fi)\[\e[0m\]"
-time="\A"
+mark=+
+((BASH_MAJOR_VERSION > 3)) && mark=$'\u2713'
+cross=-
+((BASH_MAJOR_VERSION > 3)) && cross=$'\u2717'
+check="\[\033[01;37m\]\$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\"$mark;
+      else echo \"\[\033[01;31m\]\"$cross; fi)\[\e[0m\]"
+time="\\A"
 user="\[\e[1;37m\]\u\[\e[0m\]"
 host="\[\e[1;34m\]\h\[\e[0m\]"
 dir="\[\e[1;32m\]\$(too-long)\[\e[0m\]"
 branch="\[\e[1;36m\]\$(git-branch)\[\e[0m\]"
 root="\\$"
+# TODO(alexis): refactor PS1 logic at some point.
 # e.g. ✓ 16:33 <alexis @ alexis in ~/.dotfiles> (master ±) $
 PS1=" $check $time $user @ $host in $dir$branch $root "
+
+stitle() {
+    echo -ne "\033k${1:-$(hostname -s)}\033\\"
+}
+
+# only for ssh/non-iTerm
+[[ "$TERM_PROGRAM" != "iTerm.app" ]] && stitle
+
+((BASH_MAJOR_VERSION < 4)) && (
+    echo -n $'\nBash < 4.x; some features'
+    echo $'(e.g. advanced autocompletion) won\'t be available.\n') || true
