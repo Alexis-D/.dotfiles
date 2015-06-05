@@ -127,6 +127,10 @@ nowrap() {
     cut -c1-$COLUMNS
 }
 
+root() {
+    cd "$(git rev-parse --show-toplevel)"
+}
+
 # http://stackoverflow.com/a/16178979/2813687
 color() (set -o pipefail; "$@" 2>&1>&3 | sed $'s,.*,\e[31m&\e[m,' >&2)3>&1
 
