@@ -131,7 +131,10 @@ end
 " no need for colorcolumn! display long lines with some red
 " http://stackoverflow.com/a/235970/2813687
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+augroup overlength
+    autocmd FileType java match OverLength /\%121v./
+    autocmd FileType python,sh match OverLength /\%81v./
+augroup END
 
 " easy window cycling
 nnoremap <S-Tab> <C-w>w
