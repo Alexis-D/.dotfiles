@@ -262,7 +262,7 @@ root="\\$"
 PS1=" $check $time $user @ $host in $dir$branch $root "
 
 stitle() {
-    echo -ne "\033k${1:-$(hostname -s)}\033\\"
+    echo -ne "\033]1;${1:-$(hostname -s)}\033\\"
 }
 
 # only for ssh/non-iTerm
