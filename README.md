@@ -7,7 +7,7 @@
 Vim plugins are managed using Pathogen (see
 [tpope/vim-pathogen](https://github.com/tpope/vim-pathogen)).
 
-Remember to `sudo pip install data_hacks flake8 virtualenv virtualenvwrapper`
+Remember to `sudo pip install csvkit data_hacks flake8 virtualenv virtualenvwrapper`
 the 1st time to get some python-related tools.
 
 ### Other stuff that's worth installing, but not handled here
