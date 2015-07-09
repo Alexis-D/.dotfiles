@@ -1,7 +1,7 @@
 # Check for an interactive session
 [[ -z "$PS1" ]] && return
 
-BASH_MAJOR_VERSION=${BASH_VERSION%%.*}
+BASH_MAJOR_VERSION=${BASH_VERSINFO[0]}
 
 # create an archive from a directory
 mktar() { tar cvf  "${1%%/}.tar"     "${1%%/}/"; }
@@ -156,7 +156,6 @@ alias py2=python2
 alias py3=python3
 alias py=python
 alias reload='history -n'
-alias sed='sed -E'
 alias tree='tree -C'
 alias venv=mkvirtualenv
 alias vi=vim
@@ -258,7 +257,7 @@ dir="\[\e[1;32m\]\$(too-long)\[\e[0m\]"
 branch="\[\e[1;36m\]\$(git-branch)\[\e[0m\]"
 root="\\$"
 # TODO(alexis): refactor PS1 logic at some point.
-# e.g. ✓ 16:33 <alexis @ alexis in ~/.dotfiles> (master ±) $
+# e.g. ✓ 16:33 alexis @ alexis in ~/.dotfiles (master ±) $
 PS1=" $check $time $user @ $host in $dir$branch $root "
 
 stitle() {
