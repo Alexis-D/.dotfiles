@@ -339,6 +339,11 @@ augroup Kgroup
     autocmd FileType vim setlocal keywordprg=:help
 augroup END
 
+augroup mangroup
+    autocmd!
+    autocmd FileType man setlocal nolist
+augroup END
+
 augroup palantirgroup
     autocmd!
     autocmd BufRead,BufNewFile,BufWrite *.po setlocal filetype=po
