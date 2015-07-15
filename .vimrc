@@ -128,6 +128,13 @@ else
     hi NonText term=bold ctermfg=12 gui=bold guifg=Blue
 end
 
+" usable diff colors...
+" https://groups.google.com/forum/#!topic/vim_use/oW-yL49rv1o
+highlight DiffAdd cterm=NONE ctermfg=bg ctermbg=Green
+highlight DiffDelete cterm=NONE ctermfg=bg ctermbg=Red
+highlight DiffChange cterm=NONE ctermfg=bg ctermbg=Yellow
+highlight DiffText cterm=NONE ctermfg=bg ctermbg=DarkYellow
+
 " no need for colorcolumn! display long lines with some red
 " http://stackoverflow.com/a/235970/2813687
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
