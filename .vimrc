@@ -135,6 +135,9 @@ highlight DiffDelete cterm=NONE ctermfg=bg ctermbg=Red
 highlight DiffChange cterm=NONE ctermfg=bg ctermbg=Yellow
 highlight DiffText cterm=NONE ctermfg=bg ctermbg=DarkYellow
 
+" highlight shell scripts as bash by default
+let g:is_bash = 1
+
 " no need for colorcolumn! display long lines with some red
 " http://stackoverflow.com/a/235970/2813687
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
