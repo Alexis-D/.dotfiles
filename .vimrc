@@ -215,13 +215,22 @@ augroup END
 
 " some <F-somethings> mappings
 " tell vim we paste something, and it shouldn't try to indent it
-set pastetoggle=<F2>
+set pastetoggle=<F5>
 " must have : google for gundo.vim!
 nnoremap <F3> :GundoToggle<cr>
-" open the current folder
-nnoremap <F4> :NERDTreeToggle<cr>
-" run the current file
-nnoremap <F5> :!./%<cr>
+
+" http://unix.stackexchange.com/a/156713/62710
+function! ToggleMouse()
+    " check if mouse is enabled
+    if &mouse == 'a'
+        " disable mouse
+        set mouse=
+    else
+        " enable mouse everywhere
+        set mouse=a
+    endif
+endfunc
+map <F6> :call ToggleMouse()<cr>
 
 " show tabs and trailing spaces
 set list
@@ -229,7 +238,10 @@ set list
 set listchars=tab:→\ ,trail:·,extends:»,precedes:«
 
 " hint that a line is to long
-set showbreak=»\ 
+" set showbreak=»\ 
+
+" show showbreak in number column
+" set cpoptions+=n
 
 " hide previous search results
 nnoremap <silent> <leader><space> :noh<cr>
