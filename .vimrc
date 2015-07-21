@@ -300,7 +300,6 @@ augroup END
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_mruf_max = 1000
-let g:ctrlp_extensions = ['line']
 let g:ctrlp_root_markers=['.root']
 let g:ctrlp_mruf_exclude = '.*\.fugitiveblame$'
 
@@ -308,13 +307,6 @@ if executable('ag')
     let g:ctrlp_user_command = 'ag --nogroup --nocolor -g "" %s'
     set grepprg=ag\ --nogroup\ --nocolor
 endif
-
-" use <C-space> for completion
-let g:jedi#popup_on_dot = 0
-" use buffers rather than tabs:wq
-let g:jedi#use_tabs_not_buffers = 0
-" do not show arguments when pressing (
-let g:jedi#show_call_signatures = 0
 
 " temporarily disable stuff that clutter copy/pasted stuff
 command! Clean set nonu! nornu! nolist!
@@ -340,13 +332,6 @@ au TabLeave * let g:lasttab = tabpagenr()
 
 " 'disable' netrw history
 let g:netrw_home = '/dev/null'
-
-" augroup closepreviewgroup
-"     autocmd!
-"     " close omnicomplete preview window
-"     autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-"     autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-" augroup END
 
 " set program used by K in normal mode
 augroup Kgroup
