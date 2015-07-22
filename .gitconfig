@@ -37,6 +37,7 @@
     ff = false
 [pull]
     default = current
+    ff = only
 [push]
     default = current
 [rerere]
