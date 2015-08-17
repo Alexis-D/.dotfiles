@@ -64,3 +64,6 @@
 [submodule ".vim/bundle/tabline.vim"]
 	path = .vim/bundle/tabline.vim
 	url = https://github.com/mkitt/tabline.vim.git
+[submodule ".vim/bundle/file-line"]
+	path = .vim/bundle/file-line
+	url = git@github.com:bogado/file-line.git

@@ -230,7 +230,7 @@ function! ToggleMouse()
         set mouse=a
     endif
 endfunc
-map <F6> :call ToggleMouse()<cr>
+noremap <F6> :call ToggleMouse()<cr>
 
 " show tabs and trailing spaces
 set list
