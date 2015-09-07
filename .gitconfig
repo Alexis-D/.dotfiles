@@ -24,6 +24,7 @@
     update-all-submodules = submodule foreach git pull origin master
 
     amend = commit --amend
+    squash = commit --amend -C HEAD
     branches = branch -va
     drop-last = reset --soft HEAD^
     remotes = remote -v
