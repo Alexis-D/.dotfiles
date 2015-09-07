@@ -144,7 +144,7 @@ alias csv="awk -vFPAT='([^,]+)|(\"[^\"]+\")'"
 alias eclipse='/Applications/eclipse/Eclipse.app/Contents/MacOS/eclipse'
 alias fix-mbp-camera='sudo killall VDCAssistant'
 alias grep='grep -E --color=auto -n -I'
-alias gw='./gradlew --info'
+alias gw='./gradlew --daemon --info'
 alias fgrep='fgrep --color=auto -n -I'
 alias ipy='ipython --no-confirm-exit'
 alias ipy2='ipython2 --no-confirm-exit'
