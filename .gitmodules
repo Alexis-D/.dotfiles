@@ -6,13 +6,13 @@
 	url = https://github.com/scrooloose/nerdtree.git
 [submodule ".vim/bundle/vim-surround"]
 	path = .vim/bundle/vim-surround
-	url = git://github.com/tpope/vim-surround.git
+	url = https://github.com/tpope/vim-surround.git
 [submodule ".pentadactyl/colors/solarized"]
 	path = .pentadactyl/colors/solarized
 	url = https://github.com/claytron/pentadactyl-solarized.git
 [submodule ".vim/bundle/vim-flake8"]
 	path = .vim/bundle/vim-flake8
-	url = git://github.com/nvie/vim-flake8.git
+	url = https://github.com/nvie/vim-flake8.git
 [submodule ".vim/bundle/vim-eunuch"]
 	path = .vim/bundle/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch.git
@@ -64,6 +64,6 @@
 [submodule ".vim/bundle/tabline.vim"]
 	path = .vim/bundle/tabline.vim
 	url = https://github.com/mkitt/tabline.vim.git
-[submodule ".vim/bundle/file-line"]
-	path = .vim/bundle/file-line
-	url = git@github.com:bogado/file-line.git
+[submodule ".vim/bundle/vim-fetch"]
+	path = .vim/bundle/vim-fetch
+	url = https://github.com/kopischke/vim-fetch.git
