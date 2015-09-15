@@ -43,6 +43,23 @@ then
         </autogen>
     </item>
 
+    <vkopenurldef>
+        <name>KeyCode::VK_OPEN_URL_PASS</name>
+        <url type="shell">
+            <![CDATA[ cd && bin/pass.sh ]]>
+        </url>
+    </vkopenurldef>
+
+    <item>
+        <name>Option Space to Pass</name>
+        <identifier>private.pass</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::SPACE, ModifierFlag::OPTION_L,
+            KeyCode::VK_OPEN_URL_PASS
+        </autogen>
+    </item>
+
     <replacementdef>
         <replacementname>UBIQUITOUS_VIM_BINDINGS_IGNORE_APPS</replacementname>
         <replacementvalue>CITRIX_XEN_APP_VIEWER, REMOTEDESKTOPCONNECTION, TERMINAL, VI, CATHODE, PASSWORD, FIREFOX, EMACS, LOGMEIN</replacementvalue>
@@ -72,39 +89,6 @@ then
             KeyCode::J, KeyCode::K,
             KeyCode::A, ModifierFlag::CONTROL_L,
             KeyCode::QUOTE, ModifierFlag::SHIFT_L
-        </autogen>
-    </item>
-    <item>
-        <name>Simultaneous ui triggers ^A→</name>
-        <identifier>private.ui_to_ctrla_tab</identifier>
-        <only>{{UBIQUITOUS_VIM_BINDINGS_IGNORE_APPS}}</only>
-        <autogen>
-            __SimultaneousKeyPresses__
-            KeyCode::U, KeyCode::I,
-            KeyCode::A, ModifierFlag::CONTROL_L,
-            KeyCode::TAB
-        </autogen>
-    </item>
-    <item>
-        <name>Simultaneous hj triggers ^Ap</name>
-        <identifier>private.hj_to_ctrla_p</identifier>
-        <only>{{UBIQUITOUS_VIM_BINDINGS_IGNORE_APPS}}</only>
-        <autogen>
-            __SimultaneousKeyPresses__
-            KeyCode::H, KeyCode::J,
-            KeyCode::A, ModifierFlag::CONTROL_L,
-            KeyCode::P
-        </autogen>
-    </item>
-    <item>
-        <name>Simultaneous kl triggers ^An</name>
-        <identifier>private.kl_to_ctrla_n</identifier>
-        <only>{{UBIQUITOUS_VIM_BINDINGS_IGNORE_APPS}}</only>
-        <autogen>
-            __SimultaneousKeyPresses__
-            KeyCode::K, KeyCode::L,
-            KeyCode::A, ModifierFlag::CONTROL_L,
-            KeyCode::N
         </autogen>
     </item>
 </root>

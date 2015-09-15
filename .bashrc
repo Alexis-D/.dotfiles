@@ -228,6 +228,14 @@ bind 'set match-hidden-files off'
 bind C-w:backward-kill-word
 stty stop '' # disable ^S
 
+envfile="$HOME/.gpg-agent-info"
+if [[ -e "$envfile" ]] && kill -0 $(awk -F: '/GPG_AGENT_INFO/ {print $2}' .gpg-agent-info) 2>/dev/null; then
+    . "$envfile"
+else
+    eval "$(gpg-agent --daemon --write-env-file "$envfile")"
+fi
+export GPG_AGENT_INFO
+
 too-long() {
     local pfad=${PWD/#$HOME/\~}
     if [[ ${#pfad} -lt 30 ]]; then

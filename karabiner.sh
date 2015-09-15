@@ -6,6 +6,8 @@ $cli set remap.vimnormal_jk_toggle 1
 /bin/echo -n .
 $cli set private.shift_right_to_ctrl_a 1
 /bin/echo -n .
+$cli set private.pass 1
+/bin/echo -n .
 $cli set remap.controlL2controlL_escape 1
 /bin/echo -n .
 $cli set private.cmd_enter 1
