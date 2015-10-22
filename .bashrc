@@ -185,8 +185,8 @@ export GRADLE_OPTS=-Xmx2g
     export JAVA_HOME=$(/usr/libexec/java_home -v '1.7')
 
 # use gnu coreutils on Mac (and use the right man pages)
-export MANPATH="/usr/local/opt/coreutils/share/man/:$MANPATH"
-export MANPATH="/usr/local/opt/gnu-sed/share/man/:$MANPATH"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
 export MANPATH="/usr/local/opt/grep/share/man/:$MANPATH"
 export MANPATH="/usr/local/opt/findutils/share/man/:$MANPATH"
 
@@ -229,7 +229,7 @@ bind C-w:backward-kill-word
 stty stop '' # disable ^S
 
 envfile="$HOME/.gpg-agent-info"
-if [[ -e "$envfile" ]] && kill -0 $(awk -F: '/GPG_AGENT_INFO/ {print $2}' .gpg-agent-info) 2>/dev/null; then
+if [[ -e "$envfile" ]] && kill -0 $(awk -F: '/GPG_AGENT_INFO/ {print $2}' "$envfile") 2>/dev/null; then
     . "$envfile"
 else
     eval "$(gpg-agent --daemon --write-env-file "$envfile")"
