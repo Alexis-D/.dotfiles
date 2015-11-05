@@ -139,6 +139,10 @@ tz2tz() {
     TZ=$3 gdate --date "TZ=\"$2\" ${1/T/ }" -Iseconds
 }
 
+idea() {
+    open *.ipr
+}
+
 alias ....='cd ../../..'
 alias ...='cd ../..'
 alias ..='cd ..'
