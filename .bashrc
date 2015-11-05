@@ -134,6 +134,11 @@ root() {
 # http://stackoverflow.com/a/16178979/2813687
 color() (set -o pipefail; "$@" 2>&1>&3 | sed $'s,.*,\e[31m&\e[m,' >&2)3>&1
 
+# tz2tz <LocalDateTime> <fromTz> <toTz>
+tz2tz() {
+    TZ=$3 gdate --date "TZ=\"$2\" ${1/T/ }" -Iseconds
+}
+
 alias ....='cd ../../..'
 alias ...='cd ../..'
 alias ..='cd ..'
