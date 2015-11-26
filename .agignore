@@ -7,3 +7,4 @@
 build
 ecbuild
 node_modules
+*.min.js
