@@ -3,7 +3,7 @@ caption always "%?%F%{= gk}%:%{= kc}%?%-w%?%F%{= mk}%:%{= kc}%?[%n %t]%?%F%{= gk
 
 vbell off
 altscreen on
-shell bash
+shell /bin/bash
 
 # F2 puts Screen into resize mode. Resize regions using hjkl keys.
 bindkey ^Ar eval "command -c rsz" # enter resize mode
