@@ -9,3 +9,6 @@ set bind-tty-special-chars Off
 # no more annoying bell if there are multiple matches
 set show-all-if-ambiguous on
 # set completion-ignore-case on
+
+# show filenames using LS_COLORS
+set colored-stats on
