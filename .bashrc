@@ -147,6 +147,10 @@ sum() {
     awk 'BEGIN { s = 0 } { s += $1 } END { print s }'
 }
 
+tmp() {
+    cd "$(mktemp -d)"
+}
+
 alias ....='cd ../../..'
 alias ...='cd ../..'
 alias ..='cd ..'
