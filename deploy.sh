@@ -20,6 +20,7 @@ find "$OLDPWD"\
     ! -name karabiner.sh\
     ! -name seil.sh\
     ! -name com.googlecode.iterm2.plist\
+    ! -name private.xml\
     -print0 | while IFS= read -d $'\0' -r file
 do
     rm -rf "${file##*/}" && ln -s "$file"
@@ -29,70 +30,7 @@ echo "Restoring keyboard settings..."
 
 if [[ -d ~/Library/Application\ Support/Karabiner/ ]]
 then
-    cat > ~/Library/Application\ Support/Karabiner/private.xml <<EOF
-<?xml version="1.0"?>
-<root>
-    <item>
-        <name>Shift Right to Control A</name>
-        <identifier>private.shift_right_to_ctrl_a</identifier>
-        <autogen>
-            __KeyOverlaidModifier__
-            KeyCode::SHIFT_R,
-            KeyCode::SHIFT_R,
-            KeyCode::A, ModifierFlag::CONTROL_L
-        </autogen>
-    </item>
-
-    <vkopenurldef>
-        <name>KeyCode::VK_OPEN_URL_PASS</name>
-        <url type="shell">
-            <![CDATA[ cd && bin/pass.sh ]]>
-        </url>
-    </vkopenurldef>
-
-    <item>
-        <name>Option Space to Pass</name>
-        <identifier>private.pass</identifier>
-        <autogen>
-            __KeyToKey__
-            KeyCode::SPACE, ModifierFlag::OPTION_L,
-            KeyCode::VK_OPEN_URL_PASS
-        </autogen>
-    </item>
-
-    <replacementdef>
-        <replacementname>UBIQUITOUS_VIM_BINDINGS_IGNORE_APPS</replacementname>
-        <replacementvalue>CITRIX_XEN_APP_VIEWER, REMOTEDESKTOPCONNECTION, TERMINAL, VI, CATHODE, PASSWORD, FIREFOX, EMACS, LOGMEIN</replacementvalue>
-    </replacementdef>
-
-    <item>
-        <name>Control_L to Control_L</name>
-        <appendix>(+ When you type Control_L only, toggles Normal Mode)</appendix>
-        <identifier>private.remap.vimnormal_toggle_controlL</identifier>
-        <not>{{UBIQUITOUS_VIM_BINDINGS_IGNORE_APPS}}</not>
-        <autogen>
-            __KeyOverlaidModifier__
-            KeyCode::CONTROL_L,
-            KeyCode::CONTROL_L,
-            KeyCode::VK_LOCK_ALL_FORCE_OFF,
-            KeyCode::VK_CONFIG_TOGGLE_notsave_ubiq_vimnormal,
-            {{ UBIQUITOUS_VIM_BINDINGS_CANCEL_OPERATOR_PENDING }}
-        </autogen>
-    </item>
-
-    <item>
-        <name>Simultaneous jk triggers ^A"</name>
-        <identifier>private.jk_to_ctrla_double_quote</identifier>
-        <only>{{UBIQUITOUS_VIM_BINDINGS_IGNORE_APPS}}</only>
-        <autogen>
-            __SimultaneousKeyPresses__
-            KeyCode::J, KeyCode::K,
-            KeyCode::A, ModifierFlag::CONTROL_L,
-            KeyCode::QUOTE, ModifierFlag::SHIFT_L
-        </autogen>
-    </item>
-</root>
-EOF
+    cp "$OLDPWD/private.xml" ~/Library/Application\ Support/Karabiner/
 fi
 
 # /dev/null in case this is ran on non-MacOS
