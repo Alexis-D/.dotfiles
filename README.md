@@ -35,5 +35,5 @@ the 1st time to get some python-related tools.
     brew install caskroom/cask/brew-cask
 
     # --with-default-names
-    brew install bash homebrew/versions/bash-completion2 coreutils distribution findutils gawk git gnu-sed gnu-tar homebrew/dupes/grep homebrew/dupes/gzip netcat python python3 q pv homebrew/dupes/screen ssh-copy-id the_silver_searcher tofrodos tree unrar watch youtube-dl z
+    brew install bash homebrew/versions/bash-completion2 coreutils distribution findutils gawk git gnu-sed gnu-tar homebrew/dupes/grep homebrew/dupes/gzip netcat python python3 q parallel pv homebrew/dupes/screen ssh-copy-id the_silver_searcher tofrodos tree unrar watch youtube-dl z
     brew cask install caffeine flux gpg2 intellij-idea-ce karabiner mou pass pinentry-mac pycharm-ce seil spectacle
