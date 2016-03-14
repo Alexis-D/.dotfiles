@@ -165,7 +165,7 @@ alias ??=pydoc2
 alias csv="awk -vFPAT='([^,]+)|(\"[^\"]+\")'"
 alias fix-mbp-camera='sudo killall VDCAssistant'
 alias grep='grep -E --color=auto -n -I'
-alias gw='./gradlew --daemon --info'
+alias gw='./gradlew --daemon'
 alias fgrep='fgrep --color=auto -n -I'
 alias ipy='ipython --no-confirm-exit'
 alias ipy2='ipython2 --no-confirm-exit'
