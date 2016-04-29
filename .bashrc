@@ -123,10 +123,6 @@ popen() {
     qlmanage -p "$1" &>/dev/null &
 }
 
-nowrap() {
-    cut -c1-$COLUMNS
-}
-
 root() {
     cd "$(git rev-parse --show-toplevel)"
 }
@@ -141,10 +137,6 @@ tz2tz() {
 
 idea() {
     open *.ipr
-}
-
-sum() {
-    awk 'BEGIN { s = 0 } { s += $1 } END { print s }'
 }
 
 tmp() {
@@ -197,11 +189,12 @@ shopt -s cdspell
 shopt -s histappend
 
 export EDITOR=vim
+export GRADLE_OPTS=-Xmx2g
 export HISTCONTROL=ignorespace
 export HISTTIMEFORMAT='%F %T - '
 export HISTFILESIZE=100000
 export HISTSIZE=100000
-export GRADLE_OPTS=-Xmx2g
+export HOMEBREW_NO_ANALYTICS=1
 [[ -x /usr/libexec/java_home ]] &&
     export JAVA_HOME=$(/usr/libexec/java_home -v '1.8')
 
