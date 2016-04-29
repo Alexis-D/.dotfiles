@@ -258,6 +258,8 @@ set wildmenu
 set wildcharm=<C-i>
 set wildignore+=*.class,*.jar,*/.git/*,*/.hg/*,*.DS_Store,*/build/*,*/ecbuild/*
 
+set completeopt+=longest
+
 " access MRU files
 nnoremap <C-s> :CtrlPMRUFiles<cr>
 
