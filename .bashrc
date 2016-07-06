@@ -308,6 +308,8 @@ stitle() {
 # only for ssh/non-iTerm
 [[ "$TERM_PROGRAM" != "iTerm.app" ]] && stitle
 
+[[ -f ~/.p ]] && . ~/.p
+
 ((BASH_MAJOR_VERSION < 4)) && (
     echo -n $'\nBash < 4.x; some features '
     echo $'(e.g. advanced autocompletion) won\'t be available.\n') || true
