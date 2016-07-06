@@ -636,11 +636,15 @@
 	<false/>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/.dotfiles</string>
+	<key>NSNavPanelExpandedSizeForOpenMode</key>
+	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
 	<string></string>
 	<key>NSScrollAnimationEnabled</key>
+	<false/>
+	<key>NSScrollViewShouldScrollUnderTitlebar</key>
 	<false/>
 	<key>NSTableView Columns KeyBingingTable</key>
 	<array>
@@ -653,7 +657,7 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>183</string>
+		<string>322</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
@@ -671,15 +675,15 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>2258 496 924 485 1440 0 2560 1417 </string>
+	<string>681 361 606 456 0 0 1920 1177 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>768 786 384 129 0 0 1920 1178 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
-	<string>2404 81 592 584 1920 -240 2560 1418 </string>
+	<string>1924 -219 592 584 1440 -540 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1441 7 2557 1408 1440 0 2560 1418 </string>
+	<string>1 6 1918 1168 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1440 962 650 456 1440 0 2560 1418 </string>
+	<string>-93 1618 730 528 -553 900 2560 1417 </string>
 	<key>NeverWarnAboutShortLivedSessions_85F0F6F0-0433-4554-A113-1230F40F8865</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -2171,6 +2175,18 @@
 			<string>/Users/adaboville</string>
 		</dict>
 	</array>
+	<key>NoSyncConfirmBeta</key>
+	<true/>
+	<key>NoSyncHaveShownPromoWithId_4</key>
+	<true/>
+	<key>NoSyncInstallationId</key>
+	<string>686E7BB6-2110-4848-A18F-17509619085B</string>
+	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
+	<real>489489509.12179601</real>
+	<key>NoSyncTimeOfLastPromo</key>
+	<real>477928220.80517</real>
+	<key>NoSyncTimeOfLastPromoDownload</key>
+	<real>489252792.901586</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -2234,12 +2250,16 @@
 	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
+	<key>SUFeedAlternateAppNameKey</key>
+	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>http://iterm2.com/appcasts/testing.xml</string>
+	<string>https://iterm2.com/appcasts/testing.xml?shard=90</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-04-02T08:47:53Z</date>
+	<date>2016-07-03T15:30:25Z</date>
+	<key>SUSkippedVersion</key>
+	<string>3.0.2</string>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -2267,7 +2287,7 @@
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<false/>
 	<key>UKCrashReporterLastCrashReportDate</key>
-	<real>1399563776</real>
+	<real>1434116608</real>
 	<key>URLHandlersByGuid</key>
 	<dict/>
 	<key>Use background pattern indicator</key>
@@ -2293,6 +2313,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.0.0.20141103</string>
+	<string>3.0.4</string>
 </dict>
 </plist>
