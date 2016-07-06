@@ -221,26 +221,34 @@ export PYTHONSTARTUP=~/.pythonrc.py
 export VIRTUALENVWRAPPER_HOOK_DIR=~/.virtualenvs_hooks
 export WORKON_HOME=~/.virtualenvs
 
-# use bash-completion if available (obviously...)
-((BASH_MAJOR_VERSION > 3)) && [[ -f /etc/bash_completion ]] &&
-    . /etc/bash_completion
+SOURCES=()
+
+if ((BASH_MAJOR_VERSION > 3)) && [[ -f /etc/bash_completion ]]; then
+    SOURCES+=(/etc/bash_completion)
+fi
 
 if hash brew 2>/dev/null; then
     # for MacOS
     BASH_COMPLETION=$(brew --prefix)/share/bash-completion/bash_completion
+    if ((BASH_MAJOR_VERSION > 3)) && [[ -f "$BASH_COMPLETION" ]]; then
+        SOURCES+=("$BASH_COMPLETION")
+    fi
     Z=$(brew --prefix)/etc/profile.d/z.sh
-    ((BASH_MAJOR_VERSION > 3)) && [[ -f "$BASH_COMPLETION" ]] &&
-        . "$BASH_COMPLETION"
+    # not in $SOURCES because quick to load + might be first command
     [[ -f "$Z" ]] && . "$Z"
 fi
 
 # use virtualenvwrapper, if available...
 [[ -f /usr/local/bin/virtualenvwrapper.sh ]] &&
-    . /usr/local/bin/virtualenvwrapper.sh
+    SOURCES+=(/usr/local/bin/virtualenvwrapper.sh)
 
 # for __git_ps1
 [[ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]] &&
-    . /usr/local/etc/bash_completion.d/git-prompt.sh
+    SOURCES+=(/usr/local/etc/bash_completion.d/git-prompt.sh)
+
+# http://superuser.com/a/418112
+trap 'for f in "${SOURCES[@]}"; do . "$f"; done; trap USR1' USR1
+{ sleep 3 ; builtin kill -USR1 $$ ; } & disown
 
 bind 'set match-hidden-files off'
 bind C-w:backward-kill-word
@@ -250,6 +258,7 @@ export GPG_AGENT_INFO
 envfile="$HOME/.gpg-agent-info"
 # check if gpg-agent is _maybe_ running
 if [[ -e "$envfile" ]]; then
+    # not in $SOURCES, because tiny + needed for gpg-connect-agent
     . "$envfile"
 fi
 
