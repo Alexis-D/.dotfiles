@@ -359,6 +359,11 @@ augroup gradlegroup
     autocmd BufRead,BufNewFile,BufWrite *.gradle setlocal filetype=groovy
 augroup END
 
+augroup mesagroup
+    autocmd!
+    autocmd BufRead,BufNewFile,BufWrite *.mesa setlocal filetype=groovy
+augroup END
+
 augroup fugitivegroup
     autocmd!
     " automatically get rid of fugitive buffers
