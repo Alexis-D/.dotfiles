@@ -326,6 +326,7 @@ cnoremap <C-a> <home>
 cnoremap <C-f> <right>
 cnoremap <C-b> <left>
 cnoremap <C-h> <bs>
+cnoremap <C-d> <del>
 
 " switch with the last tab (similar <C-^> for buffers)
 " http://stackoverflow.com/a/2120168/2813687
