@@ -13,6 +13,7 @@
     last = log -1 HEAD
     me = merge
     pop = stash pop
+    purr = pull --rebase
     st = status -s
 
     edit-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; vim -p `f`"
@@ -29,6 +30,7 @@
     drop-last = reset --soft HEAD^
     remotes = remote -v
     tags = tag -l
+    tracking = branch -vv
     unstage = reset HEAD
 [core]
     editor = vim
