@@ -147,6 +147,10 @@ tmp() {
     cd "$(mktemp -d)"
 }
 
+pb() {
+    pbpaste | vim -
+}
+
 fix-blued() {
     sudo kextunload -b com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport
     sudo kextload -b com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport
