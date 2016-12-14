@@ -183,6 +183,7 @@ alias reload='history -n'
 alias tree='tree -C'
 alias venv=mkvirtualenv
 alias vi=vim
+alias vimcognito='vim -u NONE "+set noswapfile nobackup nowritebackup viminfo="'
 
 # tz are hard!
 alias fr='TZ=Europe/Paris date'
