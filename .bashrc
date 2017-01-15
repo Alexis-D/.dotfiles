@@ -256,8 +256,6 @@ fi
 trap 'for f in "${SOURCES[@]}"; do . "$f"; done; trap USR1' USR1
 { sleep 3 ; builtin kill -USR1 $$ ; } & disown
 
-bind 'set match-hidden-files off'
-bind C-w:backward-kill-word
 stty stop '' # disable ^S
 
 export GPG_AGENT_INFO
