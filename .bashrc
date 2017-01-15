@@ -175,6 +175,8 @@ alias ipy3='ipython3 --no-confirm-exit'
 # first screen. + display colors
 alias less='less -F -X -R'
 alias ls='ls --color=auto'
+# because hot corners seem to be broken...
+alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
 alias mou='open -a /Applications/Mou.app'
 alias py2=python2
 alias py3=python3
