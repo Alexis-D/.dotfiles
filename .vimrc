@@ -216,7 +216,7 @@ augroup END
 
 " some <F-somethings> mappings
 " tell vim we paste something, and it shouldn't try to indent it
-set pastetoggle=<F5>
+" set pastetoggle=<F5>
 " must have : google for gundo.vim!
 nnoremap <F3> :GundoToggle<cr>
 
