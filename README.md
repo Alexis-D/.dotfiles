@@ -49,6 +49,9 @@ Vim plugins are managed using Pathogen (see
 * [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm)
 * [Vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb)
   
+      https://github.com/* t
+      https://github.palantir.build/* t
+      
       map π togglePinTab
       
       g: https://www.google.com/search?q=%s Google
