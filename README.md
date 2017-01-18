@@ -32,8 +32,8 @@ Vim plugins are managed using Pathogen (see
     brew install caskroom/cask/brew-cask
 
     # --with-default-names
-    brew install bash homebrew/versions/bash-completion2 choose-gui coreutils distribution findutils gawk git gnu-sed gnu-tar homebrew/dupes/grep homebrew/dupes/gzip netcat python python3 q parallel pv homebrew/dupes/screen ssh-copy-id the_silver_searcher tofrodos tree unrar watch youtube-dl z
-    brew cask install caffeine flux gpg2 intellij-idea-ce karabiner licecap mou pass pinentry-mac pycharm-ce seil spectacle
+    brew install bash homebrew/versions/bash-completion2 choose-gui coreutils distribution ffmpeg findutils gawk git gnu-sed gnu-tar homebrew/dupes/grep homebrew/dupes/gzip netcat python python3 q parallel pv homebrew/dupes/screen ssh-copy-id the_silver_searcher tofrodos tree unrar watch youtube-dl z
+    brew cask install caffeine flux gpg2 handbrake intellij-idea-ce karabiner licecap mou pass pinentry-mac pycharm-ce seil spectacle
 
 ### A note about Python
 
@@ -45,22 +45,5 @@ Vim plugins are managed using Pathogen (see
 * [Ghostery](https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij)
 * [HTTPS Everywhere](https://www.eff.org/https-everywhere)
 * [Office Editing for Docs, Sheets & Slides](https://chrome.google.com/webstore/detail/office-editing-for-docs-s/gbkeegbaiigmenfmjfclcdgdpimamgkj)
-* [~~Tab Pinner~~](https://chrome.google.com/webstore/detail/tab-pinner-keyboard-short/mbcjcnomlakhkechnbhmfjhnnllpbmlh)
+* [Tab Pinner](https://chrome.google.com/webstore/detail/tab-pinner-keyboard-short/mbcjcnomlakhkechnbhmfjhnnllpbmlh)
 * [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm)
-* [Vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb)
-  
-      https://github.com/* t
-      https://github.palantir.build/* t
-      
-      map π togglePinTab
-      
-      g: https://www.google.com/search?q=%s Google
-      gh: https://github.com/search?q=%s GitHub
-      gi: https://github.palantir.build/search?q=%s GitHub
-      gm: https://www.google.com/maps?q=%s Google Maps
-      hn: https://www.hnsearch.com/search#request/submissions&q=%s&start=0 HackerNews
-      so: http://stackoverflow.com/search?q=%s StackOverflow
-      translate: http://translate.google.com/?source=osdd#auto|auto|%s Google Translator
-      w: http://en.wikipedia.org/wiki/Special:Search?search=%s Wikipedia
-      wa: http://www.wolframalpha.com/input/?i=%s Wolfram|Alpha
-      yt: http://www.youtube.com/results?search_query=%s YouTube
