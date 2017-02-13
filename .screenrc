@@ -1,5 +1,6 @@
 startup_message off
 caption always "%?%F%{= gk}%:%{= kc}%?%-w%?%F%{= mk}%:%{= kc}%?[%n %t]%?%F%{= gk}%:%{= kc}%?%+w %-= @%H - %LD %d %LM - %c%{-}"
+defscrollback 25000
 
 vbell off
 altscreen on
