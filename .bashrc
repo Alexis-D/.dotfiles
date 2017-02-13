@@ -144,7 +144,12 @@ idea() {
 }
 
 tmp() {
-    cd "$(mktemp -d)"
+    if [[ $# == 1 ]]
+    then
+        cd "$(mktemp -td "$1-XXX")"
+    else
+        cd "$(mktemp -d)"
+    fi
 }
 
 pb() {
