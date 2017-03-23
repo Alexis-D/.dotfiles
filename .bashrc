@@ -53,50 +53,16 @@ list() {
     fi
 }
 
-bump() {
-    if [[ $# -ne 1 ]]; then
-        return 1
-    elif ! git rev-parse 2>/dev/null; then
-        return 2
+# takes a bunch of text and quote it like in markdown
+cite() {
+    if [[ -t 0 ]]
+    then
+        pbpaste | sed 's/^/> /'
+    else
+        sed 's/^/> /'
     fi
-
-    git fetch  # fetch to get the most recent tags
-    local currentVersion=$(git tag
-        | egrep '^v\d+.\d+.\d+$'
-        | sed 's/^v//'
-        | sort -V
-        | tail -n 1)
-
-    case $1 in
-        major)
-            local newVersion=$(echo "$currentVersion"
-                | awk -F. '{ printf "%d.0.0", $1 + 1 }') ;;
-
-        minor)
-            local newVersion=$(echo "$currentVersion"
-                | awk -F. '{ printf "%d.%d.0", $1, $2 + 1 }') ;;
-
-        patch)
-            local newVersion=$(echo "$currentVersion"
-                | awk -F. '{ printf "%d.%d.%d", $1, $2, $3 + 1 }') ;;
-
-        *) return 3 ;;
-    esac
-
-    git checkout develop &&
-    git pull --rebase &&
-    git checkout master &&
-    git pull --rebase &&
-    git merge --no-ff -m "Update to $newVersion" develop &&
-    git tag "v$newVersion" &&
-    git push --tags &&
-    git push &&
-    git checkout develop &&
-    git merge --ff master &&
-    git push &&
-    echo &&
-    echo "Successfully bumped version to $newVersion"
 }
+
 
 java6() {
     JAVA_HOME=$(/usr/libexec/java_home -v '1.6') "$@"
@@ -183,6 +149,7 @@ alias ls='ls --color=auto'
 # because hot corners seem to be broken...
 alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
 alias mou='open -a /Applications/Mou.app'
+alias pwgen='pwgen -s 32 1'
 alias py2=python2
 alias py3=python3
 alias py=python
