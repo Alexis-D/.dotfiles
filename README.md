@@ -32,7 +32,7 @@ Vim plugins are managed using Pathogen (see
     brew install caskroom/cask/brew-cask
 
     # --with-default-names
-    brew install bash homebrew/versions/bash-completion2 choose-gui coreutils distribution ffmpeg findutils gawk git gnu-sed gnu-tar homebrew/dupes/grep homebrew/dupes/gzip netcat python python3 q parallel pv homebrew/dupes/screen ssh-copy-id the_silver_searcher tofrodos tree unrar watch youtube-dl z
+    brew install bash homebrew/versions/bash-completion2 choose-gui coreutils distribution ffmpeg findutils gawk git gnu-sed gnu-tar homebrew/dupes/grep homebrew/dupes/gzip netcat pup python python3 q parallel pv homebrew/dupes/screen ssh-copy-id the_silver_searcher tofrodos tree unrar watch youtube-dl z
     brew cask install caffeine flux gpg2 handbrake intellij-idea-ce karabiner licecap mou pass pinentry-mac pycharm-ce seil spectacle
 
 ### A note about Python
