@@ -17,26 +17,12 @@ find "$OLDPWD"\
     ! -name deploy.sh\
     ! -name .git\
     ! -name README.md\
-    ! -name karabiner.sh\
-    ! -name seil.sh\
     ! -name com.googlecode.iterm2.plist\
-    ! -name private.xml\
     -print0 | while IFS= read -d $'\0' -r file
 do
     rm -rf "${file##*/}" && ln -s "$file"
 done
 
-# echo "Restoring keyboard settings..."
-# 
-# if [[ -d ~/Library/Application\ Support/Karabiner/ ]]
-# then
-#     cp "$OLDPWD/private.xml" ~/Library/Application\ Support/Karabiner/
-# fi
-# 
-# # /dev/null in case this is ran on non-MacOS
-# ./karabiner.sh &>/dev/null
-# ./seil.sh &>/dev/null
-# 
 echo "Restoring location..."
 cd - &>/dev/null
 
