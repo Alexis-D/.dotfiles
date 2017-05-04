@@ -76,10 +76,6 @@ java8() {
     JAVA_HOME=$(/usr/libexec/java_home -v '1.8') "$@"
 }
 
-gw7() {
-    JAVA_HOME=$(/usr/libexec/java_home -v '1.7') ./gradlew --daemon "$@"
-}
-
 # Less Colors for Man Pages
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
 export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
@@ -100,11 +96,6 @@ root() {
 # http://stackoverflow.com/a/16178979/2813687
 color() (set -o pipefail; "$@" 2>&1>&3 | sed $'s,.*,\e[31m&\e[m,' >&2)3>&1
 
-# tz2tz <LocalDateTime> <fromTz> <toTz>
-tz2tz() {
-    TZ=$3 gdate --date "TZ=\"$2\" ${1/T/ }" -Iseconds
-}
-
 idea() {
     open *.ipr
 }
@@ -122,11 +113,6 @@ pb() {
     pbpaste | vim -
 }
 
-fix-blued() {
-    sudo kextunload -b com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport
-    sudo kextload -b com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport
-}
-
 alias ....='cd ../../..'
 alias ...='cd ../..'
 alias ..='cd ..'
@@ -134,7 +120,6 @@ alias .='PS1= builtin .'
 alias ?=pydoc
 alias ??=pydoc2
 alias csv="awk -vFPAT='([^,]+)|(\"[^\"]+\")'"
-alias fix-mbp-camera='sudo killall VDCAssistant'
 alias grep='grep -E --color=auto -n -I'
 alias groovysh='JAVA_OPTS=-Djava.awt.headless=true rlwrap groovysh -T off'
 alias gw='./gradlew --daemon'
@@ -146,9 +131,6 @@ alias ipy3='ipython3 --no-confirm-exit'
 # first screen. + display colors
 alias less='less -F -X -R'
 alias ls='ls --color=auto'
-# because hot corners seem to be broken...
-alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
-alias mou='open -a /Applications/Mou.app'
 alias pwgen='pwgen -s 32 1'
 alias py2=python2
 alias py3=python3

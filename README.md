@@ -29,14 +29,15 @@ Vim plugins are managed using Pathogen (see
 ### A note about Homebrew and useful formulas
 
     brew tap caskroom/cask
+    brew tap caskroom/fonts
 
     # --with-default-names
-    brew install bash bash-completion@2 choose-gui coreutils distribution ffmpeg findutils gawk git gnu-sed gnu-tar grep gzip netcat pinentry pinentry-mac parallel pup pv python python3 q screen ssh-copy-id the_silver_searcher tofrodos tree unrar vim watch youtube-dl z
-    brew cask install caffeine flux handbrake intellij-idea-ce iterm2 licecap spectacle
+    brew install bash bash-completion@2 choose-gui coreutils distribution ffmpeg findutils gawk git gpg-agent gpg2 gnu-sed gnu-tar grep gzip jq netcat pinentry pinentry-mac parallel pass pup pv pwgen python python3 q screen ssh-copy-id the_silver_searcher tofrodos tree unrar vim watch youtube-dl z
+    brew cask install caffeine flux handbrake intellij-idea-ce iterm2 java karabiner-elements licecap spectacle
 
 ### A note about Python
 
-    sudo pip install csvkit data_hacks flake8 ipython jupyter virtualenv virtualenvwrapper
+    sudo pip install csvkit data_hacks flake8 font-inconsolata ipython jupyter virtualenv virtualenvwrapper
 
 ### A note about Chrome
 
