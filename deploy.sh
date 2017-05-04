@@ -26,17 +26,17 @@ do
     rm -rf "${file##*/}" && ln -s "$file"
 done
 
-echo "Restoring keyboard settings..."
-
-if [[ -d ~/Library/Application\ Support/Karabiner/ ]]
-then
-    cp "$OLDPWD/private.xml" ~/Library/Application\ Support/Karabiner/
-fi
-
-# /dev/null in case this is ran on non-MacOS
-./karabiner.sh &>/dev/null
-./seil.sh &>/dev/null
-
+# echo "Restoring keyboard settings..."
+# 
+# if [[ -d ~/Library/Application\ Support/Karabiner/ ]]
+# then
+#     cp "$OLDPWD/private.xml" ~/Library/Application\ Support/Karabiner/
+# fi
+# 
+# # /dev/null in case this is ran on non-MacOS
+# ./karabiner.sh &>/dev/null
+# ./seil.sh &>/dev/null
+# 
 echo "Restoring location..."
 cd - &>/dev/null
 

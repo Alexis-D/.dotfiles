@@ -1,13 +1,14 @@
 ### How to deploy these config files
 
-    git clone --recursive https://github.com/Alexis-D/.dotfiles.git
+    ssh-keygen -t rsa -C "Alexis Daboville <adaboville@...>"
+    git clone --recursive git@github.com:Alexis-D/.dotfiles.git
     cd .dotfiles
     . deploy.sh
 
 Vim plugins are managed using Pathogen (see
 [tpope/vim-pathogen](https://github.com/tpope/vim-pathogen)).
 
-### Other stuff that's worth installing, but not handled here
+### Other stuff that's worth doing/installing, but not handled here
 
 * [Homebrew](http://brew.sh/) (remember to install `coreutils`, `findutils`,
   `gawk`, `gnu-sed`, `screen`, `python3`, `bash`, ...)
@@ -27,13 +28,11 @@ Vim plugins are managed using Pathogen (see
 
 ### A note about Homebrew and useful formulas
 
-    brew tap homebrew/dupes
-    brew tap homebrew/versions
-    brew install caskroom/cask/brew-cask
+    brew tap caskroom/cask
 
     # --with-default-names
-    brew install bash homebrew/versions/bash-completion2 choose-gui coreutils distribution ffmpeg findutils gawk git gnu-sed gnu-tar homebrew/dupes/grep homebrew/dupes/gzip netcat pup python python3 q parallel pv homebrew/dupes/screen ssh-copy-id the_silver_searcher tofrodos tree unrar watch youtube-dl z
-    brew cask install caffeine flux gpg2 handbrake intellij-idea-ce karabiner licecap mou pass pinentry-mac pycharm-ce seil spectacle
+    brew install bash bash-completion@2 choose-gui coreutils distribution ffmpeg findutils gawk git gnu-sed gnu-tar grep gzip netcat pinentry pinentry-mac parallel pup pv python python3 q screen ssh-copy-id the_silver_searcher tofrodos tree unrar vim watch youtube-dl z
+    brew cask install caffeine flux handbrake intellij-idea-ce iterm2 licecap spectacle
 
 ### A note about Python
 
@@ -43,7 +42,7 @@ Vim plugins are managed using Pathogen (see
 
 * [Block Quora Login Popup](https://chrome.google.com/webstore/detail/block-quora-login-popup/fkbnfnaikpdihahjljbigedkangbieih)
 * [Ghostery](https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij)
-* [HTTPS Everywhere](https://www.eff.org/https-everywhere)
+* [HTTPS Everywhere](https://chrome.google.com/webstore/detail/https-everywhere/gcbommkclmclpchllfjekcdonpmejbdp/related)
 * [Office Editing for Docs, Sheets & Slides](https://chrome.google.com/webstore/detail/office-editing-for-docs-s/gbkeegbaiigmenfmjfclcdgdpimamgkj)
 * [Tab Pinner](https://chrome.google.com/webstore/detail/tab-pinner-keyboard-short/mbcjcnomlakhkechnbhmfjhnnllpbmlh)
 * [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm)
