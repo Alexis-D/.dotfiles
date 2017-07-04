@@ -375,5 +375,7 @@ if version >= 703
     set cryptmethod=blowfish
 endif
 
+let g:jsx_ext_required = 0
+
 " Let Pathogen magic happen
 execute pathogen#infect()
