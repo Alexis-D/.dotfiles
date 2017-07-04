@@ -113,6 +113,13 @@ pb() {
     pbpaste | vim -
 }
 
+clean() {
+    docker stop $(docker ps -a -q)
+    docker rm $(docker ps -a -q)
+    docker volume rm $(docker volume ls -qf dangling=true)
+    docker network rm $(docker network ls -q)
+}
+
 alias ....='cd ../../..'
 alias ...='cd ../..'
 alias ..='cd ..'
@@ -213,19 +220,6 @@ trap 'for f in "${SOURCES[@]}"; do . "$f"; done; trap USR1' USR1
 { sleep 3 ; builtin kill -USR1 $$ ; } & disown
 
 stty stop '' # disable ^S
-
-export GPG_AGENT_INFO
-envfile="$HOME/.gpg-agent-info"
-# check if gpg-agent is _maybe_ running
-if [[ -e "$envfile" ]]; then
-    # not in $SOURCES, because tiny + needed for gpg-connect-agent
-    . "$envfile"
-fi
-
-# check if it's actually running
-if ! gpg-connect-agent /bye 2>/dev/null; then
-    eval "$(gpg-agent --daemon --write-env-file "$envfile")"
-fi
 
 too-long() {
     local pfad=${PWD/#$HOME/\~}
