@@ -43,9 +43,6 @@
 [submodule ".vim/bundle/vim-visual-star-search"]
 	path = .vim/bundle/vim-visual-star-search
 	url = https://github.com/nelstrom/vim-visual-star-search.git
-[submodule ".vim/bundle/groovyindent"]
-	path = .vim/bundle/groovyindent
-	url = https://github.com/vim-scripts/groovyindent.git
 [submodule ".vim/bundle/vim-characterize"]
 	path = .vim/bundle/vim-characterize
 	url = https://github.com/tpope/vim-characterize.git
@@ -76,3 +73,6 @@
 [submodule ".vim/bundle/typescript-vim"]
 	path = .vim/bundle/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
+[submodule ".vim/bundle/groovyindent-unix"]
+	path = .vim/bundle/groovyindent-unix
+	url = https://github.com/vim-scripts/groovyindent-unix.git
