@@ -63,17 +63,12 @@ cite() {
     fi
 }
 
-
-java6() {
-    JAVA_HOME=$(/usr/libexec/java_home -v '1.6') "$@"
-}
-
-java7() {
-    JAVA_HOME=$(/usr/libexec/java_home -v '1.7') "$@"
-}
-
 java8() {
     JAVA_HOME=$(/usr/libexec/java_home -v '1.8') "$@"
+}
+
+java9() {
+    JAVA_HOME=$(/usr/libexec/java_home -v '1.9') "$@"
 }
 
 # Less Colors for Man Pages
