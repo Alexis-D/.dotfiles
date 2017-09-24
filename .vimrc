@@ -12,9 +12,6 @@ syntax on
 " let vim detect the type of the current file
 filetype plugin on
 
-" maximum lenght of inserted line (it's broken if wider)
-setlocal textwidth=78
-
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -75,6 +72,12 @@ augroup indentgroup
     autocmd BufRead,BufNewFile,BufWrite *.pql setlocal filetype=haskell
     autocmd FileType tsv setlocal noexpandtab
     " autocmd BufWritePost *.py call Flake8()
+augroup END
+
+augroup twgroup
+    " maximum length of inserted line (it's broken if wider)
+    autocmd FileType python,ruby,javascript,sh setlocal textwidth=78
+    autocmd FileType java,markdown setlocal textwidth=120
 augroup END
 
 " :h hidden
@@ -143,8 +146,8 @@ let g:is_bash = 1
 " http://stackoverflow.com/a/235970/2813687
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 augroup overlength
-    autocmd FileType java match OverLength /\%121v./
-    autocmd FileType python,sh match OverLength /\%81v./
+    autocmd FileType java,markdown match OverLength /\%121v./
+    autocmd FileType python,sh,javascript,ruby match OverLength /\%81v./
 augroup END
 
 " easy window cycling
