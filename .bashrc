@@ -139,9 +139,11 @@ alias vimcognito='vim -u NONE "+set noswapfile nobackup nowritebackup viminfo="'
 
 # tz are hard!
 alias fr='TZ=Europe/Paris date'
+alias jp='TZ=Asia/Tokyo date'
 alias ny='TZ=America/New_York date'
+alias nyc='TZ=America/New_York date'
 alias sf='TZ=US/Pacific date'
-alias tk='TZ=Asia/Tokyo date'
+alias sg='TZ=Asia/Singapore date'
 alias uk='TZ=Europe/London date'
 alias utc='TZ=UTC date'
 
