@@ -202,9 +202,9 @@ fi
 [[ -f /usr/local/bin/virtualenvwrapper.sh ]] &&
     SOURCES+=(/usr/local/bin/virtualenvwrapper.sh)
 
-# for __git_ps1
+# for __git_ps1, this actually loads fast
 [[ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]] &&
-    SOURCES+=(/usr/local/etc/bash_completion.d/git-prompt.sh)
+    . /usr/local/etc/bash_completion.d/git-prompt.sh
 
 # http://superuser.com/a/418112
 trap 'for f in "${SOURCES[@]}"; do . "$f"; done; trap USR1' USR1
