@@ -80,10 +80,6 @@ export LESS_TERMCAP_so=$'\E[1;31m'        # begin standout-mode - info box
 export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
-popen() {
-    qlmanage -p "$1" &>/dev/null &
-}
-
 root() {
     cd "$(git rev-parse --show-toplevel)"
 }
@@ -119,8 +115,6 @@ alias ....='cd ../../..'
 alias ...='cd ../..'
 alias ..='cd ..'
 alias .='PS1= builtin .'
-alias ?=pydoc
-alias ??=pydoc2
 alias csv="awk -vFPAT='([^,]+)|(\"[^\"]+\")'"
 alias grep='grep -E --color=auto -n -I'
 alias groovysh='JAVA_OPTS=-Djava.awt.headless=true rlwrap groovysh -T off'
@@ -256,8 +250,6 @@ stitle() {
 
 # only for ssh/non-iTerm
 [[ "$TERM_PROGRAM" != "iTerm.app" ]] && stitle
-
-[[ -f ~/.p ]] && . ~/.p
 
 ((BASH_MAJOR_VERSION < 4)) && (
     echo -n $'\nBash < 4.x; some features '
