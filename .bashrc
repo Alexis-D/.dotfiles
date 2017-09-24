@@ -120,9 +120,9 @@ alias grep='grep -E --color=auto -n -I'
 alias groovysh='JAVA_OPTS=-Djava.awt.headless=true rlwrap groovysh -T off'
 alias gw='./gradlew --daemon'
 alias fgrep='fgrep --color=auto -n -I'
-alias ipy='ipython --no-confirm-exit'
-alias ipy2='ipython2 --no-confirm-exit'
-alias ipy3='ipython3 --no-confirm-exit'
+alias ipy='ipython --colors=linux --no-confirm-exit'
+alias ipy2='ipython2 --colors=linux --no-confirm-exit'
+alias ipy3='ipython3 --colors=linux --no-confirm-exit'
 # Causes less to automatically exit if the entire file can be displayed on the
 # first screen. + display colors
 alias less='less -F -X -R'
