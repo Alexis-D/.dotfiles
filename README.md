@@ -19,7 +19,7 @@ Vim plugins are managed using Pathogen (see
     brew tap caskroom/fonts
 
     brew install --with-default-names findutils gnu-sed gnu-tar grep
-    brew install bash bash-completion@2 choose-gui coreutils distribution duti ffmpeg gawk git gpg-agent gpg2 grep gzip jq netcat pinentry pinentry-mac parallel pass pup pv pwgen python python3 q screen ssh-copy-id the_silver_searcher tofrodos tree unrar vim vmtouch watch youtube-dl z
+    brew install bash bash-completion@2 choose-gui coreutils distribution docker-completion docker-compose-completion duti ffmpeg gawk git gpg-agent gpg2 grep gzip jq netcat pinentry pinentry-mac parallel pass pup pv pwgen python python3 q screen ssh-copy-id the_silver_searcher tofrodos tree unrar vim vmtouch watch youtube-dl z
     brew cask install caffeine flux font-inconsolata handbrake intellij-idea-ce iterm2 java jce-unlimited-strength-policy karabiner-elements licecap mat spectacle visualvm vlc
 
 ### A note about Python
