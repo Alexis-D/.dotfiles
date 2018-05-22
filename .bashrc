@@ -8,6 +8,8 @@ mktar() { tar cvf  "${1%%/}.tar"     "${1%%/}/"; }
 mktgz() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
 mktbz() { tar cvjf "${1%%/}.tar.bz2" "${1%%/}/"; }
 
+[[ -f ~/.p ]] && . .p
+
 # ex - extract an archive
 # usage: ex <file>
 ex() {
