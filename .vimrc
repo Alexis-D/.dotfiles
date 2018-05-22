@@ -266,6 +266,10 @@ set completeopt+=longest
 " access MRU files
 nnoremap <C-s> :CtrlPMRUFiles<cr>
 
+let g:ctrlp_prompt_mappings = {
+    \ 'PrtInsert("c")': ['<C-\>']
+    \ }
+
 " provides _j to justify text: a-w-e-s-o-m-e
 runtime macros/justify.vim
 
@@ -349,6 +353,11 @@ augroup END
 augroup mangroup
     autocmd!
     autocmd FileType man setlocal nolist
+augroup END
+
+augroup jsongroup
+    autocmd!
+    autocmd FileType json setlocal fdm=syntax foldlevel=100
 augroup END
 
 augroup palantirgroup
