@@ -113,15 +113,22 @@ clean() {
     docker network rm $(docker network ls -q)
 }
 
+_xargsh () {
+    local f=$1
+    export -f "$f"
+    shift
+    xargs "$@" bash -c "$f \"\$@\"" _
+}
+
 alias ....='cd ../../..'
 alias ...='cd ../..'
 alias ..='cd ..'
 alias .='PS1= builtin .'
 alias csv="awk -vFPAT='([^,]+)|(\"[^\"]+\")'"
-alias grep='grep -E --color=auto -n -I'
+alias grep='grep -E --color=auto -I'
 alias groovysh='JAVA_OPTS=-Djava.awt.headless=true rlwrap groovysh -T off'
 alias gw='./gradlew --daemon'
-alias fgrep='fgrep --color=auto -n -I'
+alias fgrep='fgrep --color=auto -I'
 alias ipy='ipython --colors=linux --no-confirm-exit'
 alias ipy2='ipython2 --colors=linux --no-confirm-exit'
 alias ipy3='ipython3 --colors=linux --no-confirm-exit'
