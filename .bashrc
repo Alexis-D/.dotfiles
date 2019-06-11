@@ -73,6 +73,14 @@ java9() {
     JAVA_HOME=$(/usr/libexec/java_home -v '1.9') "$@"
 }
 
+java11() {
+    JAVA_HOME=$(/usr/libexec/java_home -v '11') "$@"
+}
+
+origin() {
+    tr / . | sed 's/.java$//'
+}
+
 # Less Colors for Man Pages
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
 export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
@@ -188,6 +196,7 @@ export PATH="/usr/local/bin:$PATH"
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 export PYTHONSTARTUP=~/.pythonrc.py
 export VIRTUALENVWRAPPER_HOOK_DIR=~/.virtualenvs_hooks
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 export WORKON_HOME=~/.virtualenvs
 
 SOURCES=()
@@ -217,7 +226,7 @@ fi
 
 # http://superuser.com/a/418112
 trap 'for f in "${SOURCES[@]}"; do . "$f"; done; trap USR1' USR1
-{ sleep 3 ; builtin kill -USR1 $$ ; } & disown
+{ sleep 0 ; builtin kill -USR1 $$ ; } & disown
 
 stty stop '' # disable ^S
 

@@ -4,7 +4,6 @@
 .DS_Store
 .git
 .hg
-build
 ecbuild
 node_modules
 *.min.js
