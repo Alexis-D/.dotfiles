@@ -5,5 +5,8 @@ nnoremap ,c :action RenameElement<cr>
 nnoremap ,fu :action FindUsages<cr>
 nnoremap ,ff :action FindInPath<cr>
 nnoremap ,th :action TypeHierarchy<cr>
+nnoremap gn :action MethodDown<CR>
+nnoremap gp :action MethodUp<CR>
+nnoremap gi :action GotoImplementation<CR>
 
 set surround

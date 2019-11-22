@@ -74,6 +74,10 @@ augroup indentgroup
     " autocmd BufWritePost *.py call Flake8()
 augroup END
 
+augroup gofigure
+    autocmd BufRead,BufNewFile,BufWrite *.yml.template setlocal filetype=yaml
+augroup END
+
 augroup twgroup
     " maximum length of inserted line (it's broken if wider)
     autocmd FileType python,ruby,javascript,sh setlocal textwidth=78
