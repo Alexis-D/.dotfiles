@@ -23,7 +23,7 @@ do
     rm -rf "${file##*/}" && ln -s "$file"
 done
 
-echo "Setting Outlook as the default mail client...'
+echo "Setting Outlook as the default mail client..."
 duti -s com.microsoft.outlook mailto
 
 echo "Restoring location..."
