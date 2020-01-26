@@ -320,6 +320,7 @@ let g:ctrlp_mruf_exclude = '^/private/var/folders/.*\|.*\.fugitiveblame$'
 if executable('ag')
     let g:ctrlp_user_command = 'ag --nogroup --nocolor -g "" %s'
     set grepprg=ag\ --nogroup\ --nocolor
+    let g:ackprg = 'ag --vimgrep'
 endif
 
 " temporarily disable stuff that clutter copy/pasted stuff
@@ -328,6 +329,7 @@ nnoremap <backspace> :Clean<cr>
 
 " grep from the root of a project
 cnoreabbrev <expr> G ((getcmdtype() is# ':' && getcmdline() is# 'G')?('ProjectRootExe grep'):('G'))
+cnoreabbrev Ag Ack
 
 " display all weird chars as a single char wide char
 command! CleanUpBytes :%s/\v([^[:print:]]|[^\x00-\x7f])/×/

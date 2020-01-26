@@ -76,3 +76,6 @@
 [submodule ".vim/bundle/groovyindent-unix"]
 	path = .vim/bundle/groovyindent-unix
 	url = https://github.com/vim-scripts/groovyindent-unix.git
+[submodule ".vim/bundle/ack.vim"]
+	path = .vim/bundle/ack.vim
+	url = https://github.com/mileszs/ack.vim.git
