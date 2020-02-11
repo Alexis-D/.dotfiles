@@ -329,7 +329,7 @@ nnoremap <backspace> :Clean<cr>
 
 " grep from the root of a project
 cnoreabbrev <expr> G ((getcmdtype() is# ':' && getcmdline() is# 'G')?('ProjectRootExe grep'):('G'))
-cnoreabbrev Ag Ack
+cnoreabbrev Ag ProjectRootExe Ack
 
 " display all weird chars as a single char wide char
 command! CleanUpBytes :%s/\v([^[:print:]]|[^\x00-\x7f])/×/
