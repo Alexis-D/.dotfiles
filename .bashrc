@@ -81,6 +81,13 @@ origin() {
     tr / . | sed 's/.java$//'
 }
 
+regen() {
+    ./gradlew --daemon -q tasks --all |
+        awk '{print $1}' |
+        grep -E -e generateAltaClient$ -e compileConjure$ -e gofigureRender$ -e generateSchema$ -e generateDockerCompose$ |
+        xargs ./gradlew
+}
+
 # Less Colors for Man Pages
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
 export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
@@ -135,7 +142,7 @@ alias .='PS1= builtin .'
 alias csv="awk -vFPAT='([^,]+)|(\"[^\"]+\")'"
 alias grep='grep -E --color=auto -I'
 alias groovysh='JAVA_OPTS=-Djava.awt.headless=true rlwrap groovysh -T off'
-alias gw='./gradlew --daemon'
+alias gw='./gradlew --daemon --no-scan'
 alias fgrep='fgrep --color=auto -I'
 alias ipy='ipython --colors=linux --no-confirm-exit'
 alias ipy2='ipython2 --colors=linux --no-confirm-exit'
@@ -177,7 +184,7 @@ export HISTFILESIZE=100000
 export HISTSIZE=100000
 export HOMEBREW_NO_ANALYTICS=1
 [[ -x /usr/libexec/java_home ]] &&
-    export JAVA_HOME=$(/usr/libexec/java_home -v '1.8')
+    export JAVA_HOME=$(/usr/libexec/java_home -v '11')
 
 # use gnu coreutils on Mac (and use the right man pages)
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
@@ -196,38 +203,32 @@ export PATH="/usr/local/bin:$PATH"
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 export PYTHONSTARTUP=~/.pythonrc.py
 export VIRTUALENVWRAPPER_HOOK_DIR=~/.virtualenvs_hooks
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/opt/python/libexec/bin/python
 export WORKON_HOME=~/.virtualenvs
 
-SOURCES=()
-
 if ((BASH_MAJOR_VERSION > 3)) && [[ -f /etc/bash_completion ]]; then
-    SOURCES+=(/etc/bash_completion)
+    . /etc/bash_completion
 fi
 
 if hash brew 2>/dev/null; then
     # for MacOS
     BASH_COMPLETION=$(brew --prefix)/share/bash-completion/bash_completion
     if ((BASH_MAJOR_VERSION > 3)) && [[ -f "$BASH_COMPLETION" ]]; then
-        SOURCES+=("$BASH_COMPLETION")
+        . "$BASH_COMPLETION"
     fi
     Z=$(brew --prefix)/etc/profile.d/z.sh
-    # not in $SOURCES because quick to load + might be first command
     [[ -f "$Z" ]] && . "$Z"
 fi
 
 # use virtualenvwrapper, if available...
-[[ -f /usr/local/bin/virtualenvwrapper.sh ]] &&
-    SOURCES+=(/usr/local/bin/virtualenvwrapper.sh)
+[[ -f /usr/local/bin/virtualenvwrapper_lazy.sh ]] &&
+    . /usr/local/bin/virtualenvwrapper_lazy.sh
 
 # for __git_ps1, this actually loads fast
 [[ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]] &&
     . /usr/local/etc/bash_completion.d/git-prompt.sh
 
 # http://superuser.com/a/418112
-trap 'for f in "${SOURCES[@]}"; do . "$f"; done; trap USR1' USR1
-{ sleep 0 ; builtin kill -USR1 $$ ; } & disown
-
 stty stop '' # disable ^S
 
 too-long() {
