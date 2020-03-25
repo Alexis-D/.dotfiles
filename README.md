@@ -20,7 +20,7 @@ Vim plugins are managed using Pathogen (see
 
     brew install --with-default-names findutils gnu-sed gnu-tar grep
     brew install bash bash-completion@2 choose-gui coreutils distribution docker-completion docker-compose-completion duti ffmpeg gawk git gpg-agent gpg2 grep gzip jq netcat pinentry pinentry-mac parallel pass pup pv pwgen python python3 q screen ssh-copy-id the_silver_searcher tofrodos tree unrar vim vmtouch watch youtube-dl z
-    brew cask install caffeine flux font-inconsolata handbrake intellij-idea-ce iterm2 java jce-unlimited-strength-policy karabiner-elements licecap mat spectacle visualvm vlc
+    brew cask install caffeine flux font-inconsolata handbrake intellij-idea-ce iterm2 java jce-unlimited-strength-policy karabiner-elements keyboard-cleaner licecap mat spectacle visualvm vlc
 
 ### A note about Python
 
@@ -29,6 +29,7 @@ Vim plugins are managed using Pathogen (see
 ### A note about Chrome
 
 * [Block Quora Login Popup](https://chrome.google.com/webstore/detail/block-quora-login-popup/fkbnfnaikpdihahjljbigedkangbieih)
+* [Figure it Out](https://chrome.google.com/webstore/detail/figure-it-out/lialghmkggocekkpjbnoacohodmckfke?hl=en)
 * [Ghostery](https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij)
 * [HTTPS Everywhere](https://chrome.google.com/webstore/detail/https-everywhere/gcbommkclmclpchllfjekcdonpmejbdp/related)
 * [Office Editing for Docs, Sheets & Slides](https://chrome.google.com/webstore/detail/office-editing-for-docs-s/gbkeegbaiigmenfmjfclcdgdpimamgkj)
