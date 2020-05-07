@@ -63,7 +63,7 @@
 	url = https://github.com/kopischke/vim-fetch.git
 [submodule ".vim/bundle/vim-bracketed-paste"]
 	path = .vim/bundle/vim-bracketed-paste
-	url = git@github.com:ConradIrwin/vim-bracketed-paste.git
+	url = https://github.com/ConradIrwin/vim-bracketed-paste.git
 [submodule ".vim/bundle/vim-javascript"]
 	path = .vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
