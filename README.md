@@ -30,7 +30,7 @@ Vim plugins are managed using Pathogen (see
 
 ### A note about Python
 
-    sudo pip install csvkit data_hacks flake8 ipython jupyter virtualenv virtualenvwrapper
+    pip3 install virtualenv virtualenvwrapper
 
 ### A note about Chrome
 
