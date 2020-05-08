@@ -1,4 +1,4 @@
-# C-w works as *expected* (like M-<Backspace)
+# C-w works as *expected* (like M-<Backspace>)
 set bind-tty-special-chars Off
 
 # make up/down arrows search in history like vim

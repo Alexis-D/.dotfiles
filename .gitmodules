@@ -79,3 +79,6 @@
 [submodule ".vim/bundle/ack.vim"]
 	path = .vim/bundle/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
+[submodule ".vim/bundle/readline.vim"]
+	path = .vim/bundle/readline.vim
+	url = https://github.com/ryvnf/readline.vim.git
