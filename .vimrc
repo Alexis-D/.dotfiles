@@ -317,6 +317,10 @@ let g:ctrlp_mruf_max = 1000
 let g:ctrlp_root_markers=['.root']
 let g:ctrlp_mruf_exclude = '^/private/var/folders/.*\|.*\.fugitiveblame$'
 
+" https://www.chunkhang.com/blog/slow-syntax-highlighting-in-vim
+" fixes filename only poor perf with ctrlp
+set re=1
+
 if executable('ag')
     let g:ctrlp_user_command = 'ag --nogroup --nocolor -g "" %s'
     set grepprg=ag\ --nogroup\ --nocolor
