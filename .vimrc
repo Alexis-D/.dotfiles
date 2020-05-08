@@ -67,11 +67,7 @@ augroup indentgroup
     autocmd FileType javascript setlocal shiftwidth=2
     autocmd FileType ruby setlocal tabstop=2
     autocmd FileType ruby setlocal shiftwidth=2
-    autocmd BufRead,BufNewFile,BufWrite *.gradle setlocal filetype=groovy
-    autocmd BufRead,BufNewFile,BufWrite *.tsv setlocal filetype=tsv
-    autocmd BufRead,BufNewFile,BufWrite *.pql setlocal filetype=haskell
     autocmd FileType tsv setlocal noexpandtab
-    " autocmd BufWritePost *.py call Flake8()
 augroup END
 
 augroup gofigure
@@ -221,12 +217,6 @@ augroup statuslinegroup
     autocmd InsertLeave * call StatusLineDefaultHighlight()
 augroup END
 
-" some <F-somethings> mappings
-" tell vim we paste something, and it shouldn't try to indent it
-" set pastetoggle=<F5>
-" must have : google for gundo.vim!
-nnoremap <F3> :GundoToggle<cr>
-
 " http://unix.stackexchange.com/a/156713/62710
 function! ToggleMouse()
     " check if mouse is enabled
@@ -244,12 +234,6 @@ noremap <F6> :call ToggleMouse()<cr>
 set list
 " characters to use
 set listchars=tab:→\ ,trail:·,extends:»,precedes:«
-
-" hint that a line is to long
-" set showbreak=»\ 
-
-" show showbreak in number column
-" set cpoptions+=n
 
 " hide previous search results
 nnoremap <silent> <leader><space> :noh<cr>
@@ -363,20 +347,9 @@ augroup jsongroup
     autocmd FileType json setlocal fdm=syntax foldlevel=100
 augroup END
 
-augroup palantirgroup
-    autocmd!
-    autocmd BufRead,BufNewFile,BufWrite *.po setlocal filetype=po
-    autocmd FileType po setlocal noexpandtab
-augroup END
-
 augroup gradlegroup
     autocmd!
     autocmd BufRead,BufNewFile,BufWrite *.gradle setlocal filetype=groovy
-augroup END
-
-augroup mesagroup
-    autocmd!
-    autocmd BufRead,BufNewFile,BufWrite *.mesa setlocal filetype=groovy
 augroup END
 
 augroup fugitivegroup
