@@ -22,7 +22,7 @@ Vim plugins are managed using Pathogen (see
     brew install gpg2 pass pinentry pinentry-mac pwgen
     brew install duti git jq pup pv screen tofrodos unrar vmtouch youtube-dl
     brew install bash bash-completion@2 docker-completion docker-compose-completion z
-    brew install the_silver_searcher vim
+    brew install htop the_silver_searcher vim
     brew install ipython jupyter python python3
 
     brew cask install caffeine flux iterm2 karabiner-elements keyboard-cleaner licecap spectacle vlc
