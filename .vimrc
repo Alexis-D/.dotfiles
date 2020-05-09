@@ -316,7 +316,7 @@ command! Clean set nonu! nornu! nolist!
 nnoremap <backspace> :Clean<cr>
 
 " grep from the root of a project
-cnoreabbrev <expr> G ((getcmdtype() is# ':' && getcmdline() is# 'G')?('ProjectRootExe grep'):('G'))
+" cnoreabbrev <expr> G ((getcmdtype() is# ':' && getcmdline() is# 'G')?('ProjectRootExe grep'):('G'))
 cnoreabbrev Ag ProjectRootExe Ack
 
 " display all weird chars as a single char wide char
@@ -367,3 +367,5 @@ let g:jsx_ext_required = 0
 
 " Let Pathogen magic happen
 execute pathogen#infect()
+
+Helptags
