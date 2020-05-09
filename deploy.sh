@@ -18,13 +18,20 @@ find "$OLDPWD"\
     ! -name .git\
     ! -name README.md\
     ! -name com.googlecode.iterm2.plist\
+    ! -name DefaultKeyBinding.dict\
     -print0 | while IFS= read -d $'\0' -r file
 do
     rm -rf "${file##*/}" && ln -s "$file"
 done
 
-echo "Setting Outlook as the default mail client..."
-duti -s com.microsoft.outlook mailto
+if [[ "$OSTYPE" == "darwin"* ]]
+then
+    mkdir -p ~/Library/KeyBindings/
+    cp DefaultKeyBinding.dict ~/Library/KeyBindings/
+
+    echo "Setting Outlook as the default mail client..."
+    duti -s com.microsoft.outlook mailto
+fi
 
 echo "Restoring location..."
 cd - &>/dev/null
