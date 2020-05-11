@@ -50,3 +50,4 @@ Vim plugins are managed using Pathogen (see
 * `Keyboard -> Touch Bar shows` = `Expanded Control Strip`
 * Setup hot corners
 * `iTerm2` -> right click in Dock, `Options -> Assign To -> All Desktops`
+* `Sound -> Show volume in menu bar`
