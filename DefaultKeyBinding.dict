@@ -1,5 +1,5 @@
 {
     "~f"      = "moveWordForward:";              /* M-f */
     "~b"      = "moveWordBackward:";             /* M-b */
-    "^w"      = "deleteToMark:";                 /* C-w */
+    "^w"      = "deleteWordBackward:";           /* C-w */
 }
