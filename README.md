@@ -48,7 +48,9 @@ Vim plugins are managed using Pathogen (see
 * [Stop Spaces from Rearranging Themselves in Mac OS X](http://osxdaily.com/2011/11/12/stop-spaces-rearranging-mac-os-x/)
 * `Keyboard -> Text` -> Disable everything.
 * `Keyboard -> Touch Bar shows` = `Expanded Control Strip`
+* `Keyboard -> Shortcuts -> Services -> Search man Page index in Terminal` -> Disable
 * Setup hot corners
 * `iTerm2` -> right click in Dock, `Options -> Assign To -> All Desktops`
 * `Sound -> Show volume in menu bar`
 * `Displays -> Disable True Tone`
+* `Chrome -> ⌘, -> Allow Chrome sign-in -> Disable`
