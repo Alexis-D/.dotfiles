@@ -26,11 +26,15 @@ done
 
 if [[ "$OSTYPE" == "darwin"* ]]
 then
+    echo "Setting MacOS Emacs keybindings..."
     mkdir -p ~/Library/KeyBindings/
     cp DefaultKeyBinding.dict ~/Library/KeyBindings/
 
     echo "Setting Outlook as the default mail client..."
     duti -s com.microsoft.outlook mailto
+
+    echo "Make keys repeat themselves in Intellij..."
+    defaults write com.jetbrains.intellij.ce ApplePressAndHoldEnabled -bool false
 fi
 
 echo "Restoring location..."
