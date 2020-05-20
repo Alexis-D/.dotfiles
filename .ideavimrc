@@ -10,3 +10,4 @@ nnoremap gp :action MethodUp<CR>
 nnoremap gi :action GotoImplementation<CR>
 
 set surround
+set ideajoin
