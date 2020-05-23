@@ -90,9 +90,9 @@ regen() {
 
 throttling-proxy() {
     ssh -D 1080 -N -o ProxyCommand="
-    pv -ptrbcN upload -L${2:-100K} |
+    pv -B8K -trbcN upload -L${2:-100K} |
     /usr/bin/nc %h %p |
-    pv -ptrbcN download -L${1:-100K}" localhost
+    pv -B8K -trbcN download -L${1:-100K}" localhost
 }
 
 # Less Colors for Man Pages
