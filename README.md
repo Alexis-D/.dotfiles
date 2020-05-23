@@ -54,3 +54,4 @@ Vim plugins are managed using Pathogen (see
 * `Sound -> Show volume in menu bar`
 * `Displays -> Disable True Tone`
 * `Chrome -> ⌘, -> Allow Chrome sign-in -> Disable`
+* `Karabiner-Elements -> Function keys -> Check Use all F1, F2, etc...`
