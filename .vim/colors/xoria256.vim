@@ -55,7 +55,6 @@ hi Normal       ctermfg=252 guifg=#d0d0d0 ctermbg=234 guibg=#1c1c1c cterm=none g
 hi Cursor                                 ctermbg=214 guibg=#ffaf00
 hi CursorColumn                           ctermbg=238 guibg=#444444
 hi CursorLine                             ctermbg=237 guibg=#3a3a3a cterm=none gui=none
-hi CursorLineNr                           ctermbg=237 guibg=#3a3a3a cterm=none gui=none
 hi ColorColumn  ctermbg=235 guibg=#2c2d27
 hi Error        ctermfg=15  guifg=#ffffff ctermbg=1   guibg=#800000
 hi ErrorMsg     ctermfg=15  guifg=#ffffff ctermbg=1   guibg=#800000
@@ -173,3 +172,9 @@ hi link helpExample Number
 hi link helpNumber String
 hi helpURL ctermfg=110 guifg=#87afdf                           cterm=underline gui=underline
 hi link helpHyperTextEntry helpURL
+
+" customization
+hi CursorLineNr          ctermbg=233 guibg=#3a3a3a cterm=none gui=none
+hi SignColumn            ctermbg=233
+hi SignatureMarkText     ctermbg=233
+hi SignatureMarkerText   ctermbg=233
