@@ -88,6 +88,13 @@ regen() {
         xargs ./gradlew
 }
 
+throttling-proxy() {
+    ssh -D 1080 -N -o ProxyCommand="
+    pv -ptrbcN upload -L${2:-100K} |
+    /usr/bin/nc %h %p |
+    pv -ptrbcN download -L${1:-100K}" localhost
+}
+
 # Less Colors for Man Pages
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
 export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
