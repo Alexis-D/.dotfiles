@@ -187,7 +187,7 @@ shopt -s cdspell
 (( BASH_MAJOR_VERSION > 3 )) && shopt -s globstar
 shopt -s histappend
 
-export EDITOR=vim
+export EDITOR='vim "+set tw=0"'
 export GRADLE_OPTS=-Xmx2g
 export HISTCONTROL=ignorespace
 export HISTTIMEFORMAT='%F %T - '
