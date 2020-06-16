@@ -218,6 +218,7 @@ export PYTHONSTARTUP=~/.pythonrc.py
 export VIRTUALENVWRAPPER_HOOK_DIR=~/.virtualenvs_hooks
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/opt/python/libexec/bin/python
 export WORKON_HOME=~/.virtualenvs
+export XDG_CONFIG_HOME=~/.dotfiles/.config
 
 if ((BASH_MAJOR_VERSION > 3)) && [[ -f /etc/bash_completion ]]; then
     . /etc/bash_completion
