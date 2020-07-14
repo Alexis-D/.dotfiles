@@ -18,6 +18,8 @@
 
     edit-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; vim -p `f`"
     add-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; git add `f`"
+    track-origin = "!git branch --set-upstream-to origin/`git rev-parse --abbrev-ref HEAD`"
+    track-fork = "!git branch --set-upstream-to fork/`git rev-parse --abbrev-ref HEAD`"
     forget = update-index --assume-unchanged
     unforget = update-index --no-assume-unchanged
     l = log --graph --all --date=relative\
@@ -26,7 +28,7 @@
 
     amend = commit --amend
     squash = commit --amend -C HEAD
-    branches = branch -va
+    branches = branch -vva
     drop-last = reset --soft HEAD^
     remotes = remote -v
     tags = tag -l
@@ -39,7 +41,6 @@
     tool = vimdiff
     ff = false
 [pull]
-    default = current
     ff = only
 [push]
     default = current
