@@ -6,5 +6,6 @@
 .hg
 ecbuild
 build
+out
 node_modules
 *.min.js
