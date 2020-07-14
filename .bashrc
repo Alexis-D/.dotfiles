@@ -88,7 +88,7 @@ origin() {
 regen() {
     ./gradlew --daemon -q tasks --all |
         awk '{print $1}' |
-        grep -E -e generateAltaClient$ -e compileConjure$ -e gofigureRender$ -e generateSchema$ -e generateDockerCompose$ |
+        grep -E -e generateAltaClient$ -e compileConjure$ -e gofigureRender$ -e generateSchema$ -e generateDockerCompose$ -e devEnvSetup$  -e generateMetrics$ |
         xargs ./gradlew
 }
 
@@ -187,7 +187,7 @@ shopt -s cdspell
 (( BASH_MAJOR_VERSION > 3 )) && shopt -s globstar
 shopt -s histappend
 
-export EDITOR='vim "+set tw=0"'
+export EDITOR=$HOME/.editor.sh
 export GRADLE_OPTS=-Xmx2g
 export HISTCONTROL=ignorespace
 export HISTTIMEFORMAT='%F %T - '
