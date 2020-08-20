@@ -150,6 +150,7 @@ alias ....='cd ../../..'
 alias ...='cd ../..'
 alias ..='cd ..'
 alias .='PS1= builtin .'
+alias aa='ag --ignore-dir test'
 alias csv="awk -vFPAT='([^,]+)|(\"[^\"]+\")'"
 alias grep='grep -E --color=auto -I'
 alias groovysh='JAVA_OPTS=-Djava.awt.headless=true rlwrap groovysh -T off'
@@ -168,6 +169,7 @@ alias py3=python3
 alias py=python
 alias reload='history -n'
 alias tree='tree -C'
+alias throttled-youtube-dl='youtube-dl --proxy socks5://localhost:1080'
 alias venv=mkvirtualenv
 alias vi=vim
 alias vimcognito='vim -u NONE "+set noswapfile nobackup nowritebackup viminfo="'
