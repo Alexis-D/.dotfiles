@@ -20,6 +20,7 @@
     add-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; git add `f`"
     track-origin = "!git branch --set-upstream-to origin/`git rev-parse --abbrev-ref HEAD`"
     track-fork = "!git branch --set-upstream-to fork/`git rev-parse --abbrev-ref HEAD`"
+    fork = remote add fork
     forget = update-index --assume-unchanged
     unforget = update-index --no-assume-unchanged
     l = log --graph --all --date=relative\
