@@ -81,6 +81,10 @@ java14() {
     JAVA_HOME=$(/usr/libexec/java_home -v '14') "$@"
 }
 
+java15() {
+    JAVA_HOME=$(/usr/libexec/java_home -v '15') "$@"
+}
+
 origin() {
     tr / . | sed 's/.java$//'
 }
@@ -197,7 +201,7 @@ export HISTFILESIZE=100000
 export HISTSIZE=100000
 export HOMEBREW_NO_ANALYTICS=1
 [[ -x /usr/libexec/java_home ]] &&
-    export JAVA_HOME=$(/usr/libexec/java_home -v '14')
+    export JAVA_HOME=$(/usr/libexec/java_home -v '15')
 
 # use gnu coreutils on Mac (and use the right man pages)
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
