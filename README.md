@@ -39,7 +39,30 @@ Vim plugins are managed using Pathogen (see
 * [ModHeader](https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj?hl=en)
 * [SourceGraph](https://chrome.google.com/webstore/detail/sourcegraph/dgjhfomjieaadpoljlnidmbgkdffpack)
 * [Tab Pinner](https://chrome.google.com/webstore/detail/tab-pinner-keyboard-short/mbcjcnomlakhkechnbhmfjhnnllpbmlh)
-* [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm)
+* [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm) ([`fake-news.txt`](https://raw.githubusercontent.com/ryanbr/fanboy-adblock/master/fake-news.txt))
+* [Vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb)
+
+```
+map <c-f> scrollFullPageDown
+map <c-b> scrollFullPageUp
+map p togglePinTab
+map u restoreTab
+map e Vomnibar.activateEditUrl
+map E Vomnibar.activateEditUrlInNewTab
+map Y copyCurrentUrl
+```
+
+```
+enfr: http://www.wordreference.com/enfr/%s
+fren: http://www.wordreference.com/fren/%s
+g: http://google.com/search?q=%s
+wa: https://www.wolframalpha.com/input/?i=%s
+y: https://www.youtube.com/results?search_query=%s
+```
+
+```
+https?://github.com/* btye
+```
 
 ### A note about MacOS
 
