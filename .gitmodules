@@ -70,9 +70,9 @@
 [submodule ".vim/bundle/kotlin-vim"]
 	path = .vim/bundle/kotlin-vim
 	url = https://github.com/udalov/kotlin-vim.git
-[submodule ".vim/bundle/vim-redact-pass"]
-	path = .vim/bundle/vim-redact-pass
-	url = https://sanctum.geek.nz/code/vim-redact-pass.git/
 [submodule ".vim/bundle/rainbow_csv"]
 	path = .vim/bundle/rainbow_csv
 	url = git@github.com:mechatroner/rainbow_csv.git
+[submodule ".vim/bundle/vim-redact-pass"]
+	path = .vim/bundle/vim-redact-pass
+	url = https://sanctum.geek.nz/code/vim-redact-pass.git
