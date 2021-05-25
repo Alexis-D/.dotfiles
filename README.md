@@ -23,14 +23,17 @@ Vim plugins are managed using Pathogen (see
     brew install certigo duti git jq pup pv screen tofrodos unrar vmtouch youtube-dl
     brew install bash bash-completion@2 docker-completion docker-compose-completion z
     brew install htop nmap the_silver_searcher vim
-    brew install ipython jupyter python python3
+    brew install python python3 pyenv pyenv-virtualenv
 
     brew cask install caffeine flux iterm2 karabiner-elements keyboard-cleaner licecap spectacle vlc
     brew cask install font-inconsolata font-jetbrains-mono font-ubuntu
 
-### A note about Python
+# A note about Python
 
-    pip3 install virtualenv virtualenvwrapper
+    pyenv install 3.9.4
+    pyenv global 3.9.4
+    pyenv shell 3.9.4
+    pip install ipython
 
 ### A note about Chrome
 

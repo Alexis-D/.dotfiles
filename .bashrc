@@ -143,6 +143,17 @@ clean() {
     docker network rm $(docker network ls -q)
 }
 
+WANTED_PYTHON_VERSION=3.9.4
+
+venv() {
+    pyenv virtualenv "$WANTED_PYTHON_VERSION" "$1"
+    pyenv shell "$1"
+}
+
+workon() {
+    pyenv shell "${1:-"$WANTED_PYTHON_VERSION"}"
+}
+
 _xargsh () {
     local f=$1
     export -f "$f"
@@ -161,20 +172,16 @@ alias groovysh='JAVA_OPTS=-Djava.awt.headless=true rlwrap groovysh -T off'
 alias gw='./gradlew --daemon --no-scan'
 alias fgrep='fgrep --color=auto -I'
 alias ipy='ipython --colors=linux --no-confirm-exit'
-alias ipy2='ipython2 --colors=linux --no-confirm-exit'
-alias ipy3='ipython3 --colors=linux --no-confirm-exit'
 # Causes less to automatically exit if the entire file can be displayed on the
 # first screen. + display colors
 alias less='less -F -X -R'
 alias ls='ls --color=auto'
 alias pwgen='pwgen -s 32 1'
-alias py2=python2
-alias py3=python3
 alias py=python
 alias reload='history -n'
 alias tree='tree -C'
 alias throttled-youtube-dl='youtube-dl --proxy socks5://localhost:1080'
-alias venv=mkvirtualenv
+alias venvs='pyenv virtualenvs'
 alias vi=vim
 alias vimcognito='vim -u NONE "+set noswapfile nobackup nowritebackup viminfo="'
 
@@ -221,9 +228,6 @@ export PATH="/usr/local/bin:$PATH"
 
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 export PYTHONSTARTUP=~/.pythonrc.py
-export VIRTUALENVWRAPPER_HOOK_DIR=~/.virtualenvs_hooks
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/opt/python/libexec/bin/python
-export WORKON_HOME=~/.virtualenvs
 export XDG_CONFIG_HOME=~/.dotfiles/.config
 
 if ((BASH_MAJOR_VERSION > 3)) && [[ -f /etc/bash_completion ]]; then
@@ -240,16 +244,15 @@ if hash brew 2>/dev/null; then
     [[ -f "$Z" ]] && . "$Z"
 fi
 
-# use virtualenvwrapper, if available...
-[[ -f /usr/local/bin/virtualenvwrapper_lazy.sh ]] &&
-    . /usr/local/bin/virtualenvwrapper_lazy.sh
-
 # for __git_ps1, this actually loads fast
 [[ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]] &&
     . /usr/local/etc/bash_completion.d/git-prompt.sh
 
 # http://superuser.com/a/418112
 stty stop '' # disable ^S
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 too-long() {
     local pfad=${PWD/#$HOME/\~}
