@@ -288,6 +288,10 @@ cross=-
 ((BASH_MAJOR_VERSION > 3)) && cross=$'\u2717'
 check="\[\033[01;37m\]\$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\"$mark;
       else echo \"\[\033[01;31m\]\"$cross; fi)\[\e[0m\]"
+if [[ -n "$SSH_CLIENT" ]]
+then
+    ssh="\[\e[1;41m\]\[\e[1;97m\]SSH\[\e[0m\] "
+fi
 time="\\A"
 user="\[\e[1;37m\]\u\[\e[0m\]"
 host="\[\e[1;34m\]\h\[\e[0m\]"
@@ -296,7 +300,7 @@ branch="\[\e[1;36m\]\$(git-branch)\[\e[0m\]"
 root="\\$"
 # TODO(alexis): refactor PS1 logic at some point.
 # e.g. ✓ 16:33 alexis @ alexis in ~/.dotfiles (master ±) $
-PS1=$'\b'" $check $time $user @ $host in $dir$branch $root "
+PS1=$'\b'" $check $ssh $time $user @ $host in $dir$branch $root "
 
 stitle() {
     echo -ne "\033]1;${1:-$(hostname -s)}\033\\"
