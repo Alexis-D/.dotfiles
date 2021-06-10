@@ -251,6 +251,7 @@ fi
 # http://superuser.com/a/418112
 stty stop '' # disable ^S
 
+eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
