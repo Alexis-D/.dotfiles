@@ -244,6 +244,12 @@ if hash brew 2>/dev/null; then
     [[ -f "$Z" ]] && . "$Z"
 fi
 
+if command -v z &>/dev/null
+then
+    Z="$HOME/bin/z.sh"
+    [[ -f "$Z" ]] && . "$Z"
+fi
+
 # for __git_ps1, this actually loads fast
 [[ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]] &&
     . /usr/local/etc/bash_completion.d/git-prompt.sh
@@ -251,9 +257,12 @@ fi
 # http://superuser.com/a/418112
 stty stop '' # disable ^S
 
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+if command -v pyenv &>/dev/null
+then
+    eval "$(pyenv init --path)"
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
 
 too-long() {
     local pfad=${PWD/#$HOME/\~}
