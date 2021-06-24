@@ -300,7 +300,7 @@ branch="\[\e[1;36m\]\$(git-branch)\[\e[0m\]"
 root="\\$"
 # TODO(alexis): refactor PS1 logic at some point.
 # e.g. ✓ 16:33 alexis @ alexis in ~/.dotfiles (master ±) $
-PS1=$'\b'" $check $ssh $time $user @ $host in $dir$branch $root "
+PS1=$'\b'" $check $ssh$time $user @ $host in $dir$branch $root "
 
 stitle() {
     echo -ne "\033]1;${1:-$(hostname -s)}\033\\"
