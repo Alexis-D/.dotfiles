@@ -277,9 +277,15 @@ too-long() {
 git-branch() {
     local plusminus=+-
     ((BASH_MAJOR_VERSION > 3)) && plusminus=$'\u00b1'
-    local dirty=$(
-        [[ $(git status --porcelain 2>/dev/null) != '' ]] &&
-        echo -n " $plusminus")
+    local dirty=' ???'
+
+    if ! [[ $PWD = /Volumes/git/forge* ]]
+    then
+        local dirty=$(
+            [[ $(git status --porcelain 2>/dev/null) != '' ]] &&
+            echo -n " $plusminus")
+    fi
+
     __git_ps1 " (%s$dirty)" 2>/dev/null
 }
 
