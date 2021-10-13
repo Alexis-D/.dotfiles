@@ -289,10 +289,20 @@ git-branch() {
     __git_ps1 " (%s$dirty)" 2>/dev/null
 }
 
+venv-name() {
+    local maybevenv="${VIRTUAL_ENV##*/}"
+    if ! [[ -z "$maybevenv" ]]
+    then
+        echo -n "($maybevenv)"
+    fi
+}
+
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 mark=+
 ((BASH_MAJOR_VERSION > 3)) && mark=$'\u2713'
 cross=-
 ((BASH_MAJOR_VERSION > 3)) && cross=$'\u2717'
+venvname="\$(venv-name)"
 check="\[\033[01;37m\]\$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\"$mark;
       else echo \"\[\033[01;31m\]\"$cross; fi)\[\e[0m\]"
 if [[ -n "$SSH_CLIENT" ]]
@@ -307,7 +317,7 @@ branch="\[\e[1;36m\]\$(git-branch)\[\e[0m\]"
 root="\\$"
 # TODO(alexis): refactor PS1 logic at some point.
 # e.g. ✓ 16:33 alexis @ alexis in ~/.dotfiles (master ±) $
-PS1=$'\b'" $check $ssh$time $user @ $host in $dir$branch $root "
+PS1="$venvname $check $ssh$time $user @ $host in $dir$branch $root "
 
 stitle() {
     echo -ne "\033]1;${1:-$(hostname -s)}\033\\"
