@@ -132,6 +132,14 @@ else
     hi NonText term=bold ctermfg=12 gui=bold guifg=Blue
 end
 
+augroup transparentbackground
+    " https://stackoverflow.com/a/63382382/2813687
+    " transparent bg
+    autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
+    " For Vim<8, replace EndOfBuffer by NonText
+    autocmd vimenter * hi EndOfBuffer guibg=NONE ctermbg=NONE
+augroup END
+
 " usable diff colors...
 " https://groups.google.com/forum/#!topic/vim_use/oW-yL49rv1o
 highlight DiffAdd cterm=NONE ctermfg=bg ctermbg=Green
