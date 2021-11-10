@@ -2,6 +2,8 @@ source ~/.vimrc
 nnoremap ,o :action OptimizeImports<cr>
 nnoremap ,r :action ReformatCode<cr>
 nnoremap ,c :action RenameElement<cr>
+nnoremap ,ic :action IntroduceConstant<cr>
+nnoremap ,mm :action Move<cr>
 nnoremap ,fu :action FindUsages<cr>
 nnoremap ,ff :action FindInPath<cr>
 nnoremap ,th :action TypeHierarchy<cr>
