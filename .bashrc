@@ -210,6 +210,9 @@ export HOMEBREW_NO_ANALYTICS=1
 [[ -x /usr/libexec/java_home ]] &&
     export JAVA_HOME=$(/usr/libexec/java_home -v '15')
 
+# https://stackoverflow.com/a/42265848/2813687
+export GPG_TTY=$(tty)
+
 # use gnu coreutils on Mac (and use the right man pages)
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
