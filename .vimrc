@@ -313,6 +313,11 @@ let g:ctrlp_mruf_exclude = '^/private/var/folders/.*\|.*\.fugitiveblame$'
 " fixes filename only poor perf with ctrlp
 set re=1
 
+augroup ts
+    autocmd!
+    autocmd FileType typescript,typescriptreact setlocal re=2
+augroup END
+
 if executable('ag')
     let g:ctrlp_user_command = 'ag --nogroup --nocolor -g "" %s'
     set grepprg=ag\ --nogroup\ --nocolor
