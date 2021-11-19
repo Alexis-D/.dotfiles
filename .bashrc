@@ -212,6 +212,11 @@ export HOMEBREW_NO_ANALYTICS=1
 
 # https://stackoverflow.com/a/42265848/2813687
 export GPG_TTY=$(tty)
+# avoid anonymous encryption like so:
+# gpg: encrypted with RSA key, ID 0x00000000
+# gpg: anonymous recipient; trying secret key 0xF82937A7 ...
+# gpg: okay, we are the anonymous recipient.
+export PASSWORD_STORE_GPG_OPTS='--no-throw-keyids'
 
 # use gnu coreutils on Mac (and use the right man pages)
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
