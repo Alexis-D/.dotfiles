@@ -170,7 +170,7 @@ alias pwgen='pwgen -s 32 1'
 alias py=python
 alias reload='history -n'
 alias tree='tree -C'
-alias throttled-youtube-dl='youtube-dl --proxy socks5://localhost:1080'
+alias throttled-yt-dlp='yt-dlp --proxy socks5://localhost:1080'
 alias venvs='pyenv virtualenvs'
 alias vi=vim
 alias vimcognito='vim -u NONE "+set noswapfile nobackup nowritebackup viminfo="'

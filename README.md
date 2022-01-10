@@ -20,7 +20,7 @@ Vim plugins are managed using Pathogen (see
 
     brew install coreutils findutils gawk gnu-sed gnu-tar grep gzip netcat ssh-copy-id tree watch
     brew install gpg2 pass pinentry pinentry-mac pwgen
-    brew install certigo duti git jq pup pv screen tofrodos unrar vmtouch youtube-dl
+    brew install certigo duti git jq pup pv screen tofrodos unrar vmtouch yt-dlp
     brew install bash bash-completion@2 docker-completion docker-compose-completion z
     brew install htop nmap the_silver_searcher vim
     brew install python python3 pyenv pyenv-virtualenv
