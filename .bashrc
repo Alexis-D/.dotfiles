@@ -69,20 +69,12 @@ java8() {
     JAVA_HOME=$(/usr/libexec/java_home -v '1.8') "$@"
 }
 
-java9() {
-    JAVA_HOME=$(/usr/libexec/java_home -v '1.9') "$@"
-}
-
 java11() {
     JAVA_HOME=$(/usr/libexec/java_home -v '11') "$@"
 }
 
-java14() {
-    JAVA_HOME=$(/usr/libexec/java_home -v '14') "$@"
-}
-
-java15() {
-    JAVA_HOME=$(/usr/libexec/java_home -v '15') "$@"
+java17() {
+    JAVA_HOME=$(/usr/libexec/java_home -v '17') "$@"
 }
 
 origin() {
@@ -208,7 +200,7 @@ export HISTFILESIZE=100000
 export HISTSIZE=100000
 export HOMEBREW_NO_ANALYTICS=1
 [[ -x /usr/libexec/java_home ]] &&
-    export JAVA_HOME=$(/usr/libexec/java_home -v '15')
+    export JAVA_HOME=$(/usr/libexec/java_home -v '17')
 
 # https://stackoverflow.com/a/42265848/2813687
 export GPG_TTY=$(tty)
