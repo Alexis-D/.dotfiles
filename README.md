@@ -42,7 +42,7 @@ Vim plugins are managed using Pathogen (see
 * [ModHeader](https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj?hl=en)
 * [SourceGraph](https://chrome.google.com/webstore/detail/sourcegraph/dgjhfomjieaadpoljlnidmbgkdffpack)
 * [Tab Pinner](https://chrome.google.com/webstore/detail/tab-pinner-keyboard-short/mbcjcnomlakhkechnbhmfjhnnllpbmlh)
-* [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm) ([`fake-news.txt`](https://raw.githubusercontent.com/ryanbr/fanboy-adblock/master/fake-news.txt))
+* [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm) ([`fake-news.txt`](https://raw.githubusercontent.com/ryanbr/fanboy-adblock/master/fake-news.txt), [`all.txt`](https://raw.githubusercontent.com/quenhus/uBlock-Origin-dev-filter/main/dist/google/all.txt))
 * [Vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb)
 
 ```
