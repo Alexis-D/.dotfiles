@@ -176,6 +176,7 @@ alias vi=vim
 alias vimcognito='vim -u NONE "+set noswapfile nobackup nowritebackup viminfo="'
 
 # tz are hard!
+alias denver='TZ=America/Denver date'
 alias fr='TZ=Europe/Paris date'
 alias jp='TZ=Asia/Tokyo date'
 alias ny='TZ=America/New_York date'
