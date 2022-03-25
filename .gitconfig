@@ -20,7 +20,7 @@
     add-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; git add `f`"
     track-origin = "!git branch --set-upstream-to origin/`git rev-parse --abbrev-ref HEAD`"
     track-fork = "!git branch --set-upstream-to fork/`git rev-parse --abbrev-ref HEAD`"
-    fork = remote add fork
+    fork = "!f() { git remote add fork \"$1\" ; git config remote.pushDefault fork ; }; f"
     forget = update-index --assume-unchanged
     unforget = update-index --no-assume-unchanged
     l = log --graph --all --date=relative\
@@ -35,6 +35,8 @@
     tags = tag -l
     tracking = branch -vv
     unstage = reset HEAD
+    sign = config commit.gpgSign true
+    do-not-sign = config commit.gpgSign false
 [core]
     editor = vim
     excludesfile = ~/.cvsignore
@@ -43,8 +45,6 @@
     ff = false
 [pull]
     ff = only
-[push]
-    default = current
 [rerere]
     enabled = true
 [diff]
@@ -53,3 +53,5 @@
     helper = cache
 [branch]
     autosetuprebase = always
+[commit]
+    gpgsign = true
