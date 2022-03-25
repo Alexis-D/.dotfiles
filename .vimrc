@@ -315,7 +315,7 @@ set re=1
 
 augroup ts
     autocmd!
-    autocmd FileType typescript,typescriptreact setlocal re=2
+    autocmd FileType typescript,typescriptreact setlocal re=0
 augroup END
 
 if executable('ag')
