@@ -1,6 +1,7 @@
 [user]
     name = Alexis Daboville
     email = alexis.daboville@gmail.com
+    signingKey = 704AC94F69CBE16A
 [color]
     diff = auto
     status = auto
@@ -43,6 +44,8 @@
 [merge]
     tool = vimdiff
     ff = false
+[push]
+    default = current
 [pull]
     ff = only
 [rerere]
