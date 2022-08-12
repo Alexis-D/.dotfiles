@@ -44,8 +44,12 @@
 [merge]
     tool = vimdiff
     ff = false
+    autoStash = true
+[rebase]
+    autoStash = true
 [push]
     default = current
+    autoSetupRemote = true
 [pull]
     ff = only
 [rerere]
