@@ -78,6 +78,7 @@ augroup twgroup
     " maximum length of inserted line (it's broken if wider)
     autocmd FileType python,ruby,javascript,sh setlocal textwidth=78
     autocmd FileType java,markdown setlocal textwidth=120
+    autocmd FileType rst setlocal textwidth=0
 augroup END
 
 " :h hidden
