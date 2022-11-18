@@ -236,11 +236,12 @@ fi
 
 if hash brew 2>/dev/null; then
     # for MacOS
-    BASH_COMPLETION=$(brew --prefix)/share/bash-completion/bash_completion
+    BREW_PREFIX=$(brew --prefix)
+    BASH_COMPLETION="$BREW_PREFIX/share/bash-completion/bash_completion"
     if ((BASH_MAJOR_VERSION > 3)) && [[ -f "$BASH_COMPLETION" ]]; then
         . "$BASH_COMPLETION"
     fi
-    Z=$(brew --prefix)/etc/profile.d/z.sh
+    Z="$BREW_PREFIX/etc/profile.d/z.sh"
     [[ -f "$Z" ]] && . "$Z"
 fi
 
