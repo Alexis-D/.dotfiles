@@ -14,3 +14,4 @@ nnoremap gi :action GotoImplementation<CR>
 
 set surround
 set ideajoin
+set relativenumber
