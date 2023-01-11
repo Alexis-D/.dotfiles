@@ -10,3 +10,4 @@ out
 node_modules
 *.min.js
 generated
+vendor
