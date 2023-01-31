@@ -299,11 +299,16 @@ git-branch() {
 }
 
 venv-name() {
+    local r=$?
+
     local maybevenv="${VIRTUAL_ENV##*/}"
     if ! [[ -z "$maybevenv" ]]
     then
         echo -n "($maybevenv)"
     fi
+
+    # restore $?
+    return $r
 }
 
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
