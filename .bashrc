@@ -222,6 +222,8 @@ export MANPATH="/usr/local/opt/grep/share/man/:$MANPATH"
 export MANPATH="/usr/local/opt/findutils/share/man/:$MANPATH"
 
 export PATH="$HOME/bin:$PATH"
+export PATH="/sbin:$PATH"
+export PATH="/usr/sbin:$PATH"
 export PATH="/Applications/Docker.app/Contents/Resources/bin:$PATH"
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
