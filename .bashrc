@@ -116,7 +116,7 @@ idea() {
 }
 
 goland() {
-    open -b com.jetbrains.goland *.ipr
+    open -b com.jetbrains.goland .
 }
 
 tmp() {
