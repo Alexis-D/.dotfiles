@@ -167,6 +167,7 @@ alias grep='grep -E --color=auto -I'
 alias gw='./gradlew --daemon --no-scan'
 alias fgrep='fgrep --color=auto -I'
 alias ipy='ipython --colors=linux --no-confirm-exit'
+alias k=kubectl && complete -o nospace -F __start_kubectl k
 # Causes less to automatically exit if the entire file can be displayed on the
 # first screen. + display colors
 alias less='less -F -X -R'
