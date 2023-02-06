@@ -79,3 +79,6 @@
 [submodule ".vim/bundle/vim-jsx-typescript"]
 	path = .vim/bundle/vim-jsx-typescript
 	url = https://github.com/peitalin/vim-jsx-typescript.git
+[submodule ".vim/bundle/vim-terraform"]
+	path = .vim/bundle/vim-terraform
+	url = https://github.com/hashivim/vim-terraform.git
