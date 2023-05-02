@@ -601,7 +601,7 @@
 	<key>HideActivityIndicator</key>
 	<false/>
 	<key>HideFromDockAndAppSwitcher</key>
-	<false/>
+	<true/>
 	<key>HideMenuBarInFullscreen</key>
 	<false/>
 	<key>HideScrollbar</key>
@@ -1400,8 +1400,6 @@
 			<array/>
 			<key>Terminal Type</key>
 			<string>xterm</string>
-			<key>Title Components</key>
-			<integer>512</integer>
 			<key>Transparency</key>
 			<real>0.15413580238819122</real>
 			<key>Triggers</key>
