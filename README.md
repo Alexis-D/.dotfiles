@@ -1,9 +1,11 @@
 ### How to deploy these config files
 
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    ssh-keygen -t rsa -C "Alexis Daboville <adaboville@...>"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    ssh-keygen -t ed25519 -C "Alexis Daboville <adaboville@...>"
     git clone --recursive git@github.com:Alexis-D/.dotfiles.git
+    sudo chsh -s /opt/homebrew/bin/bash alexis
     cd .dotfiles
+    bash
     . deploy.sh
 
 Vim plugins are managed using Pathogen (see
@@ -15,18 +17,19 @@ Vim plugins are managed using Pathogen (see
 
 ### A note about Homebrew and useful formulas
 
-    brew tap caskroom/cask
-    brew tap homebrew/cask-fonts
-
     brew install coreutils findutils gawk gnu-sed gnu-tar grep gzip netcat ssh-copy-id tree watch
     brew install gpg2 pass pinentry pinentry-mac pwgen
     brew install certigo duti git jq pup pv screen tofrodos unrar vmtouch yt-dlp
-    brew install bash bash-completion@2 dive docker-completion docker-compose-completion z
+    brew install bash bash-completion@2 dive docker-compose-completion z
     brew install htop nmap the_silver_searcher vim
+    brew install java
     brew install python python3 pyenv pyenv-virtualenv
 
-    brew cask install caffeine flux iterm2 karabiner-elements keyboard-cleaner licecap spectacle vlc
-    brew cask install font-inconsolata font-jetbrains-mono font-ubuntu
+    brew install --cask chromium firefox
+    brew install --cask caffeine flux iterm2 karabiner-elements keyboard-cleaner intellij-idea-ce licecap spectacle vlc
+
+    brew tap homebrew/cask-fonts
+    brew install --cask font-inconsolata font-jetbrains-mono font-ubuntu
 
 # A note about Python
 
