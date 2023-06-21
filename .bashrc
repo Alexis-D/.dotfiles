@@ -204,8 +204,14 @@ export HISTTIMEFORMAT='%F %T - '
 export HISTFILESIZE=100000
 export HISTSIZE=100000
 export HOMEBREW_NO_ANALYTICS=1
-[[ -x /usr/libexec/java_home ]] &&
+if [[ -x /opt/homebrew/opt/openjdk/bin/java ]]
+then
+    export JAVA_HOME=/opt/homebrew/opt/openjdk/bin/java
+    export PATH="/opt/homebrew/opt/openjdk/bin/:$PATH"
+elif [[ -x /usr/libexec/java_home ]]
+then
     export JAVA_HOME=$(/usr/libexec/java_home -v '17')
+fi
 
 # https://stackoverflow.com/a/42265848/2813687
 export GPG_TTY=$(tty)
