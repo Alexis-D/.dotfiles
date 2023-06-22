@@ -141,15 +141,6 @@ clean() {
 
 WANTED_PYTHON_VERSION=3.9.4
 
-venv() {
-    pyenv virtualenv "$WANTED_PYTHON_VERSION" "$1"
-    pyenv shell "$1"
-}
-
-workon() {
-    pyenv shell "${1:-"$WANTED_PYTHON_VERSION"}"
-}
-
 _xargsh () {
     local f=$1
     export -f "$f"
@@ -177,7 +168,6 @@ alias py=python
 alias reload='history -n'
 alias tree='tree -C'
 alias throttled-yt-dlp='yt-dlp --proxy socks5://localhost:1080'
-alias venvs='pyenv virtualenvs'
 alias vi=vim
 alias vimcognito='vim -u NONE "+set noswapfile nobackup nowritebackup viminfo="'
 
@@ -222,23 +212,20 @@ export GPG_TTY=$(tty)
 export PASSWORD_STORE_GPG_OPTS='--no-throw-keyids'
 
 # use gnu coreutils on Mac (and use the right man pages)
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
-export MANPATH="/usr/local/opt/grep/share/man/:$MANPATH"
-export MANPATH="/usr/local/opt/findutils/share/man/:$MANPATH"
+export MANPATH="/opt/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
+export MANPATH="/opt/homebrew/opt/gnu-sed/libexec/gnuman:$MANPATH"
+export MANPATH="/opt/homebrew/opt/grep/libexec/gnuman/:$MANPATH"
+export MANPATH="/opt/homebrew/opt/findutils/libexec/gnuman/:$MANPATH"
 
 export PATH="$HOME/bin:$PATH"
 export PATH="/sbin:$PATH"
 export PATH="/usr/sbin:$PATH"
 export PATH="/Applications/Docker.app/Contents/Resources/bin:$PATH"
-export PATH="/usr/local/opt/sqlite/bin:$PATH"
-export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
-export PATH="/usr/local/opt/grep/bin/:$PATH"
-export PATH="/usr/local/opt/findutils/bin/:$PATH"
-export PATH="/usr/local/bin:$PATH"
+export PATH="/opt/homebrew/opt/findutils/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/gnu-tar/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/grep/libexec/gnubin/:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
 
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
@@ -308,25 +295,11 @@ git-branch() {
     __git_ps1 " (%s$dirty)" 2>/dev/null
 }
 
-venv-name() {
-    local r=$?
-
-    local maybevenv="${VIRTUAL_ENV##*/}"
-    if ! [[ -z "$maybevenv" ]]
-    then
-        echo -n "($maybevenv)"
-    fi
-
-    # restore $?
-    return $r
-}
-
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 mark=+
 ((BASH_MAJOR_VERSION > 3)) && mark=$'\u2713'
 cross=-
 ((BASH_MAJOR_VERSION > 3)) && cross=$'\u2717'
-venvname="\$(venv-name)"
 check="\[\033[01;37m\]\$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\"$mark;
       else echo \"\[\033[01;31m\]\"$cross; fi)\[\e[0m\]"
 if [[ -n "$SSH_CLIENT" ]]
@@ -341,7 +314,7 @@ branch="\[\e[1;36m\]\$(git-branch)\[\e[0m\]"
 root="\\$"
 # TODO(alexis): refactor PS1 logic at some point.
 # e.g. ✓ 16:33 alexis @ alexis in ~/.dotfiles (master ±) $
-PS1="$venvname $check $ssh$time $user @ $host in $dir$branch $root "
+PS1="$check $ssh$time $user @ $host in $dir$branch $root "
 
 stitle() {
     echo -ne "\033]1;${1:-$(hostname -s)}\033\\"

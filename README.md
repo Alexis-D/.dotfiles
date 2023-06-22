@@ -11,13 +11,9 @@
 Vim plugins are managed using Pathogen (see
 [tpope/vim-pathogen](https://github.com/tpope/vim-pathogen)).
 
-### A note about keyboard configuration
-
-1. Still WIP on Sierra
-
 ### A note about Homebrew and useful formulas
 
-    brew install coreutils findutils gawk gnu-sed gnu-tar grep gzip netcat ssh-copy-id tree watch
+    brew install coreutils findutils gawk gnu-sed gnu-tar grep gzip netcat watch
     brew install gpg2 pass pinentry pinentry-mac pwgen
     brew install certigo duti git jq pup pv screen tofrodos unrar vmtouch yt-dlp
     brew install bash bash-completion@2 dive docker-compose-completion z
@@ -26,17 +22,15 @@ Vim plugins are managed using Pathogen (see
     brew install python python3 pyenv pyenv-virtualenv
 
     brew install --cask chromium firefox
-    brew install --cask caffeine flux iterm2 karabiner-elements keyboard-cleaner intellij-idea-ce licecap rectangle vlc
+    brew install --cask flux iterm2 karabiner-elements keyboard-cleaner intellij-idea-ce licecap rectangle vlc
 
     brew tap homebrew/cask-fonts
     brew install --cask font-inconsolata font-jetbrains-mono font-ubuntu
 
 # A note about Python
 
-    pyenv install 3.9.4
-    pyenv global 3.9.4
-    pyenv shell 3.9.4
-    pip install ipython
+    python3 -m venv path/to/venv
+    . path/to/venv/bin/activate
 
 ### A note about Chrome
 
@@ -76,11 +70,8 @@ https?://github.com/* btye
 * [How to Turn Off Multitouch Trackpad Look Up in OS X](https://www.tekrevue.com/tip/how-to-turn-off-multitouch-trackpad-look-up-in-os-x/)
 * [Stop Spaces from Rearranging Themselves in Mac OS X](http://osxdaily.com/2011/11/12/stop-spaces-rearranging-mac-os-x/)
 * `Keyboard -> Text` -> Disable everything.
-* `Keyboard -> Touch Bar shows` = `Expanded Control Strip`
-* `Keyboard -> Shortcuts -> Services -> Search man Page index in Terminal` -> Disable
 * Setup hot corners
 * `iTerm2` -> right click in Dock, `Options -> Assign To -> All Desktops`
 * `Sound -> Show volume in menu bar`
 * `Displays -> Disable True Tone`
-* `Chrome -> ⌘, -> Allow Chrome sign-in -> Disable`
 * `Karabiner-Elements -> Function keys -> Check Use all F1, F2, etc...`
