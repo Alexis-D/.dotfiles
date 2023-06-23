@@ -10,7 +10,7 @@ curl -LSso .vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/
 echo "Init/update submodules..."
 git submodule update --init --recursive
 
-cd
+pushd ~
 find "$OLDPWD"\
     -maxdepth 1\
     -mindepth 1\
@@ -24,6 +24,7 @@ do
     rm -rf "${file##*/}" && ln -s "$file"
 done
 
+popd
 if [[ "$OSTYPE" == "darwin"* ]]
 then
     echo "Setting MacOS Emacs keybindings..."
@@ -37,9 +38,6 @@ then
     echo "Make keys repeat themselves in Intellij..."
     defaults write com.jetbrains.intellij.ce ApplePressAndHoldEnabled -bool false
 fi
-
-echo "Restoring location..."
-cd - &>/dev/null
 
 echo "Sourcing ~/.bashrc..."
 . ~/.bashrc
