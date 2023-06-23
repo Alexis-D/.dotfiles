@@ -22,7 +22,8 @@ Vim plugins are managed using Pathogen (see
     brew install python python3 pyenv pyenv-virtualenv
 
     brew install --cask chromium firefox
-    brew install --cask flux iterm2 karabiner-elements keyboard-cleaner intellij-idea-ce licecap rectangle vlc
+    brew install --cask docker iterm2 intellij-idea-ce
+    brew install --cask flux karabiner-elements keyboard-cleaner licecap rectangle vlc
 
     brew tap homebrew/cask-fonts
     brew install --cask font-inconsolata font-jetbrains-mono font-ubuntu
