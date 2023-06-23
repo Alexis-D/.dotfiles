@@ -108,11 +108,15 @@ root() {
     cd "$(git rev-parse --show-toplevel)"
 }
 
+gw() {
+    $(git rev-parse --show-toplevel)/gradlew --daemon --no-scan "$@"
+}
+
 # http://stackoverflow.com/a/16178979/2813687
 color() (set -o pipefail; "$@" 2>&1>&3 | sed $'s,.*,\e[31m&\e[m,' >&2)3>&1
 
 idea() {
-    open -b com.jetbrains.intellij.ce *.ipr
+    open -b com.jetbrains.intellij.ce .
 }
 
 goland() {
@@ -155,7 +159,6 @@ alias .='PS1= builtin .'
 alias csv="awk -vFPAT='([^,]+)|(\"[^\"]+\")'"
 alias gg='./godelw'
 alias grep='grep -E --color=auto -I'
-alias gw='./gradlew --daemon --no-scan'
 alias fgrep='fgrep --color=auto -I'
 alias ipy='ipython --colors=linux --no-confirm-exit'
 alias k=kubectl && complete -o nospace -F __start_kubectl k
