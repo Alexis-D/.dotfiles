@@ -18,6 +18,8 @@ set surround
 set ideajoin
 set relativenumber
 
+nnoremap m<space> :action ToggleBookmark<CR>
+
 nnoremap ma :action ToggleBookmarkA<CR>
 nnoremap 'a :action GotoBookmarkA<CR>
 nnoremap mb :action ToggleBookmarkB<CR>
