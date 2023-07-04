@@ -167,7 +167,7 @@ alias k=kubectl && complete -o nospace -F __start_kubectl k
 alias less='less -F -X -R'
 alias ls='ls --color=auto'
 alias pwgen='pwgen -s 32 1'
-alias py=python
+alias py=python3
 alias reload='history -n'
 alias tree='tree -C'
 alias throttled-yt-dlp='yt-dlp --proxy socks5://localhost:1080'
@@ -227,7 +227,6 @@ export PATH="/Applications/Docker.app/Contents/Resources/bin:$PATH"
 export PATH="/opt/homebrew/opt/findutils/libexec/gnubin:$PATH"
 export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
-export PATH="/opt/homebrew/opt/gnu-tar/libexec/gnubin:$PATH"
 export PATH="/opt/homebrew/opt/grep/libexec/gnubin/:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
 
