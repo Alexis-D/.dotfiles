@@ -13,7 +13,7 @@ Vim plugins are managed using Pathogen (see
 
 ### A note about Homebrew and useful formulas
 
-    brew install coreutils findutils gawk gnu-sed gnu-tar grep gzip netcat watch
+    brew install coreutils findutils gawk gnu-sed grep gzip netcat watch
     brew install gpg2 pass pinentry pinentry-mac pwgen
     brew install certigo duti git jq pup pv screen tofrodos unrar vmtouch yt-dlp
     brew install bash bash-completion@2 dive docker-compose-completion z
