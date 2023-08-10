@@ -18,7 +18,7 @@
                 },
                 "rules": [
                     {
-                        "description": "Intellij F1/F3/F6/F9 work as expected",
+                        "description": "Intellij F1/F3/F6/F7/F9 work as expected",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -88,6 +88,30 @@
                                 "to": [
                                     {
                                         "key_code": "f6"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.jetbrains..*"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "f7",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "f7"
                                     }
                                 ],
                                 "type": "basic"
