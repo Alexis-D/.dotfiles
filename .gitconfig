@@ -27,6 +27,8 @@
     changed = show --stat --oneline
     l = log --graph --all --date=relative\
         --pretty=format:'%C(cyan)%h%Creset %s %C(green)[%an/%cr]%Creset%C(red)%d%Creset'
+    ll = log --graph --date=relative\
+        --pretty=format:'%C(cyan)%h%Creset %s %C(green)[%an/%cr]%Creset%C(red)%d%Creset'
     update-all-submodules = submodule foreach git pull origin master
 
     amend = commit --amend
