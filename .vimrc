@@ -309,6 +309,7 @@ let g:ctrlp_show_hidden = 1
 let g:ctrlp_mruf_max = 1000
 let g:ctrlp_root_markers=['.root']
 let g:ctrlp_mruf_exclude = '^/private/var/folders/.*\|.*\.fugitiveblame$'
+let g:ctrlp_open_multiple_files = 'tjr'
 
 " https://www.chunkhang.com/blog/slow-syntax-highlighting-in-vim
 " fixes filename only poor perf with ctrlp
