@@ -109,7 +109,7 @@ root() {
 }
 
 gw() {
-    $(git rev-parse --show-toplevel)/gradlew --daemon --no-scan "$@"
+    (cd "$(git rev-parse --show-toplevel)" && "$(git rev-parse --show-toplevel)"/gradlew --daemon --no-scan "$@")
 }
 
 # http://stackoverflow.com/a/16178979/2813687
