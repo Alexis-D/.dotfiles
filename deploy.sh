@@ -34,6 +34,7 @@ then
     echo "Setting Outlook as the default mail client..."
     duti -s com.microsoft.outlook mailto
     duti -s org.videolan.vlc .webm viewer
+    duti -s org.videolan.vlc .mp4 viewer
 
     echo "Make keys repeat themselves in Intellij..."
     defaults write com.jetbrains.intellij.ce ApplePressAndHoldEnabled -bool false
