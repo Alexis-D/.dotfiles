@@ -28,7 +28,7 @@ Vim plugins are managed using Pathogen (see
     brew tap homebrew/cask-fonts
     brew install --cask font-inconsolata font-jetbrains-mono font-ubuntu
 
-# A note about Python
+### A note about Python
 
     python3 -m venv path/to/venv
     . path/to/venv/bin/activate
@@ -64,6 +64,13 @@ y: https://www.youtube.com/results?search_query=%s
 ```
 https?://github.com/* btye
 ```
+
+### A note about Firefox
+
+* [Tridactyl](https://tridactyl.xyz/)
+* [LibRedirect](https://libredirect.github.io/)
+* [SponsorBlock](https://sponsor.ajay.app/)
+* [uBlock Origin](https://github.com/gorhill/uBlock#ublock-origin)
 
 ### A note about MacOS
 
