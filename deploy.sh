@@ -38,6 +38,8 @@ then
 
     echo "Make keys repeat themselves in Intellij..."
     defaults write com.jetbrains.intellij.ce ApplePressAndHoldEnabled -bool false
+    echo "Make keys repeat themselves in VSCodium..."
+    defaults write com.vscodium ApplePressAndHoldEnabled -bool false
 fi
 
 echo "Sourcing ~/.bashrc..."
