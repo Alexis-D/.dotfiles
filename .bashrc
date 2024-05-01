@@ -65,27 +65,8 @@ cite() {
     fi
 }
 
-java8() {
-    JAVA_HOME=$(/usr/libexec/java_home -v '1.8') "$@"
-}
-
-java11() {
-    JAVA_HOME=$(/usr/libexec/java_home -v '11') "$@"
-}
-
-java17() {
-    JAVA_HOME=$(/usr/libexec/java_home -v '17') "$@"
-}
-
 origin() {
     tr / . | sed 's/.java$//'
-}
-
-regen() {
-    ./gradlew --daemon -q tasks --all |
-        awk '{print $1}' |
-        grep -E -e generateAltaClient$ -e compileConjure$ -e gofigureRender$ -e generateSchema$ -e generateDockerCompose$ -e devEnvSetup$  -e generateMetrics$ |
-        xargs ./gradlew
 }
 
 throttling-proxy() {
@@ -263,6 +244,8 @@ fi
 [[ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]] &&
     . /usr/local/etc/bash_completion.d/git-prompt.sh
 
+[[ -f ~/.cargo/env ]] && . ~/.cargo/env
+
 # http://superuser.com/a/418112
 stty stop '' # disable ^S
 
@@ -320,6 +303,38 @@ PS1="$check $ssh$time $user @ $host in $dir$branch $root "
 
 stitle() {
     echo -ne "\033]1;${1:-$(hostname -s)}\033\\"
+}
+
+_venvname() {
+    if [[ -n "$1" ]]
+    then
+        echo -n "$1"
+        return
+    fi
+
+    local mayberepo=$(git rev-parse --show-toplevel 2>/dev/null)
+
+    if [[ -n "$mayberepo" ]]
+    then
+        basename "$mayberepo"
+        return
+    fi
+
+    basename "$PWD"
+}
+
+venv() {
+    [[ ! -d ~/.venvs ]] && mkdir ~/.venvs
+    local venv=$(_venvname "$1")
+    [[ ! -d ~/.venvs/"$venv" ]] && python3 -m venv ~/.venvs/"$venv"
+}
+
+venvs() {
+    ls --format=single-column ~/.venvs
+}
+
+workon() {
+    . ~/.venvs/"$(_venvname "$1")"/bin/activate
 }
 
 # only for ssh/non-iTerm
