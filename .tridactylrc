@@ -1,0 +1,41 @@
+" General Settings
+set update.lastchecktime 1687466040138
+set configversion 2.0
+
+set tabopenpos last
+set tabclosepinned false
+
+set searchurls.g https://www.google.com/search?q=
+set searchurls.w https://en.wikipedia.org/wiki/Special:Search/
+set searchurls.wfr https://fr.wikipedia.org/wiki/Special:Search/
+set searchurls.y https://www.youtube.com/results?search_query=
+set searchurls.gh https://github.com/search?utf8=✓&q=
+set searchurls.sg https://sourcegraph.com/search?q=
+set searchurls.pcs https://www.procyclingstats.com/search.php?term=
+set searchurls.enfr http://www.wordreference.com/enfr/
+set searchurls.fren http://www.wordreference.com/fren/
+set searchurls.m https://www.google.com/maps?q=
+set searchurls.wa https://www.wolframalpha.com/input/?i=
+
+bind / fillcmdline find
+bind ? fillcmdline find --reverse
+bind n findnext
+bind N findnext --reverse
+bind ,<Space> nohlsearch
+
+bind E current_url tabopen
+bind O fillcmdline tabopen
+bind e current_url open
+bind p pin
+bind x tabclose
+
+bind ,y hint -y
+bind ,p hint -p
+
+unbind a
+unbind A
+
+colourscheme --url https://raw.githubusercontent.com/dracula/tridactyl/main/dracula.css dracula
+
+" For syntax highlighting see https://github.com/tridactyl/vim-tridactyl
+" vim: set filetype=tridactyl
