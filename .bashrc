@@ -327,6 +327,8 @@ venv() {
     [[ ! -d ~/.venvs ]] && mkdir ~/.venvs
     local venv=$(_venvname "$1")
     [[ ! -d ~/.venvs/"$venv" ]] && python3 -m venv ~/.venvs/"$venv"
+
+    workon "$venv"
 }
 
 venvs() {
@@ -336,6 +338,15 @@ venvs() {
 workon() {
     . ~/.venvs/"$(_venvname "$1")"/bin/activate
 }
+
+_autovenv() {
+    if [[ -z "$VIRTUAL_ENV_PROMPT" ]] && [[ -d ~/.venvs/"$(_venvname)" ]]
+    then
+        workon
+    fi
+}
+
+PROMPT_COMMAND+=_autovenv
 
 # only for ssh/non-iTerm
 [[ "$TERM_PROGRAM" != "iTerm.app" ]] && stitle
