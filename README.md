@@ -13,6 +13,8 @@ Vim plugins are managed using Pathogen (see
 
 ### A note about Homebrew and useful formulas
 
+(note to self, investigate automating with `brew bundle`)
+
     brew install coreutils findutils gawk gnu-sed grep gzip netcat watch
     brew install gpg2 pass pinentry pinentry-mac pwgen
     brew install certigo duti git jq pup pv screen tofrodos unrar vmtouch yt-dlp
@@ -68,7 +70,6 @@ https?://github.com/* btye
 ### A note about Firefox
 
 * [Tridactyl](https://tridactyl.xyz/)
-* [LibRedirect](https://libredirect.github.io/)
 * [SponsorBlock](https://sponsor.ajay.app/)
 * [uBlock Origin](https://github.com/gorhill/uBlock#ublock-origin)
 
