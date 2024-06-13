@@ -16,6 +16,7 @@ find "$OLDPWD"\
     -mindepth 1\
     ! -name deploy.sh\
     ! -name .git\
+    ! -name Brewfile\
     ! -name README.md\
     ! -name com.googlecode.iterm2.plist\
     ! -name DefaultKeyBinding.dict\
@@ -40,6 +41,14 @@ then
     defaults write com.jetbrains.intellij.ce ApplePressAndHoldEnabled -bool false
     echo "Make keys repeat themselves in VSCodium..."
     defaults write com.vscodium ApplePressAndHoldEnabled -bool false
+fi
+
+if hash brew 2>/dev/null
+then
+    printf "✅ \032[0;31mbrew is available, will proceed with Brewfile install.\033[0m\n" >&2
+    brew bundle install --no-lock
+else
+    printf "❌ \033[0;31mNo brew, skipping brew bundle install.\033[0m\n" >&2
 fi
 
 echo "Sourcing ~/.bashrc..."

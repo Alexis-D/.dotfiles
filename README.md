@@ -11,30 +11,6 @@
 Vim plugins are managed using Pathogen (see
 [tpope/vim-pathogen](https://github.com/tpope/vim-pathogen)).
 
-### A note about Homebrew and useful formulas
-
-(note to self, investigate automating with `brew bundle`)
-
-    brew install coreutils findutils gawk gnu-sed grep gzip netcat watch
-    brew install gpg2 pass pinentry pinentry-mac pwgen
-    brew install certigo duti git jq pup pv screen tofrodos unrar vmtouch yt-dlp
-    brew install bash bash-completion@2 dive docker-compose-completion z
-    brew install htop nmap the_silver_searcher vim
-    brew install java
-    brew install python python3 pyenv pyenv-virtualenv
-
-    brew install --cask chromium firefox
-    brew install --cask docker iterm2 intellij-idea-ce
-    brew install --cask caffeine flux karabiner-elements keyboard-cleaner licecap rectangle vlc
-
-    brew tap homebrew/cask-fonts
-    brew install --cask font-inconsolata font-jetbrains-mono font-ubuntu
-
-### A note about Python
-
-    python3 -m venv path/to/venv
-    . path/to/venv/bin/activate
-
 ### A note about Chrome
 
 * [ModHeader](https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj?hl=en)
