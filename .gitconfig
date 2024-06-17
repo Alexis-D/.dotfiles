@@ -1,7 +1,6 @@
 [user]
     name = Alexis Daboville
     email = alexis.daboville@gmail.com
-    signingKey = 704AC94F69CBE16A
 [color]
     diff = auto
     status = auto
@@ -64,5 +63,3 @@
     helper = cache
 [branch]
     autosetuprebase = always
-[commit]
-    gpgsign = true
