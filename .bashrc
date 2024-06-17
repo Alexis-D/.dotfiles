@@ -201,6 +201,8 @@ export MANPATH="/opt/homebrew/opt/gnu-sed/libexec/gnuman:$MANPATH"
 export MANPATH="/opt/homebrew/opt/grep/libexec/gnuman/:$MANPATH"
 export MANPATH="/opt/homebrew/opt/findutils/libexec/gnuman/:$MANPATH"
 
+# pipx
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="/sbin:$PATH"
 export PATH="/usr/sbin:$PATH"
@@ -211,7 +213,10 @@ export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 export PATH="/opt/homebrew/opt/grep/libexec/gnubin/:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
 
-export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+if [[ "$PROMPT_COMMAND" != *"history -a;"* ]]
+then
+    export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+fi
 export PYTHONSTARTUP=~/.pythonrc.py
 export XDG_CONFIG_HOME=~/.dotfiles/.config
 
@@ -346,7 +351,10 @@ _autovenv() {
     fi
 }
 
-PROMPT_COMMAND+=_autovenv
+if [[ "$PROMPT_COMMAND" != *_autovenv* ]]
+then
+    PROMPT_COMMAND+="_autovenv; "
+fi
 
 # only for ssh/non-iTerm
 [[ "$TERM_PROGRAM" != "iTerm.app" ]] && stitle
