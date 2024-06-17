@@ -34,6 +34,7 @@ brew "wget"
 brew "z"
 
 brew "python"
+brew "pipx"
 
 brew "docker-completion", link: false
 brew "fzf"
