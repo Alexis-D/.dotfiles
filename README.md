@@ -54,7 +54,8 @@ https?://github.com/* btye
 * [How to enable the three-finger drag gesture on Mac OS X](http://www.idownloadblog.com/2015/06/25/three-finger-drag-gesture-os-x-el-capitan/)
 * [How to Turn Off Multitouch Trackpad Look Up in OS X](https://www.tekrevue.com/tip/how-to-turn-off-multitouch-trackpad-look-up-in-os-x/)
 * [Stop Spaces from Rearranging Themselves in Mac OS X](http://osxdaily.com/2011/11/12/stop-spaces-rearranging-mac-os-x/)
-* `Keyboard -> Text` -> Disable everything.
+* `Keyboard -> Keyboard shortcuts -> Services -> Text` -> Disable everything
+  (<https://intellij-support.jetbrains.com/hc/en-us/articles/360005137400-Cmd-Shift-A-hotkey-opens-Terminal-with-apropos-search-instead-of-the-Find-Action-dialog>).
 * Setup hot corners
 * `iTerm2` -> right click in Dock, `Options -> Assign To -> All Desktops`
 * `Sound -> Show volume in menu bar`
