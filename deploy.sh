@@ -34,15 +34,12 @@ then
 
     echo "Setting Outlook as the default mail client..."
     duti -s com.microsoft.outlook mailto
+    echo "Setting VLC as default video player..."
     duti -s org.videolan.vlc .webm viewer
     duti -s org.videolan.vlc .mp4 viewer
 
-    echo "Make keys repeat themselves in Intellij..."
-    defaults write com.jetbrains.intellij.ce ApplePressAndHoldEnabled -bool false
-    echo "Make keys repeat themselves in PyCharm..."
-    defaults write com.jetbrains.pycharm.ce ApplePressAndHoldEnabled -bool false
-    echo "Make keys repeat themselves in VSCodium..."
-    defaults write com.vscodium ApplePressAndHoldEnabled -bool false
+    echo "Make keys repeat themselves..."
+    defaults write -g ApplePressAndHoldEnabled -bool false
 fi
 
 if hash brew 2>/dev/null
