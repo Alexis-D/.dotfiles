@@ -351,6 +351,8 @@ _autovenv() {
     fi
 }
 
+[[ -f ~/.rye/env ]] && . ~/.rye/env
+
 if [[ "$PROMPT_COMMAND" != *_autovenv* ]]
 then
     PROMPT_COMMAND+="_autovenv; "
