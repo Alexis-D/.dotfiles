@@ -348,18 +348,10 @@ workon() {
     . ~/.venvs/"$(_venvname "$1")"/bin/activate
 }
 
-_autovenv() {
-    if [[ -z "$VIRTUAL_ENV_PROMPT" ]] && [[ -d ~/.venvs/"$(_venvname)" ]]
-    then
-        workon
-    fi
-}
-
-[[ -f ~/.rye/env ]] && . ~/.rye/env
-
-if [[ "$PROMPT_COMMAND" != *_autovenv* ]]
+if [[ -f ~/.rye/env ]]
 then
-    PROMPT_COMMAND+="_autovenv; "
+    . ~/.rye/env
+    eval "$(rye self completion)"
 fi
 
 # only for ssh/non-iTerm

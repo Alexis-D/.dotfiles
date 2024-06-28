@@ -43,6 +43,10 @@ y: https://www.youtube.com/results?search_query=%s
 https?://github.com/* btye
 ```
 
+### A note about Python
+
+Install [Rye](https://rye.astral.sh/).
+
 ### A note about Firefox
 
 * [Tridactyl](https://tridactyl.xyz/)
