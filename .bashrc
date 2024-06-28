@@ -239,6 +239,10 @@ if hash kubectl 2>/dev/null; then
     source <(kubectl completion bash)
 fi
 
+if hash fzf 2>/dev/null; then
+    eval "$(fzf --bash)"
+fi
+
 if command -v z &>/dev/null
 then
     Z="$HOME/bin/z.sh"
