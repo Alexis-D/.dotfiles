@@ -7,6 +7,7 @@
     cd .dotfiles
     bash
     . deploy.sh
+    # git submodule update --remote # update all submodule to whatever origin's HEAD is pointing to
 
 Vim plugins are managed using Pathogen (see
 [tpope/vim-pathogen](https://github.com/tpope/vim-pathogen)).
