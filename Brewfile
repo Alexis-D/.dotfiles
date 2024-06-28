@@ -39,6 +39,7 @@ brew "pipx"
 brew "docker-completion", link: false
 brew "fzf"
 brew "htop"
+brew "ripgrep"
 brew "tree"
 brew "the_silver_searcher"
 brew "watch"
