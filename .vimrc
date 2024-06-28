@@ -76,7 +76,7 @@ augroup END
 
 augroup twgroup
     " maximum length of inserted line (it's broken if wider)
-    autocmd FileType python,ruby,javascript,sh setlocal textwidth=78
+    autocmd FileType python,ruby,javascript,sh setlocal textwidth=100
     autocmd FileType java,markdown setlocal textwidth=120
     autocmd FileType rst setlocal textwidth=0
 augroup END
@@ -320,10 +320,11 @@ augroup ts
     autocmd FileType typescript,typescriptreact setlocal re=0
 augroup END
 
-if executable('ag')
-    let g:ctrlp_user_command = 'ag --nogroup --nocolor -g "" %s'
-    set grepprg=ag\ --nogroup\ --nocolor
-    let g:ackprg = 'ag --vimgrep'
+let g:ctrlp_user_command = ['.git', 'git ls-files -co --exclude-standard %s', 'find %s -type f']
+if executable('rg')
+    let g:ctrlp_user_command[2] = 'rg --files %s'
+    set grepprg=rg\ --vimgrep
+    let g:ackprg = 'rg --vimgrep'
 endif
 
 " temporarily disable stuff that clutter copy/pasted stuff
