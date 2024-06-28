@@ -66,4 +66,4 @@
 	url = https://github.com/mechatroner/rainbow_csv.git
 [submodule ".vim/bundle/vim-redact-pass"]
 	path = .vim/bundle/vim-redact-pass
-	url = https://sanctum.geek.nz/code/vim-redact-pass.git
+	url = https://dev.sanctum.geek.nz/code/vim-redact-pass.git/
