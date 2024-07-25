@@ -54,6 +54,8 @@ Install [Rye](https://rye.astral.sh/).
 * [SponsorBlock](https://sponsor.ajay.app/)
 * [uBlock Origin](https://github.com/gorhill/uBlock#ublock-origin)
 
+In `about:config`, disable `dom.private-attribution.submission.enabled`.
+
 ### A note about MacOS
 
 * [How to enable the three-finger drag gesture on Mac OS X](http://www.idownloadblog.com/2015/06/25/three-finger-drag-gesture-os-x-el-capitan/)
