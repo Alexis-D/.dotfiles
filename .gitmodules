@@ -51,7 +51,7 @@
 	url = https://github.com/mkitt/tabline.vim.git
 [submodule ".vim/bundle/vim-fetch"]
 	path = .vim/bundle/vim-fetch
-	url = https://github.com/alexis-d/vim-fetch.git
+	url = https://github.com/wsdjeg/vim-fetch.git
 [submodule ".vim/bundle/vim-bracketed-paste"]
 	path = .vim/bundle/vim-bracketed-paste
 	url = https://github.com/ConradIrwin/vim-bracketed-paste.git
