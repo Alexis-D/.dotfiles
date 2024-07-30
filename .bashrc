@@ -265,7 +265,7 @@ too-long() {
     if [[ ${#pfad} -lt 30 ]]; then
         echo -n "${pfad}"
     else
-        echo -n ".../$(basename "$pfad")"
+        echo -n ".../${pfad##*/}"
     fi
 }
 
