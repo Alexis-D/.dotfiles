@@ -260,13 +260,6 @@ fi
 # http://superuser.com/a/418112
 stty stop '' # disable ^S
 
-# if command -v pyenv &>/dev/null
-# then
-#     eval "$(pyenv init --path)"
-#     eval "$(pyenv init -)"
-#     eval "$(pyenv virtualenv-init -)"
-# fi
-
 too-long() {
     local pfad=${PWD/#$HOME/\~}
     if [[ ${#pfad} -lt 30 ]]; then
