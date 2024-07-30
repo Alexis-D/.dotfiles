@@ -252,6 +252,8 @@ fi
 # for __git_ps1, this actually loads fast
 [[ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]] &&
     . /usr/local/etc/bash_completion.d/git-prompt.sh
+[[ -f /usr/share/git/git-prompt.sh ]] &&
+    . /usr/share/git/git-prompt.sh
 
 [[ -f ~/.cargo/env ]] && . ~/.cargo/env
 
@@ -274,17 +276,33 @@ too-long() {
     fi
 }
 
+find-up () {
+  path=$(pwd)
+  while [[ "$path" != "" && ! -e "$path/$1" ]]; do
+    path=${path%/*}
+  done
+  [[ -n "$path" ]]
+}
+
 git-branch() {
+    # used instead of git rev-parse --show-toplevel as it's faster (noticeable
+    # when running in an x86 QEMU VM running on ARM)
+    if ! find-up .git; then
+        return
+    fi
+
+    # VM
+    if [[ "$HOSTNAME" == arch ]]; then
+        echo -n ' (???)'
+        return
+    fi
+
     local plusminus=+-
     ((BASH_MAJOR_VERSION > 3)) && plusminus=$'\u00b1'
-    local dirty=' ???'
 
-    if ! [[ $PWD = /Volumes/git/forge* ]]
-    then
-        local dirty=$(
-            [[ $(git status --porcelain 2>/dev/null) != '' ]] &&
-            echo -n " $plusminus")
-    fi
+    local dirty=$(
+        [[ -n "$(git status --porcelain 2>/dev/null | head -c 1)" ]] &&
+        echo -n " $plusminus")
 
     __git_ps1 " (%s$dirty)" 2>/dev/null
 }
@@ -311,7 +329,7 @@ root="\\$"
 PS1="$check $ssh$time $user @ $host in $dir$branch $root "
 
 stitle() {
-    echo -ne "\033]1;${1:-$(hostname -s)}\033\\"
+    echo -ne "\033]1;${1:-${HOSTNAME%%.*}}\033\\"
 }
 
 _venvname() {
@@ -355,7 +373,7 @@ then
 fi
 
 # only for ssh/non-iTerm
-[[ "$TERM_PROGRAM" != "iTerm.app" ]] && stitle
+[[ "$TERM_PROGRAM" != "iTerm.app" ]] && PROMPT_COMMAND="stitle; $PROMPT_COMMAND"
 
 ((BASH_MAJOR_VERSION < 4)) && (
     echo -n $'\nBash < 4.x; some features '

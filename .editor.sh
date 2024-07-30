@@ -1,3 +1,3 @@
 #/usr/bin/env sh
 
-vi "+set tw=0" "$@"
+vim "+set tw=0" "$@"
