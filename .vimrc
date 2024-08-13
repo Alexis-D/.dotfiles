@@ -130,7 +130,11 @@ else
     " colorscheme
     colo xoria256
     " ~, precedes/extends listchars, and showbreaks
-    hi NonText term=bold ctermfg=12 gui=bold guifg=Blue
+    highlight NonText term=bold ctermfg=12 gui=bold guifg=Blue
+    highlight LineNr ctermbg=none
+    highlight CursorLineNr ctermbg=none
+    highlight SignColumn ctermbg=none
+    highlight SignatureMarkText ctermbg=none
 end
 
 augroup transparentbackground
