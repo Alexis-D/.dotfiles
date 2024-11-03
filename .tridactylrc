@@ -30,12 +30,19 @@ bind p pin
 bind x tabclose
 
 bind ,y hint -y
-bind ,p hint -p
+bind ,t hint -p
 
 unbind a
 unbind A
 
+unbindurl github.com/ b
+unbindurl github.com/ t
+unbindurl github.com/ e
+
+blacklistadd ^http://localhost
+
 colourscheme --url https://raw.githubusercontent.com/dracula/tridactyl/main/dracula.css dracula
+" colourscheme --url https://raw.githubusercontent.com/lonepie/catppuccin-tridactyl/main/catppuccin.css catppuccin
 
 " For syntax highlighting see https://github.com/tridactyl/vim-tridactyl
 " vim: set filetype=tridactyl
