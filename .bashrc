@@ -124,8 +124,6 @@ clean() {
     docker network rm $(docker network ls -q)
 }
 
-WANTED_PYTHON_VERSION=3.9.4
-
 _xargsh () {
     local f=$1
     export -f "$f"
@@ -148,7 +146,7 @@ alias k=kubectl && complete -o nospace -F __start_kubectl k
 alias less='less -F -X -R'
 alias ls='ls --color=auto'
 alias pwgen='pwgen -s 32 1'
-alias py=python3
+alias py=python
 alias reload='history -n'
 alias tree='tree -C'
 alias throttled-yt-dlp='yt-dlp --proxy socks5://localhost:1080'
@@ -180,7 +178,7 @@ export HISTSIZE=100000
 export HOMEBREW_NO_ANALYTICS=1
 if [[ -x /opt/homebrew/opt/openjdk/bin/java ]]
 then
-    export JAVA_HOME=/opt/homebrew/opt/openjdk/bin/java
+    export JAVA_HOME=/opt/homebrew/opt/openjdk/
     export PATH="/opt/homebrew/opt/openjdk/bin/:$PATH"
 elif [[ -x /usr/libexec/java_home ]]
 then
