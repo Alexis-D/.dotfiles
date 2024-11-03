@@ -3,3 +3,4 @@ tags
 *.o
 *.class
 *.pyc
+.venv
