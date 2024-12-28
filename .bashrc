@@ -135,6 +135,7 @@ alias ....='cd ../../..'
 alias ...='cd ../..'
 alias ..='cd ..'
 alias .='PS1= builtin .'
+alias 720p='yt-dlp -f "bv[height<=720]+ba"'
 alias csv="awk -vFPAT='([^,]+)|(\"[^\"]+\")'"
 alias gg='./godelw'
 alias grep='grep -E --color=auto -I'
@@ -149,7 +150,6 @@ alias pwgen='pwgen -s 32 1'
 alias py=python
 alias reload='history -n'
 alias tree='tree -C'
-alias throttled-yt-dlp='yt-dlp --proxy socks5://localhost:1080'
 alias vi=vim
 alias vimcognito='vim -u NONE "+set noswapfile nobackup nowritebackup viminfo="'
 
