@@ -30,6 +30,7 @@
     ll = log --graph --date=relative\
         --pretty=format:'%C(cyan)%h%Creset %s %C(green)[%an/%cr]%Creset%C(red)%d%Creset'
     update-all-submodules = submodule foreach git pull origin master
+    c = "!f() { git branch --format='%(refname:short)' | fzf | xargs git checkout ; }; f"
 
     amend = commit --amend
     squash = commit --amend -C HEAD
