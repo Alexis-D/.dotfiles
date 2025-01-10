@@ -65,6 +65,6 @@ In `about:config`, disable `dom.private-attribution.submission.enabled`.
   (<https://intellij-support.jetbrains.com/hc/en-us/articles/360005137400-Cmd-Shift-A-hotkey-opens-Terminal-with-apropos-search-instead-of-the-Find-Action-dialog>).
 * Setup hot corners
 * `iTerm2` -> right click in Dock, `Options -> Assign To -> All Desktops`
-* `Sound -> Show volume in menu bar`
+* `Control Center -> Show volume in menu bar` + `Bluetooth`
 * `Displays -> Disable True Tone`
 * `Karabiner-Elements -> Function keys -> Check Use all F1, F2, etc...`
