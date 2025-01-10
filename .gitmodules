@@ -67,3 +67,6 @@
 [submodule ".vim/bundle/vim-redact-pass"]
 	path = .vim/bundle/vim-redact-pass
 	url = https://dev.sanctum.geek.nz/code/vim-redact-pass.git/
+[submodule ".vim/bundle/yats.vim"]
+	path = .vim/bundle/yats.vim
+	url = git@github.com:HerringtonDarkholme/yats.vim.git
