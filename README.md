@@ -35,6 +35,7 @@ enfr: http://www.wordreference.com/enfr/%s
 fren: http://www.wordreference.com/fren/%s
 g: http://google.com/search?q=%s
 m: https://www.google.com/maps?q=%s
+sg: https://sourcegraph.com/search?q=%s
 w: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s
 wa: https://www.wolframalpha.com/input/?i=%s
 y: https://www.youtube.com/results?search_query=%s
