@@ -31,7 +31,7 @@
         --pretty=format:'%C(cyan)%h%Creset %s %C(green)[%an/%cr]%Creset%C(red)%d%Creset'
     ll = log --graph --date=relative\
         --pretty=format:'%C(cyan)%h%Creset %s %C(green)[%an/%cr]%Creset%C(red)%d%Creset'
-    lll  = "!f() { git ll --color --ancestry-path "$(git merge-base origin/main HEAD)"..HEAD ; }; f"
+    lll  = "!f() { (git rev-parse -q --verify origin/main ; git rev-parse -q --verify origin/master) | xargs -i git merge-base {} HEAD | xargs -i git ll \"$@\" --ancestry-path {}..HEAD ; }; f"
     update-all-submodules = submodule foreach git pull origin master
     c = "!f() { git branch --format='%(refname:short)' | fzf | xargs git checkout ; }; f"
 
