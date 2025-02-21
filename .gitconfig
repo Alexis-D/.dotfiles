@@ -15,6 +15,8 @@
     pop = stash pop
     purr = pull --rebase
     st = status -s
+    rb = rebase
+    ri = rebase -i
 
     edit-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; vim -p `f`"
     add-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; git add `f`"
@@ -29,8 +31,12 @@
         --pretty=format:'%C(cyan)%h%Creset %s %C(green)[%an/%cr]%Creset%C(red)%d%Creset'
     ll = log --graph --date=relative\
         --pretty=format:'%C(cyan)%h%Creset %s %C(green)[%an/%cr]%Creset%C(red)%d%Creset'
+    lll  = "!f() { git ll --color --ancestry-path "$(git merge-base origin/main HEAD)"..HEAD ; }; f"
     update-all-submodules = submodule foreach git pull origin master
     c = "!f() { git branch --format='%(refname:short)' | fzf | xargs git checkout ; }; f"
+
+    fixup = "!f() { (git lll --color && echo) | tac | fzf --ansi | awk '{print $2}' | xargs -i -o git ci --fixup {} \"$@\" ; }; f"
+    wip = commit -am wip --no-verify
 
     amend = commit --amend
     squash = commit --amend -C HEAD
@@ -50,7 +56,9 @@
     ff = false
     autoStash = true
 [rebase]
+    autoSquash = true
     autoStash = true
+    updateRefs = true
 [push]
     default = current
     autoSetupRemote = true
@@ -64,3 +72,5 @@
     helper = cache
 [branch]
     autosetuprebase = always
+[spice "branchCreate"]
+	commit = false
