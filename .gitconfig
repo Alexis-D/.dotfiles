@@ -8,6 +8,7 @@
 [alias]
     br = branch
     ci = commit
+    ca = "!f() { git diff --cached --quiet && git add -u; git commit \"$@\" ; }; f"
     co = checkout
     di = diff
     last = log -1 HEAD
