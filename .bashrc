@@ -137,6 +137,7 @@ alias ..='cd ..'
 alias .='PS1= builtin .'
 alias 720p='yt-dlp -f "bv[height<=720]+ba"'
 alias csv="awk -vFPAT='([^,]+)|(\"[^\"]+\")'"
+alias drop="awk 'length(\$0) < 120'"
 alias gg='./godelw'
 alias grep='grep -E --color=auto -I'
 alias fgrep='fgrep --color=auto -I'
