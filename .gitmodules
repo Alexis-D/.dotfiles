@@ -70,3 +70,6 @@
 [submodule ".vim/bundle/yats.vim"]
 	path = .vim/bundle/yats.vim
 	url = git@github.com:HerringtonDarkholme/yats.vim.git
+[submodule ".vim/bundle/vim-fix-git-diff-path"]
+	path = .vim/bundle/vim-fix-git-diff-path
+	url = git@github.com:alikins/vim-fix-git-diff-path.git
