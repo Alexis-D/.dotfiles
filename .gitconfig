@@ -28,15 +28,18 @@
     forget = update-index --assume-unchanged
     unforget = update-index --no-assume-unchanged
     changed = show --stat --oneline
-    l = log --graph --all --date=relative\
-        --pretty=format:'%C(cyan)%h%Creset %s %C(green)[%an/%cr]%Creset%C(red)%d%Creset'
-    ll = log --graph --date=relative\
-        --pretty=format:'%C(cyan)%h%Creset %s %C(green)[%an/%cr]%Creset%C(red)%d%Creset'
+    # ignored options:
+    # -c core.pager='less -S'
+    # %<(N,trunc)
+    zlog = log --graph --date=relative \
+        --pretty=tformat:'%C(cyan)%h%Creset %s %C(green)[%an/%cr]%Creset%C(red)%d%Creset'
+    l = zlog --all
+    ll = zlog --decorate-refs-exclude=refs/tags
     lll  = "!f() { (git rev-parse -q --verify origin/main ; git rev-parse -q --verify origin/master) | xargs -i git merge-base {} HEAD | xargs -i git ll \"$@\" --ancestry-path {}..HEAD ; }; f"
     update-all-submodules = submodule foreach git pull origin master
     c = "!f() { git branch --format='%(refname:short)' | fzf | xargs git checkout ; }; f"
 
-    fixup = "!f() { (git lll --color && echo) | tac | fzf --ansi | awk '{print $2}' | xargs -i -o git ci --fixup {} \"$@\" ; }; f"
+    fixup = "!f() { git lll --color | tac | fzf --ansi | awk '{print $2}' | xargs -i -o git ci --fixup {} \"$@\" ; }; f"
     wip = commit -am wip --no-verify
 
     amend = commit --amend
