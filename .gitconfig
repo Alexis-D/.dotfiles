@@ -1,10 +1,7 @@
 [user]
     name = Alexis Daboville
     email = alexis.daboville@gmail.com
-[color]
-    diff = auto
-    status = auto
-    branch = auto
+
 [alias]
     br = branch
     ci = commit
@@ -52,29 +49,63 @@
     unstage = reset HEAD
     sign = config commit.gpgSign true
     do-not-sign = config commit.gpgSign false
+
+[branch]
+    autosetuprebase = always
+    sort = -committerdate
+
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+
+[column]
+    ui = auto
+
+[commit]
+    verbose = true
+
 [core]
     editor = vim
     excludesfile = ~/.cvsignore
+
+[credential]
+    helper = cache
+
+[diff]
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
+
+[fetch]
+    all = true
+    prune = true
+    pruneTags = true
+
 [merge]
-    tool = vimdiff
-    ff = false
     autoStash = true
+    ff = false
+    tool = vimdiff
+
+[pull]
+    ff = only
+
+[push]
+    autoSetupRemote = true
+    default = current
+
 [rebase]
     autoSquash = true
     autoStash = true
     updateRefs = true
-[push]
-    default = current
-    autoSetupRemote = true
-[pull]
-    ff = only
+
 [rerere]
+    autoupdate = true
     enabled = true
-[diff]
-    algorithm = patience
-[credential]
-    helper = cache
-[branch]
-    autosetuprebase = always
+
+[tags]
+    sort = version:refname
+
 [spice "branchCreate"]
     commit = false
