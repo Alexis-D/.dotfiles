@@ -239,6 +239,11 @@ if hash kubectl 2>/dev/null; then
 fi
 
 if hash fzf 2>/dev/null; then
+    if hash rg 2>/dev/null; then
+        export FZF_DEFAULT_COMMAND='rg --files'
+        export FZF_CTRL_T_COMMAND='rg --files'
+    fi
+
     eval "$(fzf --bash)"
 fi
 
