@@ -34,7 +34,8 @@
         --pretty=tformat:'%C(cyan)%h%Creset %s %C(green)[%an/%cr]%Creset%C(red)%d%Creset'
     l = zlog --all
     ll = zlog --decorate-refs-exclude=refs/tags
-    lll  = "!f() { (git rev-parse -q --verify origin/main ; git rev-parse -q --verify origin/master) | xargs -i git merge-base {} HEAD | xargs -i git ll \"$@\" --ancestry-path {}..HEAD ; }; f"
+    lll  = "!f() { (git rev-parse -q --verify origin/main ; git rev-parse -q --verify origin/master) | xargs -i git merge-base {} HEAD | xargs -i git ll \"$@\" --ancestry-path {}^..HEAD ; }; f"
+
     update-all-submodules = submodule foreach git pull origin master
     c = "!f() { git branch --format='%(refname:short)' | fzf | xargs git checkout ; }; f"
 
