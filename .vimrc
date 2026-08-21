@@ -315,16 +315,8 @@ let g:ctrlp_root_markers=['.root']
 let g:ctrlp_mruf_exclude = '^/private/var/folders/.*\|.*\.fugitiveblame$'
 let g:ctrlp_open_multiple_files = 'tjr'
 
-" https://www.chunkhang.com/blog/slow-syntax-highlighting-in-vim
-" fixes filename only poor perf with ctrlp
-set re=1
-
-augroup ts
-    autocmd!
-    autocmd FileType typescript,typescriptreact setlocal re=0
-augroup END
-
 let g:ctrlp_user_command = ['.git', 'git ls-files -co --exclude-standard %s', 'find %s -type f']
+let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
 if executable('rg')
     let g:ctrlp_user_command[2] = 'rg --files %s'
     set grepprg=rg\ --vimgrep
