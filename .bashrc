@@ -363,10 +363,11 @@ workon() {
     . ~/.venvs/"$(_venvname "$1")"/bin/activate
 }
 
-if [[ -f ~/.rye/env ]]
-then
-    . ~/.rye/env
-    eval "$(rye self completion)"
+if hash uv 2>/dev/null; then
+    eval "$(uv --generate-shell-completion bash)"
+fi
+if hash uvx 2>/dev/null; then
+    eval "$(uvx --generate-shell-completion bash)"
 fi
 
 # only for ssh/non-iTerm
